@@ -2,7 +2,7 @@
 @section('title', 'Terms & Conditions')
 @section('content')
     <div class="information-page-slider">
-        <img src="assets/img/travel-with-landmarks-new.png" alt="Krishidha Farmer Producer Company Limited " class="img-fluid">
+        <img src="assets/img/travel-with-landmarks-new.png" alt="TravelJob  Farmer Producer Company Limited " class="img-fluid">
         <div class="information-content">
             <h1>Terms & Conditions</h1>
         </div>
@@ -14,7 +14,7 @@
                     <h2 class="text-center">Terms & Conditions</h2>
                 </div>
                 <div class="midd-content">
-                    <p class="text-justify">These Terms and Conditions, along with privacy policy or other terms (“Terms”) constitute a binding agreement by and between Krishidha Farmer Producer Company Limited , ( “Website Owner” or “we” or “us” or “our”) and you (“you” or “your”) and relate to your use of our website, goods (as applicable) or services (as applicable) (collectively, “Services”).</p>
+                    <p class="text-justify">These Terms and Conditions, along with privacy policy or other terms (“Terms”) constitute a binding agreement by and between TravelJob  Farmer Producer Company Limited , ( “Website Owner” or “we” or “us” or “our”) and you (“you” or “your”) and relate to your use of our website, goods (as applicable) or services (as applicable) (collectively, “Services”).</p>
                     <p class="text-justify">By using our website and availing the services, you agree that you have read and accepted these terms (including the privacy policy). We reserve the right to modify these terms at any time and without Assigning any reason. It is your responsibility to periodically review these terms to stay informed of updates.</p> 
                     <p class="text-justify">The use of this website or availing of our Services is subject to the following terms of use:</p> 
                     <ul>

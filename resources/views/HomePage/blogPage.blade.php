@@ -10,7 +10,7 @@
         <div class="default-content blog-page pt-5 pb-3">
             <div class="custom-container">
                 <div class="site-title pb-3">
-                    <h2 class="text-center">Krishidha Blog</h2>
+                    <h2 class="text-center">TravelJob  Blog</h2>
                     {{-- <p class="text-center pb-3">From basic treks to high-altitude mountaineering expeditions, we cater to adventurers of all levels.</p> --}}
                 </div>
                 <div class="blog-container midd-content">
@@ -83,12 +83,12 @@
                                 <button class="collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                     aria-controls="flush-collapseTwo">
-                                    Q: What does the name "KRISHIDHA" mean?
+                                    Q: What does the name "TravelJob " mean?
                                 </button>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse">
                                     <div class="accordion-content">
                                         <ul>
-                                            <li>A: KRISHIDHA is derived from the Vedic saying "Krishi hi Dhan h," which
+                                            <li>A: TravelJob  is derived from the Vedic saying "Krishi hi Dhan h," which
                                                 translates to "Agriculture is wealth."</li>
                                         </ul>
                                     </div>
@@ -99,12 +99,12 @@
                                 <button class="collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
-                                    Q: What services does KRISHIDHA FPO offer to farmers?
+                                    Q: What services does TravelJob  FPO offer to farmers?
                                 </button>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse">
                                     <div class="accordion-content">
                                         <ul>
-                                            <li>A: KRISHIDHA FPO provides a combination of services to support farmers,
+                                            <li>A: TravelJob  FPO provides a combination of services to support farmers,
                                                 including:</li>
                                             <li>Supplying world-class agricultural inputs (seeds, fertilizers, crop
                                                 protection products).</li>
@@ -122,13 +122,13 @@
                                 <button class="collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseFour" aria-expanded="false"
                                     aria-controls="flush-collapseFour">
-                                    Q: How does KRISHIDHA FPO help farmers increase their income?
+                                    Q: How does TravelJob  FPO help farmers increase their income?
                                 </button>
                                 <div id="flush-collapseFour" class="accordion-collapse collapse">
                                     <div class="accordion-content">
                                         <ul>
                                             <li>A: By providing access to high-quality inputs, training on improved
-                                                practices, and fair market access, KRISHIDHA FPO equips farmers to:</li>
+                                                practices, and fair market access, TravelJob  FPO equips farmers to:</li>
                                             <li>Increase their crop yields.</li>
                                             <li>Reduce production costs through sustainable practices.</li>
                                             <li>Secure better prices for their produce.</li>
@@ -141,7 +141,7 @@
                         @endif
                     </div>
                     
-                    <p><b>Case studies:</b> Showcase the positive impact KRISHIDHA FPO has had on specific communities or
+                    <p><b>Case studies:</b> Showcase the positive impact TravelJob  FPO has had on specific communities or
                         farmers.</p>
                 </div>
             </div>

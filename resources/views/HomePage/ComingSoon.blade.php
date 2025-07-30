@@ -31,7 +31,7 @@
             <p class="subline">We're working on our new website. <a href="{{ url('/') }}"><i class="fa fa-link"></i>&nbsp;Return to Home</a></p>
         </div>
         <div class="footer">
-            <p>&copy; 2024 Krishidha Farmer Producer Company Limited  | Design by <a href="https://vyaparkranti.com">Vyapar Kranti</a></p>
+            <p>&copy; 2024 TravelJob  Farmer Producer Company Limited  | Design by <a href="https://vyaparkranti.com">Vyapar Kranti</a></p>
         </div>
         <!-- /FOOTER -->
     </div>

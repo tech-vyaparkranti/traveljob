@@ -107,9 +107,9 @@
 
                 </div>
                 <hr>
-                <p class="text-justify"><b>At Krishidha Farmer Producer Company Limited , we invite you to embark on a journey of discovery, where every experience is crafted with care and passion. Let us be your guide to the wonders of India.</b></p>
+                <p class="text-justify"><b>At TravelJob  Farmer Producer Company Limited , we invite you to embark on a journey of discovery, where every experience is crafted with care and passion. Let us be your guide to the wonders of India.</b></p>
 
-                <img src="assets/img/logo.png" width="100" height="" class="img-fluid mb-2" style="width: 100px;" />
+                <img src="assets/img/logo4.png" width="100" height="" class="img-fluid mb-2" style="width: 100px;" />
                 <span> - Symbolize our spirit to <i>Either Find Ways Or Make One.</i></span><br><br>
             </div>
         </div>

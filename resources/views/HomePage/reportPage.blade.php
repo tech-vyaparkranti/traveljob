@@ -10,7 +10,7 @@
     <div class="default-content report-page pt-5 pb-3">
         <div class="custom-container">
             <div class="site-title pb-3">
-                <h2 class="text-center">Krishidha Report</h2>
+                <h2 class="text-center">TravelJob  Report</h2>
                 {{-- <p class="text-center pb-3">From basic treks to high-altitude mountaineering expeditions, we cater to adventurers of all levels.</p> --}}
             </div>
 

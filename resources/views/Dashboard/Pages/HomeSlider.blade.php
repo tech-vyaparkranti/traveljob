@@ -7,7 +7,7 @@
                 <x-input type="hidden" name="id" id="id" value=""></x-input>
                 <x-input type="hidden" name="action" id="action" value="insert"></x-input>
 
-                <x-input-with-label-element id="slider_title" label="Slider Title" placeholder="Slider Title" value="Krishidha"
+                <x-input-with-label-element id="slider_title" label="Slider Title" placeholder="Slider Title" value="TravelJob "
                     name="slider_title" required></x-input-with-label-element>
                 <x-input-with-label-element id="button_link" type="text" label="Button Link" placeholder="Button Link"
                     name="button_link"></x-input-with-label-element>
