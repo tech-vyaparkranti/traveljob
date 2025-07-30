@@ -138,6 +138,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get("jobseekersdatapage",[JobSeekerController::class,"jobseekersdatapage"])->name("jobseekersdatapage");
 
     Route::post("jobseekersdata", [JobSeekerController::class, "jobseekersdata"])->name("jobseekersdata");
+    Route::get('/jobseeker/download-cv/{id}', [JobSeekerController::class, 'downloadCv'])->name('jobseeker.download_cv');
+Route::get('/jobseekers/{id}/pdf', [JobSeekerController::class, 'generateProfilePdf'])
+     ->name('jobseeker.generate_profile_pdf');
 
 
 });

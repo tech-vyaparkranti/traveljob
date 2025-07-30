@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\JobSeeker;
 use Illuminate\Support\Facades\Storage;
-use Yajra\DataTables\Facades\DataTables; // Make sure to import DataTables facade
-
+use Illuminate\Support\Str;
+use Yajra\DataTables\Facades\DataTables; 
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class JobSeekerController extends Controller
 {
@@ -197,263 +198,98 @@ class JobSeekerController extends Controller
         return redirect()->back()->with('success', 'Your profile has been submitted successfully!');
     }
 
-     public function jobseekersdatapage(){
+    public function generateProfilePdf($id)
+    {
+        $jobSeeker = JobSeeker::find($id);
+
+        if (!$jobSeeker) {
+            return redirect()->back()->with('error', 'Job Seeker not found.');
+        }
+
+        // Load the view with the job seeker data
+        $pdf = Pdf::loadView('pdfs.jobseeker_profile', compact('jobSeeker'));
+
+        // Define a friendly filename for the PDF
+        $givenName = Str::slug($jobSeeker->given_name);
+        $familyName = Str::slug($jobSeeker->family_name);
+        $pdfFileName = $givenName . '_' . $familyName . '_Profile.pdf';
+
+        // Return the PDF for download
+        return $pdf->download($pdfFileName);
+    }
+
+    public function jobseekersdatapage(){
         return view("Dashboard.Pages.jobseekers");
     }
 
     public function jobseekersdata(Request $request)
+{
+    if ($request->ajax()) {
+        $data = JobSeeker::select('id', 'given_name', 'family_name', 'personal_email', 'mobile_no', 'total_experience', 'cv_path', 'created_at');
+
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('cv_download', function(JobSeeker $jobSeeker) {
+                if ($jobSeeker->cv_path) {
+                    $url = route('jobseeker.download_cv', ['id' => $jobSeeker->id]);
+                    return '<a href="' . $url . '" class="btn btn-sm btn-info"><i class="fas fa-download"></i> Download CV</a>';
+                }
+                return 'N/A';
+            })
+            ->addColumn('profile_pdf', function(JobSeeker $jobSeeker) { // <-- NEW COLUMN
+                $url = route('jobseeker.generate_profile_pdf', ['id' => $jobSeeker->id]);
+                return '<a href="' . $url . '" class="btn btn-sm btn-primary"><i class="fas fa-file-pdf"></i> Download Profile PDF</a>';
+            })
+            ->addColumn('created_at_formatted', function(JobSeeker $jobSeeker) {
+                return $jobSeeker->created_at->format('Y-m-d H:i:s');
+            })
+            ->rawColumns(['cv_download', 'profile_pdf']) // <-- Add 'profile_pdf' here
+            ->make(true);
+    }
+    abort(403, 'Unauthorized access.');
+}
+
+    /**
+     * Handles the CV file download.
+     *
+     * @param int $id
+     * @return \Symfony\Component\HttpFoundation\StreamedResponse|\Illuminate\Http\RedirectResponse
+     */
+   public function downloadCv($id)
     {
-        if ($request->ajax()) {
-            // Select all columns from the job_seekers table
-            $data = JobSeeker::select('*');
+        $jobSeeker = JobSeeker::find($id);
 
-            return DataTables::of($data)
-                ->addIndexColumn() // Adds the DT_RowIndex column for serial numbers (Sr.No.)
-                ->addColumn('cv_download', function(JobSeeker $jobSeeker) {
-                    if ($jobSeeker->cv_path) {
-                        // Generate a URL for the stored file.
-                        // IMPORTANT: Ensure 'php artisan storage:link' has been run
-                        // to symlink storage/app/public to public/storage.
-                        $url = Storage::url($jobSeeker->cv_path);
-                        return '<a href="' . $url . '" class="btn btn-sm btn-primary" download>Download CV</a>';
-                    }
-                    return 'N/A'; // If no CV is available
-                })
-                ->addColumn('created_at_date', function(JobSeeker $jobSeeker) {
-                    // Format the created_at timestamp as desired
-                    return $jobSeeker->created_at->format('Y-m-d H:i:s');
-                })
-                // Add more custom columns to display 'Yes'/'No' for boolean fields
-                ->addColumn('willing_to_relocate', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->willing_to_relocate ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_gds_itinerary', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_gds_itinerary ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_pnr_adult', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_pnr_adult ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_pnr_child_infant', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_pnr_child_infant ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_senior_citizen_fares', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_senior_citizen_fares ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_student_fares', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_student_fares ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_youth_special_fares', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_youth_special_fares ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_fare_mask', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_fare_mask ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_ticketing_gds', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_ticketing_gds ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_lcc_websites', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_lcc_websites ? 'Yes' : 'No';
-                })
-                ->addColumn('domestic_supplier_portal', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->domestic_supplier_portal ? 'Yes' : 'No';
-                })
-                ->addColumn('hotel_bookings_india', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->hotel_bookings_india ? 'Yes' : 'No';
-                })
-                ->addColumn('hotel_contact_direct', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->hotel_contact_direct ? 'Yes' : 'No';
-                })
-                ->addColumn('hotel_consolidator_websites', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->hotel_consolidator_websites ? 'Yes' : 'No';
-                })
-                ->addColumn('hotel_local_dmc', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->hotel_local_dmc ? 'Yes' : 'No';
-                })
-                ->addColumn('car_hire_city', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->car_hire_city ? 'Yes' : 'No';
-                })
-                ->addColumn('car_hire_other_cities', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->car_hire_other_cities ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_gds_itinerary', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_gds_itinerary ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_pnr_child_infant', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_pnr_child_infant ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_senior_citizen_fares', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_senior_citizen_fares ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_student_fares', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_student_fares ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_youth_special_fares', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_youth_special_fares ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_fare_mask', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_fare_mask ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_queue_pnrs', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_queue_pnrs ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_first_reissue', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_first_reissue ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_subsequent_reissue', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_subsequent_reissue ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_ticket_refunds', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_ticket_refunds ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_hotac_rooms', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_hotac_rooms ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_group_pnr', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_group_pnr ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_issue_emd', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_issue_emd ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_standalone_emd', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_standalone_emd ? 'Yes' : 'No';
-                })
-                ->addColumn('intl_associated_emd', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->intl_associated_emd ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_aware_procedures', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_aware_procedures ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_handled_personally', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_handled_personally ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_in_department', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_in_department ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_usa', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_usa ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_canada', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_canada ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_mexico', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_mexico ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_brazil', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_brazil ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_other_south_america', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_other_south_america ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_uk', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_uk ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_ireland', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_ireland ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_haj_umrah', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_haj_umrah ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_uae', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_uae ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_russia', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_russia ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_china', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_china ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_vietnam', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->vietnam ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_cambodia', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_cambodia ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_hongkong', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_hongkong ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_philippines', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_philippines ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_singapore', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_singapore ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_malaysia', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_malaysia ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_australia', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_australia ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_newzealand', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_newzealand ? 'Yes' : 'No';
-                })
-                ->addColumn('visa_draft_cover_note', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->visa_draft_cover_note ? 'Yes' : 'No';
-                })
-                ->addColumn('tours_handled_packages', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->tours_handled_packages ? 'Yes' : 'No';
-                })
-                ->addColumn('tours_worked_cost', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->tours_worked_cost ? 'Yes' : 'No';
-                })
-                ->addColumn('tours_incentive_groups', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->tours_incentive_groups ? 'Yes' : 'No';
-                })
-                ->addColumn('tours_mice_groups', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->tours_mice_groups ? 'Yes' : 'No';
-                })
-                ->addColumn('tours_cruise_pax', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->tours_cruise_pax ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_record_transactions', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_record_transactions ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_bank_cc_reconciliation', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_bank_cc_reconciliation ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_corporate_card_reconciliation', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_corporate_card_reconciliation ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_track_commissions', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_track_commissions ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_submit_invoices', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_submit_invoices ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_manage_financial_records', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_manage_financial_records ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_software_excel_proficient', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_software_excel_proficient ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_prepare_analyze_reports', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_prepare_analyze_reports ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_ensure_compliance', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_ensure_compliance ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_manage_ap_ar', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_manage_ap_ar ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_process_payroll_expenses', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_process_payroll_expenses ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_calculate_pay_taxes', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_calculate_pay_taxes ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_coordinate_auditors', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_coordinate_auditors ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_monitor_cashflow_forecast', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_monitor_cashflow_forecast ? 'Yes' : 'No';
-                })
-                ->addColumn('acc_reconcile_bsp', function(JobSeeker $jobSeeker) {
-                    return $jobSeeker->acc_reconcile_bsp ? 'Yes' : 'No';
-                })
-                // ... continue for all other boolean fields ...
-
-                ->rawColumns(['cv_download']) // Crucial: tells DataTables that this column contains HTML
-                ->make(true);
+        if (!$jobSeeker || !$jobSeeker->cv_path) {
+            return redirect()->back()->with('error', 'CV file not found or path is missing.');
         }
-        abort(403, 'Unauthorized access.'); // Protect against direct access
+
+        // The path stored in cv_path is relative to the 'public' disk root (storage/app/public)
+        if (!Storage::disk('public')->exists($jobSeeker->cv_path)) {
+            // It's a good idea to log this for actual debugging on a server
+            \Log::error('CV file not found on public disk: ' . $jobSeeker->cv_path);
+            return redirect()->back()->with('error', 'CV file does not exist on the server.');
+        }
+
+        // --- CHANGES START HERE ---
+
+        // 1. Get the original file extension
+        $extension = pathinfo($jobSeeker->cv_path, PATHINFO_EXTENSION);
+
+        // 2. Construct the desired filename using given_name and family_name
+        // Sanitize the names to be safe for filenames (e.g., replace spaces with hyphens)
+        $givenName = Str::slug($jobSeeker->given_name);
+        $familyName = Str::slug($jobSeeker->family_name);
+
+        // Combine them, add "CV", and append the original extension
+        $newFileName = $givenName . '_' . $familyName . '_CV.' . $extension;
+
+        // Ensure the path is correct for the Storage::download method
+        // You had changed this line in your last snippet. We need to revert to using
+        // Storage::disk('public')->download() because it correctly handles the symlink.
+        // response()->download() expects a full, absolute server path.
+        // Storage::disk('public')->download() expects the path relative to the disk's root.
+        return Storage::disk('public')->download($jobSeeker->cv_path, $newFileName);
+
+        // --- CHANGES END HERE ---
     }
 }
