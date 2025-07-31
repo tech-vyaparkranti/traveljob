@@ -78,7 +78,7 @@
                         <li><a href="{{ route('CancellationRefundPolicy') }}">Cancellation & Refund Policy</a></li> --}}
                         <li><a href="{{ url('/') }}/comingsoon">Privacy Policy</a></li>
                         <li><a href="{{ route('destinations') }}">Our Services</a></li>
-                        <li><a href="{{ route('productPage') }}">Products</a></li>
+                        <li><a href="{{ route('productPage') }}">Profile Submission</a></li>
                         <li><a href="{{ route('reportPage') }}">Report</a></li>
                         <li><a href="{{ route('galleryPages') }}">Event</a></li>
                         <li><a href="{{ route('blogPage') }}">Blog</a></li>

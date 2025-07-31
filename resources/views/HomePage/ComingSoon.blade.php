@@ -26,7 +26,7 @@
     <div class="hero"><br><br>
     <div class="front-content text-center">
         <div class="container-mid">
-            <img class="img-responsive logo" style="width: 100%;max-width: 200px;" src="assets/img/logo.png" alt="image">
+            <img class="img-responsive logo" style="width: 100%;max-width: 200px;" src="assets/img/logo4.png" alt="image">
             <h1>We're Coming Soon..</h1>
             <p class="subline">We're working on our new website. <a href="{{ url('/') }}"><i class="fa fa-link"></i>&nbsp;Return to Home</a></p>
         </div>
