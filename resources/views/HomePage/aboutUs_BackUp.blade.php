@@ -10,7 +10,7 @@
     <div class="default-content pt-5 pb-3">
         <div class="custom-container">
             <div class="site-title pb-3">
-                <h2 class="text-center">AboutUs TravelJob </h2>
+                <h2 class="text-center">AboutUs Travel Job </h2>
             </div>
             <div class="midd-content">
                 <p class="text-justify">TravelJob  FPO, word TravelJob  meaning " Krishi Hi Dhan H (Agriculture is wealth)" taken from Vedas, is a Farmer Producer Organization empowering 500 farmers (25% women) across 20 villages. Backed by DEHAAT under SFAC, they provide farmers with high-quality agricultural inputs, training programs, and access to fair markets. Their mission is to increase farmer income through sustainable practices and healthy soil, ultimately envisioning thriving rural communities where empowered farmers, especially women, cultivate abundance. TravelJob  FARMER PRODUCER COMPANY LIMITED is incorporated on 14 December, 2023 under the Companies Act, 2013(18 of 2013).</p>
