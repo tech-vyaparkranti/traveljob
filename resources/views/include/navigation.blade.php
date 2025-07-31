@@ -1,8 +1,8 @@
-<div class="sticky-navigation">
+<div class="sticky-navigation" style="background:#f2dcdc;">
     <div class="custom-container">
-    <ul class="sticky-content p-0 m-0">
-            <li><a href="mailto:{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@traveljob.com' }}"><i class="fa fa-envelope"></i>&nbsp;<span>{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@traveljob.com' }}</span></a></li>
-            <li><a href="tel:{{ isset($WebSetting['0']->mobile) ? $WebSetting['0']->mobile : '+91 9876543210' }}"><i class="fa fa-phone"></i>&nbsp;<span>{{ isset($WebSetting['0']->mobile) ? $WebSetting['0']->mobile : '+91 9876543210' }}</span></a></li>
+    <ul class="sticky-content p-0 m-0" >
+            <li><a  style="color:black" href="mailto:{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@Traveljob.com' }}"><i class="fa fa-envelope"></i>&nbsp;<span>{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@TravelJob.com' }}</span></a></li>
+            <li><a  style="color:black" href="tel:{{ isset($WebSetting['0']->mobile) ? $WebSetting['0']->mobile : '+91 9876543210' }}"><i class="fa fa-phone"  style="color:black"></i>&nbsp;<span>{{ isset($WebSetting['0']->mobile) ? $WebSetting['0']->mobile : '+91 9876543210' }}</span></a></li>
         </ul>
         <div class="gtranslate_wrapper"></div>
     </div>
@@ -12,7 +12,7 @@
     <div class="header-contaner">
         <div class="logo-section">
             <div class="mobile-bars" hidden></div>
-            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo.png' }}" class="img-fluid" width="120" height="86" alt="Krishidha Farmer Producer Company Limited"></a>
+            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo4.png' }}" class="img-fluid" width="120" height="86" alt="TravelJob  Farmer Producer Company Limited"></a>
         </div>
         <div class="slide-navigation">
             <div class="navbar-wrapper">
@@ -34,12 +34,18 @@
                 </ul>
             </div>
             <ul class="social-media">
-                <li><a href="{{ isset($WebSetting['0']->facebook) ? $WebSetting['0']->facebook : '/' }}" aria-label="Read more about Krishidha Farmer Producer Company Limited  facebook"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="{{ isset($WebSetting['0']->twitter) ? $WebSetting['0']->twitter : '/' }}" aria-label="Read more about Krishidha Farmer Producer Company Limited  Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="{{ isset($WebSetting['0']->instagram) ? $WebSetting['0']->instagram : '/' }}" aria-label="Read more about Krishidha Farmer Producer Company Limited  Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="{{ isset($WebSetting['0']->youtube) ? $WebSetting['0']->youtube : '/' }}" aria-label="Read more about Krishidha Farmer Producer Company Limited  Youtube"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="{{ isset($WebSetting['0']->facebook) ? $WebSetting['0']->facebook : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="{{ isset($WebSetting['0']->twitter) ? $WebSetting['0']->twitter : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="{{ isset($WebSetting['0']->instagram) ? $WebSetting['0']->instagram : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="{{ isset($WebSetting['0']->youtube) ? $WebSetting['0']->youtube : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Youtube"><i class="fa-brands fa-youtube"></i></a></li>
             </ul>
         </div>
     </div>
 </header>
 <!-- Header section end -->
+<style>
+    header.fixed-header .slide-navigation ul li a {
+    color:white;
+}
+
+</style>

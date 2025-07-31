@@ -104,12 +104,12 @@
               </li>
 
 
-              <li class="menu-item">
+              <!-- <li class="menu-item">
                 <a href="{{route("manageproduct")}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-images"></i>
                   <div data-i18n="Analytics">Manage Product</div>
                 </a>
-              </li>
+              </li> -->
               <li class="menu-item">
                 <a href="{{route("managereport")}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-images"></i>

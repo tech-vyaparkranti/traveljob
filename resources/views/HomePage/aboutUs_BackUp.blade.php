@@ -10,14 +10,14 @@
     <div class="default-content pt-5 pb-3">
         <div class="custom-container">
             <div class="site-title pb-3">
-                <h2 class="text-center">AboutUs Krishidha</h2>
+                <h2 class="text-center">AboutUs Travel Job </h2>
             </div>
             <div class="midd-content">
-                <p class="text-justify">KRISHIDHA FPO, word KRISHIDHA meaning " Krishi Hi Dhan H (Agriculture is wealth)" taken from Vedas, is a Farmer Producer Organization empowering 500 farmers (25% women) across 20 villages. Backed by DEHAAT under SFAC, they provide farmers with high-quality agricultural inputs, training programs, and access to fair markets. Their mission is to increase farmer income through sustainable practices and healthy soil, ultimately envisioning thriving rural communities where empowered farmers, especially women, cultivate abundance. KRISHIDHA FARMER PRODUCER COMPANY LIMITED is incorporated on 14 December, 2023 under the Companies Act, 2013(18 of 2013).</p>
+                <p class="text-justify">TravelJob  FPO, word TravelJob  meaning " Krishi Hi Dhan H (Agriculture is wealth)" taken from Vedas, is a Farmer Producer Organization empowering 500 farmers (25% women) across 20 villages. Backed by DEHAAT under SFAC, they provide farmers with high-quality agricultural inputs, training programs, and access to fair markets. Their mission is to increase farmer income through sustainable practices and healthy soil, ultimately envisioning thriving rural communities where empowered farmers, especially women, cultivate abundance. TravelJob  FARMER PRODUCER COMPANY LIMITED is incorporated on 14 December, 2023 under the Companies Act, 2013(18 of 2013).</p>
                 <div class="about-block" id="mission-sec">
                     <div class="about-item about-item-left">
                         <h3><b>Vision</b></h3>
-                        <p>Krishidha FPO envisions a thriving agricultural community in the Shikhar Block Chunar Road Mirzapur region, where farmers are empowered as entrepreneurs, benefiting from improved market access and enhanced demand for their products.</p>
+                        <p>TravelJob  FPO envisions a thriving agricultural community in the Shikhar Block Chunar Road Mirzapur region, where farmers are empowered as entrepreneurs, benefiting from improved market access and enhanced demand for their products.</p>
                     </div>
                     <div class="about-item about-item-right">
                         <h3><b>Mission</b></h3>
@@ -121,7 +121,7 @@
                     </div>
                 </div><hr>
 
-                <p class="text-justify"><b>At Krishidha Farmer Producer Company Limited , we invite you to embark on a journey of discovery, where every experience is crafted with care and passion. Let us be your guide to the wonders of India.</b></p>
+                <p class="text-justify"><b>At TravelJob  Farmer Producer Company Limited , we invite you to embark on a journey of discovery, where every experience is crafted with care and passion. Let us be your guide to the wonders of India.</b></p>
 
                 <img src="assets/img/logo.png" width="100" height="" class="img-fluid mb-2" style="width: 100px;" />
                 <span> - Symbolize our spirit to <i>Either Find Ways Or Make One.</i></span><br><br>

@@ -17,46 +17,79 @@
                 <div class="container modern-form-container">
                     <form action="{{ route('jobseeker.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-                        <h3 class="form-section-title">PERSONAL:</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="given_name">Given Name:</label>
-                                <input type="text" id="given_name" name="given_name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="family_name">Family Name:</label>
-                                <input type="text" id="family_name" name="family_name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="dob">Date of Birth:</label>
-                            <input type="date" id="dob" name="dob" placeholder="DD/MM/YYYY" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <textarea id="address" name="address" rows="4" required></textarea>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="mobile_no">Mobile No:</label>
-                                <input type="text" id="mobile_no" name="mobile_no" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="personal_email">Personal Email Id:</label>
-                                <input type="email" id="personal_email" name="personal_email" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="total_experience">TOTAL Number of Travel Trade Experience (Years):</label>
-                                <input type="number" id="total_experience" name="total_experience" min="0" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="current_city">City of Present Job (3 Letter City Code):</label>
-                                <input type="text" id="current_city" name="current_city" maxlength="3" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
+                     <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
+  <i class="fa fa-user-circle me-2 logo"></i> PERSONAL INFORMATION
+</h3>
+   <div class="row mb-3">
+  <div class="col-md-6">
+    <label for="given_name" class="form-label">Given Name:</label>
+    <div class="input-group">
+      <span class="input-group-text "><i class="fa fa-user logo"></i></span>
+      <input type="text" class="form-control" id="given_name" name="given_name" placeholder="Enter given name" required>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="family_name" class="form-label">Family Name:</label>
+    <div class="input-group">
+      <span class="input-group-text "><i class="fa fa-users logo"></i></span>
+      <input type="text" class="form-control" id="family_name" name="family_name" placeholder="Enter family name" required>
+    </div>
+  </div>
+</div>
+<div class="mb-3">
+  <label for="dob" class="form-label">Date of Birth:</label>
+  <div class="input-group">
+    <span class="input-group-text"><i class="fa fa-calendar-alt logo"></i></span>
+    <input type="date" class="form-control" id="dob" name="dob" required>
+  </div>
+</div>
+
+<div class="mb-3">
+  <label for="address" class="form-label">Address:</label>
+  <div class="input-group">
+    <span class="input-group-text"><i class="fa fa-map-marker-alt logo"></i></span>
+    <textarea class="form-control" id="address" name="address" rows="4" required></textarea>
+  </div>
+</div>
+                        <div class="row mb-3">
+  <div class="col-md-6">
+    <label for="mobile_no" class="form-label">Mobile No:</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa fa-phone logo"></i></span>
+      <input type="text" class="form-control" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="personal_email" class="form-label">Personal Email Id:</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa fa-envelope logo"></i></span>
+      <input type="email" class="form-control" id="personal_email" name="personal_email" placeholder="Enter email address" required>
+    </div>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-6">
+    <label for="total_experience" class="form-label">
+      TOTAL Number of Travel Trade Experience (Years):
+    </label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa fa-briefcase logo"></i></span>
+      <input type="number" class="form-control" id="total_experience" name="total_experience" min="0" placeholder="e.g., 5" required>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="current_city" class="form-label">
+      City of Present Job (3 Letter City Code):
+    </label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa fa-city logo"></i></span>
+      <input type="text" class="form-control" id="current_city" name="current_city" maxlength="3" placeholder="e.g., DEL" required>
+    </div>
+  </div>
+</div>                        <div class="form-group">
                             <label>If willing to relocate:</label>
                             <div class="radio-group">
                                 <label><input type="radio" name="willing_to_relocate" value="Yes" onclick="toggleRelocateCities(true)"> Yes</label>
@@ -67,16 +100,23 @@
                             <label for="preferred_cities">Preferred Cities (comma-separated, e.g., DEL, MUM, BLR):</label>
                             <input type="text" id="preferred_cities" name="preferred_cities">
                         </div>
-                        <div class="form-group">
-                            <label for="current_salary">CURRENT SALARY (Rs.):</label>
-                            <input type="number" id="current_salary" name="current_salary" min="0">
-                        </div>
-                        <div class="form-group">
-                            <label for="cv_upload">Attach/Upload your CV/Resume here:</label>
-                            <input type="file" id="cv_upload" name="cv_upload" accept=".pdf,.doc,.docx" required>
-                        </div>
-
-                        <h3 class="form-section-title">CREATE YOUR SKILL SET:</h3>
+                   <div class="mb-3">
+  <label for="current_salary" class="form-label">CURRENT SALARY (Rs.):</label>
+  <div class="input-group">
+    <span class="input-group-text logo">₹</span>
+    <input type="number" class="form-control" id="current_salary" name="current_salary" min="0" placeholder="Enter current salary">
+  </div>
+</div>
+<div class="mb-3">
+  <label for="cv_upload" class="form-label">Attach/Upload your CV/Resume here:</label>
+  <div class="input-group">
+    <span class="input-group-text"><i class="fa fa-paperclip logo"></i></span>
+    <input type="file" class="form-control" id="cv_upload" name="cv_upload" accept=".pdf,.doc,.docx" required>
+  </div>
+</div>
+                       <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
+  <i class="fa fa-tools me-2 logo"></i> CREATE YOUR SKILL SET
+</h3>
 
                         <h4>Domestic Travel</h4>
                         <div class="form-row">
@@ -521,8 +561,10 @@
                             </div>
                         </div>
 
-                        <h3 class="form-section-title">ACCOUNTING</h3>
-                        <div class="form-row">
+                      <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
+  <i class="fa fa-calculator me-2 logo"></i> ACCOUNTING
+</h3>
+  <div class="form-row">
                             <div class="form-group radio-group-wrapper">
                                 <label>I CAN… Record the transactions daily, both for revenue and expenses:</label>
                                 <div class="radio-group">
@@ -651,6 +693,7 @@
 </div>
 
 <style>
+    
     /* General body and font styling */
     body {
         font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -684,8 +727,7 @@
     }
 
     h3.form-section-title {
-        color: #007bff;
-        border-bottom: 3px solid #007bff; /* Thicker border */
+        color: #030358;
         padding-bottom: 15px; /* More padding */
         margin-top: 45px; /* More space above */
         margin-bottom: 30px; /* More space below */
@@ -694,9 +736,11 @@
         text-transform: uppercase; /* Uppercase for sections */
         letter-spacing: 0.5px;
     }
-
+    .logo{
+        color:#030358;
+    }
     h4 {
-        color: #4a4a4a; /* Darker grey */
+        color: black; /* Darker grey */
         margin-top: 35px;
         margin-bottom: 25px;
         font-size: 1.6em; /* Larger */
@@ -853,7 +897,8 @@
 
     /* Submit Button */
     button[type="submit"] {
-        background-color: #28a745;
+        /* background-color: #28a745; */
+    background-color:#030358;
         color: white;
         padding: 15px 35px; /* Larger padding */
         border: none;

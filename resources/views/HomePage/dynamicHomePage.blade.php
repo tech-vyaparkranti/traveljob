@@ -38,7 +38,7 @@
 
           <a href="{{ route('aboutUs') }}" 
    class="btn" 
-   style="background-color:#1e7b14; color:white; padding:10px 20px; border:none;">
+   style="background-color:#030358; color:white; padding:10px 20px; border:none;">
    Know More
 </a>
       </div>
@@ -75,7 +75,7 @@
                     <div class="chairperson-content">
                         <h3>Message from Chairperson’s Desk</h3>
                         <p><b>Welcome!</b><br>
-                            I am immensely proud of the journey KRISHIDHA FPO has undertaken. We started with a vision to empower our fellow farmers and transform their livelihoods. Today, seeing hundreds of families thriving under our umbrella fills me with immense satisfaction. Our commitment is unwavering. We will continue to work relentlessly to provide our farmers with the resources, knowledge, and support they need to achieve agricultural success. Join us on this journey of growth and prosperity!<br><b>Warm regards,</b><br><span>(Mr. Mukesh Kumar Pandey)</span></p>getChairManData
+                            I am immensely proud of the journey Travel Job  FPO has undertaken. We started with a vision to empower our fellow farmers and transform their livelihoods. Today, seeing hundreds of families thriving under our umbrella fills me with immense satisfaction. Our commitment is unwavering. We will continue to work relentlessly to provide our farmers with the resources, knowledge, and support they need to achieve agricultural success. Join us on this journey of growth and prosperity!<br><b>Warm regards,</b><br><span>(Mr. Mukesh Kumar Pandey)</span></p>getChairManData
                     </div>
                  <?php }?>
 
@@ -137,7 +137,7 @@
         </div>
         <div class="quick-nav-content p-4">
             <h4 class="text-dark">I'm a Job Seeker</h4>
-            <p class="text-muted mb-0">Discover exciting career opportunities and find your next travel job adventure.</p>
+            <p class="text-muted mb-0">Discover exciting career opportunities and find your next Travel Job adventure.</p>
         </div>
     </a>
 </div>
@@ -174,7 +174,7 @@
         <div class="custom-container">
             <div class="site-title pb-3">
                 <h2 class="text-center">Testimonial</h2>
-                <p class="text-center text-white">Include quotes or stories from farmers who have benefited from <b>KRISHIDHA FPO's</b> services.</p>
+                <p class="text-center text-white">Include quotes or stories from farmers who have benefited from <b>Travel Job  FPO's</b> services.</p>
             </div>
             <div class="swiper testimonials mb-5">
                 <div class="swiper-wrapper" id="testimonialsData">

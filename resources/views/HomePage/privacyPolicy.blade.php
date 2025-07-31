@@ -2,7 +2,7 @@
 @section('title', 'Privacy Policy')
 @section('content')
     <div class="information-page-slider">
-        <img src="assets/img/travel-with-landmarks-new.png" alt="Krishidha Farmer Producer Company Limited " class="img-fluid">
+        <img src="assets/img/travel-with-landmarks-new.png" alt="TravelJob  Farmer Producer Company Limited " class="img-fluid">
         <div class="information-content">
             <h1>Privacy Policy</h1>
         </div>
@@ -14,9 +14,9 @@
                     <h2 class="text-center">Privacy Policy</h2>
                 </div>
                 <div class="midd-content">
-                    <p class="text-justify">This privacy policy (“Policy”) relates to the manner <b>Krishidha Farmer Producer Company Limited </b> (“we”, “us”, “our”) in which we use, handle and process the data that you provide us in connection with using the products or services we offer. By using this website or by availing goods or services offered by us, you agree to the terms and conditions of this Policy, and consent to our use, storage, disclosure, and transfer of your information or data in the manner described in this Policy.</p>
+                    <p class="text-justify">This privacy policy (“Policy”) relates to the manner <b>TravelJob  Farmer Producer Company Limited </b> (“we”, “us”, “our”) in which we use, handle and process the data that you provide us in connection with using the products or services we offer. By using this website or by availing goods or services offered by us, you agree to the terms and conditions of this Policy, and consent to our use, storage, disclosure, and transfer of your information or data in the manner described in this Policy.</p>
                     <p class="text-justify">We are committed to ensuring that your privacy is protected in accordance with applicable laws and regulations. We urge you to acquaint yourself with this Policy to familiarize yourself with the manner in which your data is being handled by us.</p>
-                    <p class="text-justify"><b>Krishidha Farmer Producer Company Limited </b> may change this Policy periodically and we urge you to check this page for the latest version of the Policy in order to keep yourself updated.</p>
+                    <p class="text-justify"><b>TravelJob  Farmer Producer Company Limited </b> may change this Policy periodically and we urge you to check this page for the latest version of the Policy in order to keep yourself updated.</p>
                     <h3>What data is being collected</h3>
                     <p class="text-justify">We may collect the following information from you: </p>
                     <ul>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="midd-content">
                     <p class="text-justify">For International buyers, orders are shipped and delivered through registered international courier companies and/or International speed post only. For domestic buyers, orders are shipped through registered domestic courier companies and /or speed post only. Orders are shipped within 3-5 Days days or as per the delivery date agreed at the time of order confirmation and delivering of the shipment subject to Courier Company / post office norms.</p>
-                    <p class="text-justify"><b>Krishidha Farmer Producer Company Limited </b> is not liable for any delay in delivery by the courier company / postal authorities and only guarantees to hand over the consignment to the courier company or postal authorities within 3-5 Days days from the date of the order and payment or as per the delivery date agreed at the time of order confirmation. Delivery of all orders will be to the address provided by the buyer. Delivery of our services will be confirmed on your mail ID as specified during registration. For any issues in utilizing our services you may contact our helpdesk on <a href="tel:+919540721363">+91 954 072 1363</a> or <a href="mailto:torna.in@gmail.com">torna.in@gmail.com</a>.</p>
+                    <p class="text-justify"><b>TravelJob  Farmer Producer Company Limited </b> is not liable for any delay in delivery by the courier company / postal authorities and only guarantees to hand over the consignment to the courier company or postal authorities within 3-5 Days days from the date of the order and payment or as per the delivery date agreed at the time of order confirmation. Delivery of all orders will be to the address provided by the buyer. Delivery of our services will be confirmed on your mail ID as specified during registration. For any issues in utilizing our services you may contact our helpdesk on <a href="tel:+919540721363">+91 954 072 1363</a> or <a href="mailto:torna.in@gmail.com">torna.in@gmail.com</a>.</p>
                 </div>
             </div>
         </div>

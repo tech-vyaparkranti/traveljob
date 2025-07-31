@@ -20,7 +20,7 @@
         <div class="swiper-slide">
             <img class="img-fluid" width="" height="" alt="Image" src="assets/img/banner-3.png" />
             <div class="video-content">
-              <span>Krishidha</span>
+              <span>Travel Job </span>
               <h1>Serving Since 2023</h1>
               <a href="{{ route('contactUs') }}" aria-label="Explore The World">Get in touch</a>
             </div>
@@ -34,7 +34,7 @@
         {{-- <div class="swiper-slide">
           <img class="img-fluid" width="" height="" alt="Image" src="assets/img/banner-2.png" />
           <div class="video-content">
-            <span>Krishidha</span>
+            <span>Travel Job </span>
             <h1>Grow with Innovation: Solutions for Sustainable Farming</h1>
             <a href="{{ route('contactUs') }}" aria-label="Explore The World">Get in touch</a>
           </div>
