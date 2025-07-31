@@ -6,6 +6,13 @@
 
     <x-content-div heading="Manage Job Seekers">
         <x-card-element header="Job Seeker Data">
+            {{-- Export Data Button --}}
+            <div style="text-align: right; margin-bottom: 15px;">
+                <a href="{{ route('jobseeker.export_data') }}" class="btn btn-success" style="padding: 8px 15px; border-radius: 4px; text-decoration: none; color: white;">
+                    Export All Data
+                </a>
+            </div>
+
             <x-data-table>
             </x-data-table>
         </x-card-element>
