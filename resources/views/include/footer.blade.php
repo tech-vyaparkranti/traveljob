@@ -108,5 +108,11 @@
         </div>
     </div>
 </footer>
-<div class="copyright-section text-center p-3">&copy; <script>document.write( new Date().getFullYear() );</script>{{ isset($WebSetting['0']->copyright_txt) ? $WebSetting['0']->copyright_txt : '© 2024 All Rights Reserved by Travel Job  Farmer Producer Company Limited & Developed by Vyapar kranti' }}   & Developed by <a href="https://vyaparkranti.com/" class="text-white" aria-label="Digital Markating" alt="Vyapar Kranti">Vyapar kranti</a></div>
-<!-- Footer Section End-->
+<div class="copyright-section text-center p-3">&copy;
+    <script>
+        document.write(new Date().getFullYear());
+    </script>
+    {{ isset($WebSetting['0']->copyright_txt) ? $WebSetting['0']->copyright_txt : ' All Rights Reserved by Travel Job ' }}
+    & Developed by <a href="https://vyaparkranti.com/" class="text-white" aria-label="Digital Markating"
+        alt="Vyapar Kranti">Vyapar kranti</a>
+</div><!-- Footer Section End-->
