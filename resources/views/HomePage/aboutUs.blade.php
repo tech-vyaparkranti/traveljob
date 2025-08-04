@@ -73,7 +73,7 @@
                         Along the way, I’ve had the privilege of visiting more than 48 countries, forging connections and gaining a ground-level view of how travel works—and how it should work. I served as the President of Skal International Hyderabad (606) and as a member of the Skal India National Committee, always believing in the value of ethical business, trusted partnerships, and professional camaraderie.
                         Now, though retired from full-time roles, I’m not done contributing. With TravelJobs.com, I aim to bridge industry talent with opportunity. It’s more than a job board—it’s a platform for mentorship, mobility, and meaningful careers in travel.
                     </p>
-                      <p class="text-end"> <i><b>Anil</b></i><br>
+                      <p class="text-end"> <i><b>Ashok Harkara</b></i><br>
                    </p>
                   
                     <p class="text-end"> <i><b>Founder, TravelJobs.info</b></i><br>
@@ -144,8 +144,10 @@
     <div class="col-md-4 col-sm-6 ">
         <div class="team-card h-100 shadow-sm p-3 rounded text-center">
             <img src="{{ asset('assets/img/team1.jpeg') }}" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width: 180px; height: 180px; object-fit: cover;">
-            <h6>Miss</h6>
-            <p><b>Education:</b> MBA in HR</p>
+            <h6>Vani Harkara</h6>
+            <p><b>Co - Founder</b></p>
+            
+
         </div>
     </div>
     @endif
