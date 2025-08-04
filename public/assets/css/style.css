@@ -255,7 +255,7 @@ header.fixed-header .slide-navigation,
 .common-home header.fixed-header .header-contaner ul li:focus a,
 .information header .header-contaner ul li:hover a,
 .information header .header-contaner ul li:focus a {
-    color: rgb(var(--red-color)) !important;
+    color: green;
 }
 
 header ul,
