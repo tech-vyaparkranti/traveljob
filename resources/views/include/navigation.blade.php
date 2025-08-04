@@ -1,4 +1,4 @@
-<div class="sticky-navigation" style="background:#f2dcdc;">
+<div class="sticky-navigation" style="background:#e6e6f2;">
     <div class="custom-container">
     <ul class="sticky-content p-0 m-0" >
             <li><a  style="color:black" href="mailto:{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@Traveljob.com' }}"><i class="fa fa-envelope"></i>&nbsp;<span>{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@TravelJob.com' }}</span></a></li>
