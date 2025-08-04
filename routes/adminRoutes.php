@@ -142,5 +142,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/jobseekers/{id}/pdf', [JobSeekerController::class, 'generateProfilePdf'])
      ->name('jobseeker.generate_profile_pdf');
 
+Route::get('/jobseekers/export', [JobSeekerController::class, 'export'])->name('jobseeker.export_data');
 
 });
