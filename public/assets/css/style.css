@@ -235,7 +235,7 @@ header.fixed-header,
 header.fixed-header .slide-navigation,
 .common-home header.fixed-header .slide-navigation {
     margin-top: -18px;
-    margin-left: 264px;
+    /* margin-left: 264px; */
     font-size: 26px;
 }
 
@@ -1156,7 +1156,7 @@ section.chairperson {
 
 /* our partner */
 .our_partner img.img-fluid {
-    max-height: 176px;
+    /* max-height: 176px; */
     display: block;
     width: auto;
     margin: auto;
@@ -1718,7 +1718,7 @@ section.our-service:before {
         position: absolute;
         right: 20px;
         top: calc(50% - 10px);
-        color: #fff;
+        color: black;
         cursor: pointer;
         height: 2px;
         width: 35px;
@@ -1787,7 +1787,8 @@ section.our-service:before {
     }
 
     body .slide-navigation ul li a {
-        color: rgb(var(--black-color));
+        /* color: rgb(var(--black-color)); */
+        color: white;
         font: 400 16px/normal var(--font-josefin);
     }
 
@@ -1797,7 +1798,7 @@ section.our-service:before {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgb(var(--yellow-color) / 30%);
+        background: rgb(var(--black-color) / 50%);
         width: 100%;
         height: auto;
         margin: 0 0;

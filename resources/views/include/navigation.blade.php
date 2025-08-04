@@ -48,4 +48,9 @@
     color:white;
 }
 
+header.fixed-header .mobile-bars:before,
+header.fixed-header .mobile-bars:after {
+    background: white !important;
+}
+
 </style>

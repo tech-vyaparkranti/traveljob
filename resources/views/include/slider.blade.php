@@ -50,6 +50,10 @@
 .swiper-button-prev, .swiper-button-next {
   position: absolute;
   top: 200px;
+  background:white;
+  padding:10px;
+  border-radius:50%;
+  font-size:20px !important;
   
 }
 @media (max-width: 640px) { 

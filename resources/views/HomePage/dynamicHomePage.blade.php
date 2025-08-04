@@ -24,11 +24,11 @@
 
             <div class="row align-items-center">
                 <!-- Image Column (50%) -->
-                <div class="col-md-6 mb-3" data-aos="fade-right">
-                    <img src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}"
+                <div class="col-md-6 mb-3 hover-z" data-aos="fade-right">
+                    <img class="img-fluid  shadow-sm transition transform hover-zoom" src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}"
                          alt="About Us"
-                         class="img-fluid rounded w-100"
-                         style="height:300px;">
+                         class="img-fluid  w-100"
+                         style="height:300px;border-radius:10px">
                 </div>
 
                 <!-- Content Column (50%) -->
@@ -48,6 +48,16 @@
     </div>
 </div>
 <style>
+    
+.hover-zoom {
+  transition: transform 0.3s ease;
+}
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+
+
 .custom-container, .offerings-container {
     overflow-x: hidden;
 }
@@ -92,7 +102,7 @@
             <p class="text-center">Turn your love for travel into a career — the world is hiring!</p>
         </div>
         <div class="swiper we-offer">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper  hover-z">
                 @if (!empty($service))
                     @foreach ($service as $item)
                         <div class="swiper-slide mb-4">
@@ -100,8 +110,8 @@
                             <div class="destinations-block" style="display: flex; flex-direction: column; height: 350px;">
                                 {{-- Image Wrapper (90% of parent height) --}}
                                 <div style="height: 90%; overflow: hidden;">
-                                    <img src="{{ url($item->image) }}" class="img-fluid"
-                                    alt="{!! $item->service_name !!}" style="width:100%; height:100%;">
+                                    <img  src="{{ url($item->image) }}" class="img-fluid hover-zoom"
+                                    alt="{!! $item->service_name !!}" style="width:100%; height:100%;border-radius:10px">
                                 </div>
 
                                 {{-- Name Wrapper (10% of parent height) --}}
@@ -129,11 +139,11 @@
             <p class="text-center">Choose the path that's right for you to get started.</p>
         </div>
         <div class="row g-4">
-           <div class="col-md-6">
+           <div class="col-md-6 ">
     <a href="{{ route('productPage') }}" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
         <div class="quick-nav-image-container">
             {{-- Replace this placeholder image URL with your own image for job seekers --}}
-            <img src="assets/img/jobseeker.jpeg" alt="Job Seeker" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+            <img src="assets/img/jobseeker.jpeg" alt="Job Seeker" class="img-fluid w-100 hover-zoom" style="height: 200px; object-fit: cover;">
         </div>
         <div class="quick-nav-content p-4">
             <h4 class="text-dark">I'm a Job Seeker</h4>
@@ -145,7 +155,7 @@
                 <a href="" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
                     <div class="quick-nav-image-container">
                         {{-- Replace this placeholder image URL with your own image for employers --}}
-                        <img src="assets/img/employer.jpeg" alt="Employer" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <img src="assets/img/employer.jpeg" alt="Employer" class="img-fluid w-100 hover-zoom" style="height: 200px; object-fit: cover;">
                     </div>
                     <div class="quick-nav-content p-4">
                         <h4 class="text-dark">I'm an Employer</h4>
@@ -158,14 +168,6 @@
 </div>
 
 <style>
-.quick-nav-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.quick-nav-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
 </style>
     <!-- Destinations Section End -->
 
@@ -202,32 +204,36 @@
         <div class="site-title pb-3">
             <h2 class="text-center">Industry Certifications</h2>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             @if(!empty($partnersImages))
-            @foreach ($partnersImages as $PartnerRow)
-            <div class="col-4">
-                {{-- Increased size and added border-radius for a curvy look --}}
-                <div style="width:auto;height:250px;overflow:hidden;border-radius: 15px;">
-                    <img src="{{ url($PartnerRow->image) }}" alt="deHaat" width="300" class="img-fluid" />
-                </div>
-            </div>
-            @endforeach
+                @foreach ($partnersImages as $PartnerRow)
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex justify-content-center">
+                        <div style="width:100%; max-width:400px; height:250px; overflow:hidden; border-radius:15px;">
+                            <img src="{{ url($PartnerRow->image) }}" alt="deHaat" class="img-fluid hover-zoom element" style="border-radius:20px; width:100%; height:100%; " />
+                        </div>
+                    </div>
+                @endforeach
             @else
-            {{-- Update the fallback images as well --}}
-            <div class="col-4">
-                <img src="assets/img/deHaat-logo.png" alt="deHaat" width="300" height="250" class="img-fluid" style="border-radius: 15px;" />
-            </div>
-            <div class="col-4">
-                <img src="assets/img/amrit.jpg" alt="deHaat" width="300" height="250" class="img-fluid" style="border-radius: 15px;" />
-            </div>
-            <div class="col-4">
-                <img src="assets/img/guiding.jpg" alt="deHaat" width="300" height="250" class="img-fluid" style="border-radius: 15px;" />
-            </div>
+                @php
+                    $fallbackImages = [
+                        'assets/img/deHaat-logo.png',
+                        'assets/img/amrit.jpg',
+                        'assets/img/guiding.jpg'
+                    ];
+                @endphp
+                @foreach ($fallbackImages as $image)
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex justify-content-center">
+                        <div style="width:100%; max-width:300px; height:250px; overflow:hidden; border-radius:15px;">
+                            <img src="{{ asset($image) }}" alt="Industry Logo" class="img-fluid" style="border-radius:20px; width:100%; height:100%; object-fit:cover;" />
+                        </div>
+                    </div>
+                @endforeach
             @endif
         </div>
     </div>
 </section>
-
+<style>
+    </style>
     {{-- Testimonial Section End  --}}
 @endsection
 @section('script')

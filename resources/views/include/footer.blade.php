@@ -80,7 +80,7 @@
                         <li><a href="{{ route('destinations') }}">Our Services</a></li>
                         <li><a href="{{ route('productPage') }}">Profile Submission</a></li>
                         <li><a href="{{ route('reportPage') }}">Report</a></li>
-                        <li><a href="{{ route('galleryPages') }}">Event</a></li>
+                        <!-- <li><a href="{{ route('galleryPages') }}">Event</a></li> -->
                         <li><a href="{{ route('blogPage') }}">Blog</a></li>
                         <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
                     </ul>
