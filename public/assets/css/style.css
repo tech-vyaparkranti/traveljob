@@ -279,7 +279,7 @@ a {
     justify-items: center;
     align-items: center;
     width: 100%;
-    margin-left: 251px;
+    margin-left: 200px;
 }
 
 .custom-container,
@@ -317,7 +317,7 @@ a {
 }
 
 .header-contaner ul li a {
-    font: 500 13px/normal var(--font-josefin);
+    font: 500 20px/normal var(--font-josefin);
     color: rgb(var(--black-color));
     text-transform: uppercase;
     transition: var(--transition);
