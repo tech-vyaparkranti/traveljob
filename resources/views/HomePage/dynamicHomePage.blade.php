@@ -185,7 +185,7 @@
         <div class="custom-container">
             <div class="site-title pb-3">
                 <h2 class="text-center">Testimonial</h2>
-                <p class="text-center text-white">Include quotes or stories from farmers who have benefited from <b>Travel Job  FPO's</b> services.</p>
+                <p class="text-center text-white">Include quotes or stories from Jobseekers who have benefited from <b>Travel Job  FPO's</b> services.</p>
             </div>
             <div class="swiper testimonials mb-5">
                 <div class="swiper-wrapper" id="testimonialsData">
