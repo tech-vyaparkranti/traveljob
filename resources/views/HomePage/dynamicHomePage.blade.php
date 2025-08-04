@@ -15,38 +15,48 @@
     </div>
     <!-- About Section End --> --}}
 
-    <div class="destinations pt-5 pb-2">
-    <div class="custom-container">
-        <div class="col-12 offerings-container">
-            <div class="site-title">
-                <h2 class="text-center">About Us</h2>
-            </div>
-
-            <div class="row align-items-center">
-                <!-- Image Column (50%) -->
-                <div class="col-md-6 mb-3 hover-z" data-aos="fade-right">
-                    <img class="img-fluid  shadow-sm transition transform hover-zoom" src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}"
-                         alt="About Us"
-                         class="img-fluid  w-100"
-                         style="height:300px;border-radius:10px">
-                </div>
-
-                <!-- Content Column (50%) -->
-                <div class="col-md-6" data-aos="fade-left">
-                    <p class="text-center">{!! isset($aboutText['0']->sort_about_us) ? $aboutText['0']->sort_about_us : 'Please fill about data from admin panel.'  !!}</p>
-
-
-          <a href="{{ route('aboutUs') }}" 
-   class="btn" 
-   style="background-color:#030358; color:white; padding:10px 20px; border:none;">
-   Know More
-</a>
+ <div class="destinations py-5">
+  <div class="custom-container">
+    <div class="offerings-container col-12">
+      
+      <!-- Section Title -->
+      <div class="site-title text-center mb-4">
+        <h2>About Us</h2>
       </div>
-            </div>
 
+      <!-- Row -->
+      <div class="row align-items-center">
+        
+        <!-- Image Column -->
+        <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+          <img 
+            src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}" 
+            alt="About Us" 
+            class="img-fluid w-100 shadow-sm" 
+            style="height: 300px; object-fit: cover; border-radius: 10px;"
+          >
         </div>
+
+        <!-- Text Column -->
+        <div class="col-md-6 text-center text-md-start" data-aos="fade-left">
+          <p class="about-text mb-3">
+            {!! isset($aboutText['0']->sort_about_us) 
+                ? $aboutText['0']->sort_about_us 
+                : 'Please fill about data from admin panel.' !!}
+          </p>
+          <a 
+            href="{{ route('aboutUs') }}" 
+            class="btn" 
+            style="background-color:#030358; color:white; padding:10px 20px; border-radius:5px;">
+            Know More
+          </a>
+        </div>
+        
+      </div>
     </div>
+  </div>
 </div>
+
 <style>
     
 .hover-zoom {

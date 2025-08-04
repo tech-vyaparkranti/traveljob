@@ -1,4 +1,4 @@
-<div class="sticky-navigation" style="background:#e6e6f2;">
+<div class="sticky-navigation" style="background:#f2dcdc;">
     <div class="custom-container">
     <ul class="sticky-content p-0 m-0" >
             <li><a  style="color:black" href="mailto:{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@Traveljob.com' }}"><i class="fa fa-envelope"></i>&nbsp;<span>{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@TravelJob.com' }}</span></a></li>
@@ -12,7 +12,7 @@
     <div class="header-contaner">
         <div class="logo-section" >
             <div class="mobile-bars" hidden></div>
-            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo4.png' }}" class="img-fluid"  style="height:70px;width:150px" alt="TravelJob  Farmer Producer Company Limited"></a>
+            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo4.png' }}" class="img-fluid"  style="height:80px;width:190px" alt="TravelJob  Farmer Producer Company Limited"></a>
         </div>
         <div class="slide-navigation">
             <div class="navbar-wrapper">
@@ -49,8 +49,7 @@
 }
 
 header.fixed-header .mobile-bars:before,
-header.fixed-header .mobile-bars:after,
-header.fixed-heaer .mobile-bars {
+header.fixed-header .mobile-bars:after {
     background: white !important;
 }
 
