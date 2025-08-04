@@ -138,20 +138,22 @@
             <h2 class="text-center">Quick Navigation</h2>
             <p class="text-center">Choose the path that's right for you to get started.</p>
         </div>
-      <div class="row g-4" style="margin-bottom:20px">
-    <div class="col-md-12">
-        <a href="{{ route('productPage') }}" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
-            <div class="quick-nav-image-container">
-                <img src="assets/img/jobseeker.jpeg" alt="Job Seeker" class="img-fluid w-100 hover-zoom" style="height: 400px; object-fit: cover;">
-            </div>
-            <div class="quick-nav-content p-4">
-                <h4 class="text-dark">I'm a Job Seeker</h4>
-                <p class="text-muted mb-0" style="font-size:15px">
-                    Discover exciting career opportunities and find your next Travel Job adventure.
-                </p>
-            </div>
-        </a>
+  <div class="container">
+  <div class="row g-4 justify-content-center" style="margin-bottom:20px;">
+    <div class="col-md-8">
+      <a href="{{ route('productPage') }}" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
+        <div class="quick-nav-image-container">
+          <img src="assets/img/jobseeker.jpeg" alt="Job Seeker" class="img-fluid w-100 hover-zoom" style="height: 400px; object-fit: cover;">
+        </div>
+        <div class="quick-nav-content p-4">
+          <h4 class="text-dark text-center">I'm a Job Seeker</h4>
+          <p class="text-muted mb-0 text-center" style="font-size:15px">
+            Discover exciting career opportunities and find your next Travel Job adventure.
+          </p>
+        </div>
+      </a>
     </div>
+  </div>
 </div>
 
     </div>
