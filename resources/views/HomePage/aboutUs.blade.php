@@ -12,7 +12,7 @@
             <div class="site-title pb-3">
                 <h2 class="text-center">About Us</h2>
             </div>
-            <div class="midd-content">
+            <div class="midd-content text-justify">
                 {!! isset($aboutText['0']->about_desc) ? $aboutText['0']->about_desc : '' !!}
             </div>
 
@@ -20,7 +20,7 @@
        <div class="site-title pb-3 " style="padding-top:30px">
                 <h2 class="text-center">Objectives</h2>
             </div>
-            <div class="midd-content" style="">
+            <div class="midd-content text-justify" style="">
                 <ul >
         	<li>To provide a seamless job search experience for travel industry professionals.</li>
 <li>To serve as a trusted hiring partner for travel agencies and corporate employers.</li>

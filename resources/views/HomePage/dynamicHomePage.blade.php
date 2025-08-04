@@ -38,8 +38,8 @@
         </div>
 
         <!-- Text Column -->
-        <div class="col-md-6 text-center text-md-start" data-aos="fade-left">
-          <p class="about-text mb-3">
+        <div class="col-md-6 text-justify text-md-start" data-aos="fade-left">
+          <p class="about-text mb-3 ">
             {!! isset($aboutText['0']->sort_about_us) 
                 ? $aboutText['0']->sort_about_us 
                 : 'Please fill about data from admin panel.' !!}
