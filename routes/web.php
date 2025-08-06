@@ -3,10 +3,13 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\OurServicesModelController;
 use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\JobSeekerController;
+use App\Http\Controllers\EmployerControllerController;
+
 
 //use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +58,8 @@ Route::controller(HomePageController::class)->group(function(){
 });
 
 Route::post('/jobseeker/store', [JobSeekerController::class, 'store'])->name('jobseeker.store');
+Route::post('/employer/store', [EmployerController::class, 'store'])->name('employer.store');
+
 
 
 Route::get("get-home-page-dd",[DestinationController::class,"getHomePageDestinations"])->name("getHomePageDestinations");

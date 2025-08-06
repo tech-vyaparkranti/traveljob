@@ -18,6 +18,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\JobSeekerController;
+use App\Http\Controllers\EmployerController;
+
 
 
 
@@ -143,5 +145,14 @@ Route::get('/jobseekers/{id}/pdf', [JobSeekerController::class, 'generateProfile
      ->name('jobseeker.generate_profile_pdf');
 
 Route::get('/jobseekers/export', [JobSeekerController::class, 'export'])->name('jobseeker.export_data');
+
+Route::get("employersdatapage",[EmployerController::class,"employersdatapage"])->name("employersdatapage");
+
+    Route::post("employersdata", [EmployerController::class, "employersdata"])->name("employersdata");
+    // Route::get('/jobseeker/download-cv/{id}', [JobSeekerController::class, 'downloadCv'])->name('jobseeker.download_cv');
+Route::get('/employers/{id}/pdf', [EmployerController::class, 'generateProfilePdf'])
+     ->name('employers.generate_profile_pdf');
+
+Route::get('/employers/export', [EmployerController::class, 'export'])->name('employers.export_data');
 
 });

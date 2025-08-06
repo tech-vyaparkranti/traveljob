@@ -15,7 +15,7 @@
             </div>
             <div class="midd-content">
                 <div class="container modern-form-container">
-                    <form action="{{ route('jobseeker.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('employer.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
                      <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
   <i class="fa fa-user-circle me-2 logo"></i> Employer INFORMATION
@@ -141,7 +141,7 @@
 
                   
                        <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
-  <i class="fa fa-tools me-2 logo"></i> CREATE YOUR SKILL SET
+  <i class="fa fa-tools me-2 logo"></i> Required SKILL SET
 </h3>
 
                         <h4>Domestic Travel</h4>
