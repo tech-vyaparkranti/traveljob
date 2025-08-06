@@ -13,6 +13,7 @@ use App\Models\ReportModel;
 use App\Models\SettingModel;
 use App\Models\FaqModel;
 use App\Models\PartnersModel;
+use App\Models\TeamModel;
 use App\Traits\CommonFunctions;
 use Exception;
 use Illuminate\Http\Request;
@@ -43,16 +44,15 @@ class HomePageController extends Controller
 
     }
     public function aboutUs(){
-        $WebSetting = SettingModel::all();
+    $WebSetting = SettingModel::all();
+    $Recognitions = PartnersModel::where('image_type', '2')->get();
+    $aboutText = AboutUsModel::get();
 
-        $Recognitions   = PartnersModel::where('image_type','2')->get();
+    // Fetch all team members instead of filtering by specific posts
+    $teamData = TeamModel::all();
 
-        $aboutText =AboutUsModel::get();
-        $getChairManData =  DB::table('team')->where('post',"LIKE","%Founder%")->get();
-        $getCEOData =  DB::table('team')->where('post',"LIKE","%CEO%")->get();
-        $getDirectoreData =  DB::table('team')->where('post',"LIKE","%director%")->get();
-        return view("HomePage.aboutUs",compact("WebSetting","Recognitions","aboutText","getDirectoreData","getCEOData","getChairManData"));
-    }
+    return view("HomePage.aboutUs", compact("WebSetting", "Recognitions", "aboutText", "teamData"));
+}
     public function termsConditions(){
         $WebSetting = SettingModel::all();
 

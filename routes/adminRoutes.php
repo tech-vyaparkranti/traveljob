@@ -151,8 +151,8 @@ Route::get("employersdatapage",[EmployerController::class,"employersdatapage"])-
     Route::post("employersdata", [EmployerController::class, "employersdata"])->name("employersdata");
     // Route::get('/jobseeker/download-cv/{id}', [JobSeekerController::class, 'downloadCv'])->name('jobseeker.download_cv');
 Route::get('/employers/{id}/pdf', [EmployerController::class, 'generateProfilePdf'])
-     ->name('employers.generate_profile_pdf');
+     ->name('employer.generate_profile_pdf');
 
-Route::get('/employers/export', [EmployerController::class, 'export'])->name('employers.export_data');
+Route::get('/employers/export', [EmployerController::class, 'export'])->name('employer.export_data');
 
 });

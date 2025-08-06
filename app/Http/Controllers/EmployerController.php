@@ -22,21 +22,14 @@ class EmployerController extends Controller
     {
         // 1. Validate the incoming request data
         $validatedData = $request->validate([
-            'company_name' => 'required|string|max:255',
-            'contact_person' => 'required|string|max:255',
-            'contact_email' => 'required|email|max:255|unique:employers,contact_email',
-            'contact_mobile' => 'required|string|max:20',
-            'min_travel_trade_experience_years' => 'nullable|integer|min:0',
+            'given_name' => 'required|string|max:255',
+            'family_name' => 'required|string|max:255',
+            'address' => 'required|string',
+            'mobile_no' => 'required|string|max:255',
+            'personal_email' => 'required|string|email|max:255|unique:employers,contact_email',
+            'total_experience' => 'nullable|integer',
+            'areas_of_expertise' => 'nullable|array',
 
-            // Validation rules for all your other fields (domestic, international, etc.)
-            // For boolean fields (Yes/No), they should be 'in:Yes,No' and then converted
-            'desired_domestic_travel_expertise' => 'nullable|in:Yes,No',
-            'desired_hotel_car_hire_expertise' => 'nullable|in:Yes,No',
-            'desired_international_travel_expertise' => 'nullable|in:Yes,No',
-            'desired_visa_handling_expertise' => 'nullable|in:Yes,No',
-            'desired_tours_holiday_packages_expertise' => 'nullable|in:Yes,No',
-            'desired_accounting_expertise' => 'nullable|in:Yes,No',
-            
             // Domestic Travel Fields
             'domestic_gds_itinerary' => 'nullable|in:Yes,No',
             'domestic_pnr_adult' => 'nullable|in:Yes,No',
@@ -47,9 +40,10 @@ class EmployerController extends Controller
             'domestic_fare_mask' => 'nullable|in:Yes,No',
             'domestic_ticketing_gds' => 'nullable|in:Yes,No',
             'domestic_gds_type' => 'nullable|string',
+            'domestic_gds_other_name' => 'nullable|string',
             'domestic_lcc_websites' => 'nullable|in:Yes,No',
             'domestic_supplier_portal' => 'nullable|in:Yes,No',
-            'domestic_supplier_portal_name' => 'nullable|string|max:255',
+            'domestic_supplier_portal_name' => 'nullable|string',
 
             // Hotel Bookings & Car Hire Fields
             'hotel_bookings_india' => 'nullable|in:Yes,No',
@@ -67,6 +61,7 @@ class EmployerController extends Controller
             'intl_youth_special_fares' => 'nullable|in:Yes,No',
             'intl_fare_mask' => 'nullable|in:Yes,No',
             'intl_gds_type' => 'nullable|string',
+            'intl_gds_other_name' => 'nullable|string',
             'intl_queue_pnrs' => 'nullable|in:Yes,No',
             'intl_first_reissue' => 'nullable|in:Yes,No',
             'intl_subsequent_reissue' => 'nullable|in:Yes,No',
@@ -90,7 +85,7 @@ class EmployerController extends Controller
             'visa_ireland' => 'nullable|in:Yes,No',
             'visa_haj_umrah' => 'nullable|in:Yes,No',
             'visa_uae' => 'nullable|in:Yes,No',
-            'visa_schengen_countries' => 'nullable|string|max:255',
+            'visa_schengen_countries' => 'nullable|string',
             'visa_russia' => 'nullable|in:Yes,No',
             'visa_china' => 'nullable|in:Yes,No',
             'visa_vietnam' => 'nullable|in:Yes,No',
@@ -105,7 +100,7 @@ class EmployerController extends Controller
 
             // TOURS AND HOLIDAY PACKAGES Fields
             'tours_handled_packages' => 'nullable|in:Yes,No',
-            'tours_countries' => 'nullable|string|max:255',
+            'tours_countries' => 'nullable|string',
             'tours_worked_cost' => 'nullable|in:Yes,No',
             'tours_incentive_groups' => 'nullable|in:Yes,No',
             'tours_mice_groups' => 'nullable|in:Yes,No',
@@ -128,71 +123,122 @@ class EmployerController extends Controller
             'acc_monitor_cashflow_forecast' => 'nullable|in:Yes,No',
             'acc_reconcile_bsp' => 'nullable|in:Yes,No',
         ]);
+        
+        $areasOfExpertise = $request->input('areas_of_expertise') ?? [];
 
-        // 2. Prepare data for insertion, converting 'Yes'/'No' strings to booleans
-        $dataToStore = [
-            'company_name' => $validatedData['company_name'],
-            'contact_person' => $validatedData['contact_person'],
-            'contact_email' => $validatedData['contact_email'],
-            'contact_mobile' => $validatedData['contact_mobile'],
-            'min_travel_trade_experience_years' => $validatedData['min_travel_trade_experience_years'],
-        ];
+        Employer::create([
+            'company_name' => $validatedData['given_name'],
+            'contact_person' => $validatedData['family_name'],
+            'address' => $validatedData['address'],
+            'contact_mobile' => $validatedData['mobile_no'],
+            'contact_email' => $validatedData['personal_email'],
+            'min_travel_trade_experience_years' => $validatedData['total_experience'],
+            
+            // Expertise Checkboxes
+            'desired_domestic_travel_expertise' => in_array('Domestic Travel', $areasOfExpertise),
+            'desired_hotel_car_hire_expertise' => in_array('Hotel Bookings & Car Hire', $areasOfExpertise),
+            'desired_international_travel_expertise' => in_array('International Travel', $areasOfExpertise),
+            'desired_visa_handling_expertise' => in_array('VISA Handling', $areasOfExpertise),
+            'desired_tours_holiday_packages_expertise' => in_array('Tours and Holiday Packages', $areasOfExpertise),
+            'desired_accounting_expertise' => in_array('Accounting', $areasOfExpertise),
 
-        // List all fields that require 'Yes'/'No' to boolean conversion
-        $booleanFields = [
-            'desired_domestic_travel_expertise', 'desired_hotel_car_hire_expertise',
-            'desired_international_travel_expertise', 'desired_visa_handling_expertise',
-            'desired_tours_holiday_packages_expertise', 'desired_accounting_expertise',
-            'domestic_gds_itinerary', 'domestic_pnr_adult', 'domestic_pnr_child_infant',
-            'domestic_senior_citizen_fares', 'domestic_student_fares', 'domestic_youth_special_fares',
-            'domestic_fare_mask', 'domestic_ticketing_gds', 'domestic_lcc_websites',
-            'domestic_supplier_portal',
-            'hotel_bookings_india', 'hotel_contact_direct', 'hotel_consolidator_websites',
-            'hotel_local_dmc', 'car_hire_city', 'car_hire_other_cities',
-            'intl_gds_itinerary', 'intl_pnr_child_infant', 'intl_senior_citizen_fares',
-            'intl_student_fares', 'intl_youth_special_fares', 'intl_fare_mask',
-            'intl_queue_pnrs', 'intl_first_reissue', 'intl_subsequent_reissue',
-            'intl_ticket_refunds', 'intl_hotac_rooms', 'intl_group_pnr',
-            'intl_issue_emd', 'intl_standalone_emd', 'intl_associated_emd',
-            'visa_aware_procedures', 'visa_handled_personally', 'visa_in_department',
-            'visa_usa', 'visa_canada', 'visa_mexico', 'visa_brazil',
-            'visa_other_south_america', 'visa_uk', 'visa_ireland', 'visa_haj_umrah',
-            'visa_uae', 'visa_russia', 'visa_china', 'visa_vietnam', 'visa_cambodia',
-            'visa_hongkong', 'visa_philippines', 'visa_singapore', 'visa_malaysia',
-            'visa_australia', 'visa_newzealand', 'visa_draft_cover_note',
-            'tours_handled_packages', 'tours_worked_cost', 'tours_incentive_groups',
-            'tours_mice_groups', 'tours_cruise_pax',
-            'acc_record_transactions', 'acc_bank_cc_reconciliation', 'acc_corporate_card_reconciliation',
-            'acc_track_commissions', 'acc_submit_invoices', 'acc_manage_financial_records',
-            'acc_software_excel_proficient', 'acc_prepare_analyze_reports', 'acc_ensure_compliance',
-            'acc_manage_ap_ar', 'acc_process_payroll_expenses', 'acc_calculate_pay_taxes',
-            'acc_coordinate_auditors', 'acc_monitor_cashflow_forecast', 'acc_reconcile_bsp',
-        ];
+            // Domestic Travel Fields
+            'domestic_gds_itinerary' => $request->input('domestic_gds_itinerary') === 'Yes',
+            'domestic_pnr_adult' => $request->input('domestic_pnr_adult') === 'Yes',
+            'domestic_pnr_child_infant' => $request->input('domestic_pnr_child_infant') === 'Yes',
+            'domestic_senior_citizen_fares' => $request->input('domestic_senior_citizen_fares') === 'Yes',
+            'domestic_student_fares' => $request->input('domestic_student_fares') === 'Yes',
+            'domestic_youth_special_fares' => $request->input('domestic_youth_special_fares') === 'Yes',
+            'domestic_fare_mask' => $request->input('domestic_fare_mask') === 'Yes',
+            'domestic_ticketing_gds' => $request->input('domestic_ticketing_gds') === 'Yes',
+            'domestic_gds_type' => $request->input('domestic_gds_type'),
+            'domestic_gds_other_name' => $request->input('domestic_gds_other_name'),
+            'domestic_lcc_websites' => $request->input('domestic_lcc_websites') === 'Yes',
+            'domestic_supplier_portal' => $request->input('domestic_supplier_portal') === 'Yes',
+            'domestic_supplier_portal_name' => $request->input('domestic_supplier_portal_name'),
 
-        foreach ($booleanFields as $field) {
-            // Check if the field exists in validatedData and convert if it's 'Yes' or 'No'
-            if (isset($validatedData[$field])) {
-                $dataToStore[$field] = ($validatedData[$field] === 'Yes');
-            } else {
-                $dataToStore[$field] = null;
-            }
-        }
+            // Hotel Bookings & Car Hire Fields
+            'hotel_bookings_india' => $request->input('hotel_bookings_india') === 'Yes',
+            'hotel_contact_direct' => $request->input('hotel_contact_direct') === 'Yes',
+            'hotel_consolidator_websites' => $request->input('hotel_consolidator_websites') === 'Yes',
+            'hotel_local_dmc' => $request->input('hotel_local_dmc') === 'Yes',
+            'car_hire_city' => $request->input('car_hire_city') === 'Yes',
+            'car_hire_other_cities' => $request->input('car_hire_other_cities') === 'Yes',
 
-        // Add other non-boolean specific fields from validatedData
-        $dataToStore['domestic_gds_type'] = $validatedData['domestic_gds_type'] ?? null;
-        $dataToStore['domestic_supplier_portal_name'] = $validatedData['domestic_supplier_portal_name'] ?? null;
-        $dataToStore['intl_gds_type'] = $validatedData['intl_gds_type'] ?? null;
-        $dataToStore['visa_schengen_countries'] = $validatedData['visa_schengen_countries'] ?? null;
-        $dataToStore['tours_countries'] = $validatedData['tours_countries'] ?? null;
+            // International Travel Fields
+            'intl_gds_itinerary' => $request->input('intl_gds_itinerary') === 'Yes',
+            'intl_pnr_child_infant' => $request->input('intl_pnr_child_infant') === 'Yes',
+            'intl_senior_citizen_fares' => $request->input('intl_senior_citizen_fares') === 'Yes',
+            'intl_student_fares' => $request->input('intl_student_fares') === 'Yes',
+            'intl_youth_special_fares' => $request->input('intl_youth_special_fares') === 'Yes',
+            'intl_fare_mask' => $request->input('intl_fare_mask') === 'Yes',
+            'intl_gds_type' => $request->input('intl_gds_type'),
+            'intl_gds_other_name' => $request->input('intl_gds_other_name'),
+            'intl_queue_pnrs' => $request->input('intl_queue_pnrs') === 'Yes',
+            'intl_first_reissue' => $request->input('intl_first_reissue') === 'Yes',
+            'intl_subsequent_reissue' => $request->input('intl_subsequent_reissue') === 'Yes',
+            'intl_ticket_refunds' => $request->input('intl_ticket_refunds') === 'Yes',
+            'intl_hotac_rooms' => $request->input('intl_hotac_rooms') === 'Yes',
+            'intl_group_pnr' => $request->input('intl_group_pnr') === 'Yes',
+            'intl_issue_emd' => $request->input('intl_issue_emd') === 'Yes',
+            'intl_standalone_emd' => $request->input('intl_standalone_emd') === 'Yes',
+            'intl_associated_emd' => $request->input('intl_associated_emd') === 'Yes',
 
+            // VISA Handling Fields
+            'visa_aware_procedures' => $request->input('visa_aware_procedures') === 'Yes',
+            'visa_handled_personally' => $request->input('visa_handled_personally') === 'Yes',
+            'visa_in_department' => $request->input('visa_in_department') === 'Yes',
+            'visa_usa' => $request->input('visa_usa') === 'Yes',
+            'visa_canada' => $request->input('visa_canada') === 'Yes',
+            'visa_mexico' => $request->input('visa_mexico') === 'Yes',
+            'visa_brazil' => $request->input('visa_brazil') === 'Yes',
+            'visa_other_south_america' => $request->input('visa_other_south_america') === 'Yes',
+            'visa_uk' => $request->input('visa_uk') === 'Yes',
+            'visa_ireland' => $request->input('visa_ireland') === 'Yes',
+            'visa_haj_umrah' => $request->input('visa_haj_umrah') === 'Yes',
+            'visa_uae' => $request->input('visa_uae') === 'Yes',
+            'visa_schengen_countries' => $request->input('visa_schengen_countries'),
+            'visa_russia' => $request->input('visa_russia') === 'Yes',
+            'visa_china' => $request->input('visa_china') === 'Yes',
+            'visa_vietnam' => $request->input('visa_vietnam') === 'Yes',
+            'visa_cambodia' => $request->input('visa_cambodia') === 'Yes',
+            'visa_hongkong' => $request->input('visa_hongkong') === 'Yes',
+            'visa_philippines' => $request->input('visa_philippines') === 'Yes',
+            'visa_singapore' => $request->input('visa_singapore') === 'Yes',
+            'visa_malaysia' => $request->input('visa_malaysia') === 'Yes',
+            'visa_australia' => $request->input('visa_australia') === 'Yes',
+            'visa_newzealand' => $request->input('visa_newzealand') === 'Yes',
+            'visa_draft_cover_note' => $request->input('visa_draft_cover_note') === 'Yes',
 
-        // 3. Create a new Employer record in the database
-        $employer = Employer::create($dataToStore);
+            // TOURS AND HOLIDAY PACKAGES Fields
+            'tours_handled_packages' => $request->input('tours_handled_packages') === 'Yes',
+            'tours_countries' => $request->input('tours_countries'),
+            'tours_worked_cost' => $request->input('tours_worked_cost') === 'Yes',
+            'tours_incentive_groups' => $request->input('tours_incentive_groups') === 'Yes',
+            'tours_mice_groups' => $request->input('tours_mice_groups') === 'Yes',
+            'tours_cruise_pax' => $request->input('tours_cruise_pax') === 'Yes',
 
-        // 4. Redirect with a success message
-        return redirect()->back()->with('success', 'Employer profile has been submitted successfully!');
+            // ACCOUNTING Fields
+            'acc_record_transactions' => $request->input('acc_record_transactions') === 'Yes',
+            'acc_bank_cc_reconciliation' => $request->input('acc_bank_cc_reconciliation') === 'Yes',
+            'acc_corporate_card_reconciliation' => $request->input('acc_corporate_card_reconciliation') === 'Yes',
+            'acc_track_commissions' => $request->input('acc_track_commissions') === 'Yes',
+            'acc_submit_invoices' => $request->input('acc_submit_invoices') === 'Yes',
+            'acc_manage_financial_records' => $request->input('acc_manage_financial_records') === 'Yes',
+            'acc_software_excel_proficient' => $request->input('acc_software_excel_proficient') === 'Yes',
+            'acc_prepare_analyze_reports' => $request->input('acc_prepare_analyze_reports') === 'Yes',
+            'acc_ensure_compliance' => $request->input('acc_ensure_compliance') === 'Yes',
+            'acc_manage_ap_ar' => $request->input('acc_manage_ap_ar') === 'Yes',
+            'acc_process_payroll_expenses' => $request->input('acc_process_payroll_expenses') === 'Yes',
+            'acc_calculate_pay_taxes' => $request->input('acc_calculate_pay_taxes') === 'Yes',
+            'acc_coordinate_auditors' => $request->input('acc_coordinate_auditors') === 'Yes',
+            'acc_monitor_cashflow_forecast' => $request->input('acc_monitor_cashflow_forecast') === 'Yes',
+            'acc_reconcile_bsp' => $request->input('acc_reconcile_bsp') === 'Yes',
+
+        ]);
+
+        return redirect()->back()->with('success', 'Your profile has been submitted successfully!');
     }
-
     /**
      * Display the employer data page.
      *
@@ -210,25 +256,24 @@ class EmployerController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function employersData(Request $request)
-    {
-        if ($request->ajax()) {
-            $data = Employer::select('id', 'company_name', 'contact_person', 'contact_email', 'contact_mobile', 'created_at');
+{
+    if ($request->ajax()) {
+        $data = Employer::select('id', 'company_name', 'contact_person', 'contact_email', 'contact_mobile', 'min_travel_trade_experience_years', 'created_at')->latest()->get();
 
-            return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('profile_pdf', function(Employer $employer) {
-                    $url = route('employer.generate_profile_pdf', ['id' => $employer->id]);
-                    return '<a href="' . $url . '" class="btn btn-sm btn-primary"><i class="fas fa-file-pdf"></i> Download Profile PDF</a>';
-                })
-                ->addColumn('created_at_formatted', function(Employer $employer) {
-                    return $employer->created_at->format('Y-m-d H:i:s');
-                })
-                ->rawColumns(['profile_pdf'])
-                ->make(true);
-        }
-        abort(403, 'Unauthorized access.');
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function(Employer $employer) {
+                $url = route('employer.generate_profile_pdf', ['id' => $employer->id]);
+                return '<a href="' . $url . '" class="btn btn-sm btn-info" target="_blank"><i class="fas fa-file-pdf"></i> Download PDF</a>';
+            })
+            ->addColumn('created_at_formatted', function(Employer $employer) {
+                return $employer->created_at->format('d-m-Y');
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
-
+    abort(403, 'Unauthorized access.');
+}
     /**
      * Generate and download a PDF of the employer's profile.
      *

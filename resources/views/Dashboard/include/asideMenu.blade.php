@@ -102,6 +102,12 @@
                   <div data-i18n="Analytics">Job Seekers Data</div>
                 </a>
               </li>
+              <li class="menu-item">
+                <a href="{{route("employersdatapage")}}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-images"></i>
+                  <div data-i18n="Analytics">Employers Data</div>
+                </a>
+              </li>
 
 
               <!-- <li class="menu-item">
@@ -122,28 +128,28 @@
                   <div data-i18n="Analytics">Manage Team</div>
                 </a>
               </li>
-              <li class="menu-item">
+              {{-- <li class="menu-item">
                 <a href="{{route("manageGallery")}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-images"></i>
                   <div data-i18n="Analytics">Manage Gallery</div>
                 </a>
-              </li>
+              </li> --}}
               <li class="menu-item">
                 <a href="{{route("manageblog")}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-images"></i>
                   <div data-i18n="Analytics">Manage Blog</div>
                 </a>
               </li>
-              <li class="menu-item">
+              {{-- <li class="menu-item">
                 <a href="{{route("managefaq")}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-images"></i>
                   <div data-i18n="Analytics">Manage FAQ</div>
                 </a>
-              </li>
+              </li> --}}
               <li class="menu-item">
                 <a href="{{route("managepartner")}}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-images"></i>
-                  <div data-i18n="Analytics">Manage Partner & Recognitions</div>
+                  <div data-i18n="Analytics">Manage Certificates</div>
                 </a>
               </li>
 
