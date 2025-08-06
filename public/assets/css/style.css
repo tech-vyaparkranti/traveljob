@@ -272,6 +272,10 @@ a {
     /* background-color: #fff6f4; */
     /* background-color: #e6e6f2; */
     background-color: #030358;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 60px;
 }
 
 .slide-navigation,

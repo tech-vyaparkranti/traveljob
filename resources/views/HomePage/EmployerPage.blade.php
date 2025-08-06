@@ -7,8 +7,8 @@
         <h1><a href="{{ url('/') }}">Home</a><span>Employer Form</span></h1>
     </div>
 </div>
-<div id="about">
-    <div class="default-content products-page pt-5 pb-3">
+<div id="about" style="overflow-x:hidden">
+    <div class="default-content products-page pt-5 ">
         <div class="custom-container">
             <div class="site-title pb-3">
                 <h2 class="text-center">EMPLOYER'S NEEDS OF QUALIFICATIONS</h2>
@@ -81,7 +81,7 @@
         (Select below. In case of Managers, select all areas of work and select desired skills)
       </small>
     </label>
-    <div class="row row-cols-1 row-cols-md-3 g-3">
+    <div class="row row-cols-1 row-cols-md-2 g-2">
       <div class="col">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Domestic Travel" id="domestic_travel">
@@ -145,287 +145,373 @@
 </h3>
 
                         <h4>Domestic Travel</h4>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>plan/Build an Itinerary on GDS?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_gds_itinerary" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_gds_itinerary" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>PNR Creation for Adult Pax:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_pnr_adult" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_pnr_adult" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>PNR Creation for Children and Infants?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_pnr_child_infant" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_pnr_child_infant" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Senior Citizen?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_senior_citizen_fares" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_senior_citizen_fares" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Students?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_student_fares" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_student_fares" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Youth & Other Special Fares?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_youth_special_fares" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_youth_special_fares" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Creation of fare Mask for Ticketing:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_fare_mask" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_fare_mask" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Ticketing on GDS:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_ticketing_gds" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_ticketing_gds" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>GDS:</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="domestic_gds_type" value="Amadeus" onclick="toggleDomesticGdsOther(false)"> Amadeus</label>
-                                <label><input type="radio" name="domestic_gds_type" value="Galileo" onclick="toggleDomesticGdsOther(false)"> Galileo</label>
-                                <label><input type="radio" name="domestic_gds_type" value="Sabre" onclick="toggleDomesticGdsOther(false)"> Sabre</label>
-                                <label><input type="radio" name="domestic_gds_type" value="Other" onclick="toggleDomesticGdsOther(true)"> Other</label>
-                            </div>
-                            <div class="conditional-field" id="domestic_gds_other_name_group">
-                                <label for="domestic_gds_other_name">Specify Other GDS:</label>
-                                <input type="text" id="domestic_gds_other_name" name="domestic_gds_other_name">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Ticketing experience through direct log-in to LCC Websites:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_lcc_websites" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="domestic_lcc_websites" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Through Suppliers Portal (Make My Trip, TBO, Akbar, Ria, etc.):</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="domestic_supplier_portal" value="Yes" onclick="toggleDomesticSupplierPortalName(true)"> Yes</label>
-                                    <label><input type="radio" name="domestic_supplier_portal" value="No" onclick="toggleDomesticSupplierPortalName(false)"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group conditional-field" id="domestic_supplier_portal_name_group">
-                            <label for="domestic_supplier_portal_name">Name the portal:</label>
-                            <input type="text" id="domestic_supplier_portal_name" name="domestic_supplier_portal_name">
-                        </div>
+      <div class="container mt-4">
+  
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Plan/Build an Itinerary on GDS?</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_gds_itinerary" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_gds_itinerary" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">PNR Creation for Adult Pax:</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_pnr_adult" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_pnr_adult" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">PNR Creation for Children and Infants?</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_pnr_child_infant" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_pnr_child_infant" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Senior Citizen?</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_senior_citizen_fares" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_senior_citizen_fares" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Students?</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_student_fares" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_student_fares" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Youth & Other Special Fares?</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_youth_special_fares" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_youth_special_fares" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Creation of fare Mask for Ticketing:</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_fare_mask" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_fare_mask" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Ticketing on GDS:</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_ticketing_gds" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_ticketing_gds" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <label class="form-label">GDS:</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_gds_type" value="Amadeus" onclick="toggleDomesticGdsOther(false)">
+            <label class="form-check-label">Amadeus</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_gds_type" value="Galileo" onclick="toggleDomesticGdsOther(false)">
+            <label class="form-check-label">Galileo</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_gds_type" value="Sabre" onclick="toggleDomesticGdsOther(false)">
+            <label class="form-check-label">Sabre</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_gds_type" value="Other" onclick="toggleDomesticGdsOther(true)">
+            <label class="form-check-label">Other</label>
+          </div>
+        </div>
+
+        <div class="mt-2" id="domestic_gds_other_name_group" style="display: none;">
+          <label class="form-label" for="domestic_gds_other_name">Specify Other GDS:</label>
+          <input type="text" class="form-control" id="domestic_gds_other_name" name="domestic_gds_other_name">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Ticketing experience through direct log-in to LCC Websites:</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_lcc_websites" value="Yes">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_lcc_websites" value="No">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Through Suppliers Portal (Make My Trip, TBO, Akbar, Ria, etc.):</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_supplier_portal" value="Yes" onclick="toggleDomesticSupplierPortalName(true)">
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="domestic_supplier_portal" value="No" onclick="toggleDomesticSupplierPortalName(false)">
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12" id="domestic_supplier_portal_name_group" style="display: none;">
+        <label class="form-label" for="domestic_supplier_portal_name">Name the portal:</label>
+        <input type="text" class="form-control" id="domestic_supplier_portal_name" name="domestic_supplier_portal_name">
+      </div>
+
+      </div>
+</div>
+
 
                         <h4>Hotel Bookings & Car Hire</h4>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Handle Hotel Bookings within India?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="hotel_bookings_india" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="hotel_bookings_india" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Contact the Hotel directly?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="hotel_contact_direct" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="hotel_contact_direct" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Book through Hotel Consolidator Websites like Hotels.com, Etc.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="hotel_consolidator_websites" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="hotel_consolidator_websites" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>or through the Local DMC?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="hotel_local_dmc" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="hotel_local_dmc" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Handle Car Hire within your city?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="car_hire_city" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="car_hire_city" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Handle Car Hire in other Indian Cities?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="car_hire_other_cities" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="car_hire_other_cities" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Add Bootstrap CSS -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+            <label class="form-label">Handle Hotel Bookings within India?</label>
+            <div class="d-flex gap-3 flex-wrap">
+                <label><input type="radio" name="hotel_bookings_india" value="Yes"> Yes</label>
+                <label><input type="radio" name="hotel_bookings_india" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+            <label class="form-label">Contact the Hotel directly?</label>
+            <div class="d-flex gap-3 flex-wrap">
+                <label><input type="radio" name="hotel_contact_direct" value="Yes"> Yes</label>
+                <label><input type="radio" name="hotel_contact_direct" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+            <label class="form-label">Book through Hotel Consolidator Websites like Hotels.com, Etc.:</label>
+            <div class="d-flex gap-3 flex-wrap">
+                <label><input type="radio" name="hotel_consolidator_websites" value="Yes"> Yes</label>
+                <label><input type="radio" name="hotel_consolidator_websites" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+            <label class="form-label">or through the Local DMC?</label>
+            <div class="d-flex gap-3 flex-wrap">
+                <label><input type="radio" name="hotel_local_dmc" value="Yes"> Yes</label>
+                <label><input type="radio" name="hotel_local_dmc" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+            <label class="form-label">Handle Car Hire within your city?</label>
+            <div class="d-flex gap-3 flex-wrap">
+                <label><input type="radio" name="car_hire_city" value="Yes"> Yes</label>
+                <label><input type="radio" name="car_hire_city" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+            <label class="form-label">Handle Car Hire in other Indian Cities?</label>
+            <div class="d-flex gap-3 flex-wrap">
+                <label><input type="radio" name="car_hire_other_cities" value="Yes"> Yes</label>
+                <label><input type="radio" name="car_hire_other_cities" value="No"> No</label>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                         <h4>International Travel</h4>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Plan/build an Itinerary on GDS for Intl Travel?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_gds_itinerary" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_gds_itinerary" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Inputs for PNR Creation for Children and Infants?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_pnr_child_infant" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_pnr_child_infant" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Senior Citizen?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_senior_citizen_fares" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_senior_citizen_fares" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Students?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_student_fares" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_student_fares" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Youth & Other Special Fares?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_youth_special_fares" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_youth_special_fares" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Create a Fare Mask for Ticketing?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_fare_mask" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_fare_mask" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Have you worked on GDS?:</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="intl_gds_type" value="Amadeus" onclick="toggleIntlGdsOther(false)"> Amadeus</label>
-                                <label><input type="radio" name="intl_gds_type" value="Galileo" onclick="toggleIntlGdsOther(false)"> Galileo</label>
-                                <label><input type="radio" name="intl_gds_type" value="Sabre" onclick="toggleIntlGdsOther(false)"> Sabre</label>
-                                <label><input type="radio" name="intl_gds_type" value="Other" onclick="toggleIntlGdsOther(true)"> Other</label>
-                            </div>
-                            <div class="conditional-field" id="intl_gds_other_name_group">
-                                <label for="intl_gds_other_name">Specify Other GDS:</label>
-                                <input type="text" id="intl_gds_other_name" name="intl_gds_other_name">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Queue PNRs to Consolidators?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_queue_pnrs" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_queue_pnrs" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>The formats and procedures for First reissuing a ticket?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_first_reissue" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_first_reissue" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>The formats and procedures for reissuing a ticket after the First Reissue?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_subsequent_reissue" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_subsequent_reissue" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>The formats and Procedures for Refunds of a ticket?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_ticket_refunds" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_ticket_refunds" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Can you use the HOTAC option to book Rooms?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_hotac_rooms" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_hotac_rooms" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Create a PNR for Group Booking?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_group_pnr" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_group_pnr" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>How to issue EMD?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_issue_emd" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_issue_emd" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Do you know Stand Alone EMD?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_standalone_emd" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_standalone_emd" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group radio-group-wrapper">
-                            <label>Know the Associated EMD Issuance for EB, Seat, & Seat election?:</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="intl_associated_emd" value="Yes"> Yes</label>
-                                <label><input type="radio" name="intl_associated_emd" value="No"> No</label>
-                            </div>
-                        </div>
+                        <div class="container">
+    <div class="row g-3">
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Plan/build an Itinerary on GDS for Intl Travel?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_gds_itinerary" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_gds_itinerary" value="No"> No</label>
+            </div>
+        </div>
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Inputs for PNR Creation for Children and Infants?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_pnr_child_infant" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_pnr_child_infant" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Senior Citizen?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_senior_citizen_fares" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_senior_citizen_fares" value="No"> No</label>
+            </div>
+        </div>
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Students?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_student_fares" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_student_fares" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Youth & Other Special Fares?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_youth_special_fares" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_youth_special_fares" value="No"> No</label>
+            </div>
+        </div>
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Create a Fare Mask for Ticketing?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_fare_mask" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_fare_mask" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <label class="form-label">Have you worked on GDS?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_gds_type" value="Amadeus" onclick="toggleIntlGdsOther(false)"> Amadeus</label>
+                <label><input type="radio" name="intl_gds_type" value="Galileo" onclick="toggleIntlGdsOther(false)"> Galileo</label>
+                <label><input type="radio" name="intl_gds_type" value="Sabre" onclick="toggleIntlGdsOther(false)"> Sabre</label>
+                <label><input type="radio" name="intl_gds_type" value="Other" onclick="toggleIntlGdsOther(true)"> Other</label>
+            </div>
+            <div class="mt-2" id="intl_gds_other_name_group" style="display: none;">
+                <label for="intl_gds_other_name">Specify Other GDS:</label>
+                <input type="text" class="form-control" id="intl_gds_other_name" name="intl_gds_other_name">
+            </div>
+        </div>
+
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Queue PNRs to Consolidators?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_queue_pnrs" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_queue_pnrs" value="No"> No</label>
+            </div>
+        </div>
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">The formats and procedures for First reissuing a ticket?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_first_reissue" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_first_reissue" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">The formats and procedures for reissuing a ticket after the First Reissue?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_subsequent_reissue" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_subsequent_reissue" value="No"> No</label>
+            </div>
+        </div>
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">The formats and Procedures for Refunds of a ticket?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_ticket_refunds" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_ticket_refunds" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Can you use the HOTAC option to book Rooms?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_hotac_rooms" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_hotac_rooms" value="No"> No</label>
+            </div>
+        </div>
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Create a PNR for Group Booking?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_group_pnr" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_group_pnr" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">How to issue EMD?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_issue_emd" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_issue_emd" value="No"> No</label>
+            </div>
+        </div>
+        <div class="col-md-6 form-group radio-group-wrapper">
+            <label class="form-label">Do you know Stand Alone EMD?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_standalone_emd" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_standalone_emd" value="No"> No</label>
+            </div>
+        </div>
+
+        <div class="col-12 form-group radio-group-wrapper">
+            <label class="form-label">Know the Associated EMD Issuance for EB, Seat, & Seat election?</label>
+            <div class="d-flex flex-wrap gap-3">
+                <label><input type="radio" name="intl_associated_emd" value="Yes"> Yes</label>
+                <label><input type="radio" name="intl_associated_emd" value="No"> No</label>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                         <h4>VISA Handling:</h4>
                         <div class="form-group radio-group-wrapper">
@@ -435,7 +521,7 @@
                                 <label><input type="radio" name="visa_aware_procedures" value="No" onclick="toggleVisaQuestions(false)"> No</label>
                             </div>
                         </div>
-                        <div id="visa_handling_questions" class="conditional-field">
+                        <div id="visa_handling_questions" style="overflow-y: auto;" class="conditional-field">
                             <div class="form-row">
                                 <div class="form-group radio-group-wrapper">
                                     <label>Did you personally handle Visas for your Pax?:</label>
@@ -543,172 +629,290 @@
                         </div>
 
                         <h4>TOURS AND HOLIDAY PACKAGES</h4>
-                        <div class="form-group radio-group-wrapper">
-                            <label>Have you handled Tour Packages?:</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="tours_handled_packages" value="Yes" onclick="toggleTourCountries(true)"> Yes</label>
-                                <label><input type="radio" name="tours_handled_packages" value="No" onclick="toggleTourCountries(false)"> No</label>
-                            </div>
-                        </div>
-                        <div class="form-group conditional-field" id="tours_countries_group">
-                            <label for="tours_countries">To which countries did you handled Tour Packages:</label>
-                            <input type="text" id="tours_countries" name="tours_countries">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Have you worked out the total cost of the Tours?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="tours_worked_cost" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="tours_worked_cost" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Have you handled Incentive Groups?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="tours_incentive_groups" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="tours_incentive_groups" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Have you handled MICE Groups?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="tours_mice_groups" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="tours_mice_groups" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Have You handled Cruise Pax?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="tours_cruise_pax" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="tours_cruise_pax" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row mb-3">
+    <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+      <label class="form-label">Have you handled Tour Packages?</label>
+      <div class="radio-group d-flex gap-3">
+        <label><input type="radio" name="tours_handled_packages" value="Yes" onclick="toggleTourCountries(true)"> Yes</label>
+        <label><input type="radio" name="tours_handled_packages" value="No" onclick="toggleTourCountries(false)"> No</label>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3 form-group conditional-field" id="tours_countries_group" style="display: none;">
+      <label for="tours_countries" class="form-label">To which countries did you handle Tour Packages?</label>
+      <input type="text" class="form-control" id="tours_countries" name="tours_countries">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+      <label class="form-label">Have you worked out the total cost of the Tours?</label>
+      <div class="radio-group d-flex gap-3">
+        <label><input type="radio" name="tours_worked_cost" value="Yes"> Yes</label>
+        <label><input type="radio" name="tours_worked_cost" value="No"> No</label>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+      <label class="form-label">Have you handled Incentive Groups?</label>
+      <div class="radio-group d-flex gap-3">
+        <label><input type="radio" name="tours_incentive_groups" value="Yes"> Yes</label>
+        <label><input type="radio" name="tours_incentive_groups" value="No"> No</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+      <label class="form-label">Have you handled MICE Groups?</label>
+      <div class="radio-group d-flex gap-3">
+        <label><input type="radio" name="tours_mice_groups" value="Yes"> Yes</label>
+        <label><input type="radio" name="tours_mice_groups" value="No"> No</label>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3 form-group radio-group-wrapper">
+      <label class="form-label">Have you handled Cruise Pax?</label>
+      <div class="radio-group d-flex gap-3">
+        <label><input type="radio" name="tours_cruise_pax" value="Yes"> Yes</label>
+        <label><input type="radio" name="tours_cruise_pax" value="No"> No</label>
+      </div>
+    </div>
+  </div>
+
 
                       <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
   <i class="fa fa-calculator me-2 logo"></i> ACCOUNTING
 </h3>
   <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>I CAN… Record the transactions daily, both for revenue and expenses:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_record_transactions" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_record_transactions" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Periodical Bank Reconciliations and Credit card transactions:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_bank_cc_reconciliation" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_bank_cc_reconciliation" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Reconciliations of corporate travel card activity:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_corporate_card_reconciliation" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_corporate_card_reconciliation" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Tracking of Commissions receivable from Airlines, Insurance companies:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_track_commissions" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_track_commissions" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Timely submission of Invoices to corporate clients:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_submit_invoices" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_submit_invoices" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Maintaining and managing financial records for the travel agency.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_manage_financial_records" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_manage_financial_records" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Proficient in accounting software and Microsoft Excel:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_software_excel_proficient" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_software_excel_proficient" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Prepare and analyze financial reports, statements, and budgets.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_prepare_analyze_reports" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_prepare_analyze_reports" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Ensure compliance with financial regulations and standards.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_ensure_compliance" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_ensure_compliance" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Manage accounts payable and receivable.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_manage_ap_ar" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_manage_ap_ar" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Process payroll and manage expense reports.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_process_payroll_expenses" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_process_payroll_expenses" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Timely Calculate & Pay: TDS, GST, Advance Tax within the due dates:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_calculate_pay_taxes" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_calculate_pay_taxes" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Coordinating with auditors to ensure compliance with all regulations.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_coordinate_auditors" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_coordinate_auditors" value="No"> No</label>
-                                </div>
-                            </div>
-                            <div class="form-group radio-group-wrapper">
-                                <label>Monitor and manage cash flow and forecast future financial trends.:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="acc_monitor_cashflow_forecast" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="acc_monitor_cashflow_forecast" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group radio-group-wrapper">
-                            <label>Reconcile BSP Invoices Statement with Ledger entries.:</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="acc_reconcile_bsp" value="Yes"> Yes</label>
-                                <label><input type="radio" name="acc_reconcile_bsp" value="No"> No</label>
-                            </div>
-                        </div>
+                            <div class="container">
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>I CAN… Record the transactions daily, both for revenue and expenses:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_record_transactions" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_record_transactions" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Periodical Bank Reconciliations and Credit card transactions:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_bank_cc_reconciliation" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_bank_cc_reconciliation" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Reconciliations of corporate travel card activity:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_corporate_card_reconciliation" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_corporate_card_reconciliation" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Tracking of Commissions receivable from Airlines, Insurance companies:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_track_commissions" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_track_commissions" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Timely submission of Invoices to corporate clients:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_submit_invoices" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_submit_invoices" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Maintaining and managing financial records for the travel agency:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_manage_financial_records" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_manage_financial_records" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Proficient in accounting software and Microsoft Excel:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_software_excel_proficient" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_software_excel_proficient" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Prepare and analyze financial reports, statements, and budgets:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_prepare_analyze_reports" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_prepare_analyze_reports" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Ensure compliance with financial regulations and standards:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_ensure_compliance" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_ensure_compliance" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Manage accounts payable and receivable:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_manage_ap_ar" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_manage_ap_ar" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Process payroll and manage expense reports:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_process_payroll_expenses" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_process_payroll_expenses" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Timely Calculate & Pay: TDS, GST, Advance Tax within the due dates:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_calculate_pay_taxes" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_calculate_pay_taxes" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Coordinating with auditors to ensure compliance with all regulations:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_coordinate_auditors" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_coordinate_auditors" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Monitor and manage cash flow and forecast future financial trends:</label>
+      <div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_monitor_cashflow_forecast" value="Yes">
+          <label class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="acc_monitor_cashflow_forecast" value="No">
+          <label class="form-check-label">No</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Reconcile BSP Invoices Statement with Ledger entries:</label>
+    <div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="acc_reconcile_bsp" value="Yes">
+        <label class="form-check-label">Yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="acc_reconcile_bsp" value="No">
+        <label class="form-check-label">No</label>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
                         <button type="submit">Submit Profile</button>
                     </form>
@@ -716,9 +920,8 @@
             </div>
         </div>
     </div>
-</div>
-
-<style>
+      </div>
+ <style>
     
     /* General body and font styling */
     body {
@@ -788,7 +991,7 @@
         margin-bottom: 25px; /* Standardized margin for single input fields and for spacing between form rows/groups */
     }
 
-    .form-group label {
+     label {
         display: block;
         margin-bottom: 8px;
         font-weight: 600;
