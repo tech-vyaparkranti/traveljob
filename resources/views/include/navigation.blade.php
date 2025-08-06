@@ -27,6 +27,8 @@
                     </li>
                     {{-- <li><a href="{{ route('destinations') }}">Our Services</a></li> --}}
                     <li><a href="{{ route('productPage') }}">Profile submission</a></li>
+                    <li><a href="{{ route('EmployerPage') }}">Employer</a></li>
+
                     {{-- <li><a href="{{ route('reportPage') }}">Report</a></li>
                     <li><a href="{{ route('galleryPages') }}">Event</a></li>
                      <li><a href="{{ route('blogPage') }}">Blog</a></li> --}}

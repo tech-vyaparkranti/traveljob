@@ -89,6 +89,11 @@ class HomePageController extends Controller
 
          return view("HomePage.productPage",compact("WebSetting","Recognitions","getAllProduts"));
     }
+
+     public function EmployerPage(){
+       
+         return view("HomePage.EmployerPage");
+    }
     public function reportPage(){
         $WebSetting = SettingModel::all();
 
