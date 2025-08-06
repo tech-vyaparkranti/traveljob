@@ -62,7 +62,7 @@
     </div>
   </div>
 </div>
-<div class="row mb-3">
+<div class="row mb-3 "  >
   <div class="col-md-6">
     <label for="total_experience" class="form-label">
       Minimum DESIRED Travel Trade Experience (Years):
@@ -73,60 +73,65 @@
     </div>
   </div>
 
- <div class="row mb-3">
-  <div class="col-md-12">
+ <div class="row mb-3" style="margin-top: 20px">
+  <div class="col-12">
     <label class="form-label">
       Specific Areas of Expertise in Travel Agency Operations:
       <small class="text-muted d-block">
         (Select below. In case of Managers, select all areas of work and select desired skills)
       </small>
     </label>
-    <div class="row">
-      <div class="col-md-4 mb-2">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div class="col">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Domestic Travel" id="domestic_travel">
           <label class="form-check-label" for="domestic_travel">
-            <i class="fa fa-plane-departure me-1"></i> Domestic Travel
+            <i class="fa fa-plane-departure me-1 logo"></i> Domestic Travel
           </label>
         </div>
       </div>
-      <div class="col-md-4 mb-2">
+
+      <div class="col">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Hotel Bookings & Car Hire" id="hotel_car">
           <label class="form-check-label" for="hotel_car">
-            <i class="fa fa-hotel me-1"></i> Hotel Bookings & Car Hire
+            <i class="fa fa-hotel me-1 logo"></i> Hotel Bookings & Car Hire
           </label>
         </div>
       </div>
-      <div class="col-md-4 mb-2">
+
+      <div class="col">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="International Travel" id="intl_travel">
           <label class="form-check-label" for="intl_travel">
-            <i class="fa fa-globe me-1"></i> International Travel
+            <i class="fa fa-globe me-1 logo"></i> International Travel
           </label>
         </div>
       </div>
-      <div class="col-md-4 mb-2">
+
+      <div class="col">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="VISA Handling" id="visa_handling">
           <label class="form-check-label" for="visa_handling">
-            <i class="fa fa-passport me-1"></i> VISA Handling
+            <i class="fa fa-passport me-1 logo"></i> VISA Handling
           </label>
         </div>
       </div>
-      <div class="col-md-4 mb-2">
+
+      <div class="col">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Tours and Holiday Packages" id="tours">
           <label class="form-check-label" for="tours">
-            <i class="fa fa-suitcase-rolling me-1"></i> TOURS AND HOLIDAY PACKAGES
+            <i class="fa fa-suitcase-rolling me-1 logo"></i> Tours and Holiday Packages
           </label>
         </div>
       </div>
-      <div class="col-md-4 mb-2">
+
+      <div class="col">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Accounting" id="accounting">
           <label class="form-check-label" for="accounting">
-            <i class="fa fa-calculator me-1"></i> Accounting
+            <i class="fa fa-calculator me-1 logo"></i> Accounting
           </label>
         </div>
       </div>

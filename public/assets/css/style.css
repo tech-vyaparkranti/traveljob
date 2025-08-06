@@ -236,7 +236,7 @@ header.fixed-header,
 header.fixed-header .slide-navigation,
 .common-home header.fixed-header .slide-navigation {
     margin-top: -18px;
-    /* margin-left: 264px; */
+    margin-left: 100px;
     font-size: 26px;
 }
 
@@ -281,7 +281,7 @@ a {
     justify-items: center;
     align-items: center;
     width: 100%;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .custom-container,

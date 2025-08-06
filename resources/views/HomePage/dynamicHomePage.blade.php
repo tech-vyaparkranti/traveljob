@@ -147,53 +147,53 @@
     <!-- Destinations Section End -->
 
      <!-- Destinations Section -->
-    <div class="destinations pt-5 pb-2 " data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
+    <!-- Destinations Section -->
+    <div class="destinations pt-5 pb-2"  data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
     <div class="custom-container">
         <div class="site-title pb-4">
             <h2 class="text-center">Quick Navigation</h2>
             <p class="text-center">Choose the path that's right for you to get started.</p>
         </div>
-  <div class="container">
-  <div class="row g-4 justify-content-center" style="margin-bottom:20px;">
-    <div class="col-md-8">
-      <a href="{{ route('productPage') }}" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
+        <div class="row g-4">
+           <div class="col-md-6">
+    <a href="{{ route('productPage') }}" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
         <div class="quick-nav-image-container">
-          <img src="assets/img/jobseeker.jpeg" alt="Job Seeker" class="img-fluid w-100 hover-zoom" style="height: 400px; object-fit: cover;">
+            {{-- Replace this placeholder image URL with your own image for job seekers --}}
+            <img src="assets/img/jobseeker.jpeg" alt="Job Seeker" class="img-fluid w-100 hover-zoom" style="height: 200px; object-fit: cover;">
         </div>
         <div class="quick-nav-content p-4">
-          <h4 class="text-dark text-center">I'm a Job Seeker</h4>
-          <p class="text-muted mb-0 text-center" style="font-size:15px">
-            Discover exciting career opportunities and find your next Travel Job adventure.
-          </p>
+            <h4 class="text-dark">I'm a Job Seeker</h4>
+            <p class="text-muted mb-0">Discover exciting career opportunities and find your next Travel Job adventure.</p>
         </div>
-      </a>
-    </div>
-  </div>
+    </a>
 </div>
-
+            <div class="col-md-6">
+                <a href="" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
+                    <div class="quick-nav-image-container">
+                        {{-- Replace this placeholder image URL with your own image for employers --}}
+                        <img src="assets/img/employer.jpeg" alt="Employer" class="img-fluid w-100 hover-zoom" style="height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="quick-nav-content p-4">
+                        <h4 class="text-dark">I'm an Employer</h4>
+                        <p class="text-muted mb-0">Post jobs and find the perfect talent to join your team with ease.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
-
 
 <style>
-    .quick-nav-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* subtle initial shadow */
-    }
+.quick-nav-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .quick-nav-card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.25); /* full shadow on all sides */
-    }
-
-    .hover-zoom {
-        transition: transform 0.4s ease;
-    }
-
-    .quick-nav-card:hover .hover-zoom {
-        transform: scale(1.05);
-    }
+.quick-nav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 </style>
+    <!-- Destinations Section End -->
 
     <!-- Destinations Section End -->
 
