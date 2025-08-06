@@ -168,7 +168,7 @@
     </a>
 </div>
             <div class="col-md-6">
-                <a href="" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
+                <a href="{{ route('EmployerPage') }}" class="quick-nav-card d-block text-decoration-none shadow-sm rounded-3 overflow-hidden">
                     <div class="quick-nav-image-container">
                         {{-- Replace this placeholder image URL with your own image for employers --}}
                         <img src="assets/img/employer.jpeg" alt="Employer" class="img-fluid w-100 hover-zoom" style="height: 200px; object-fit: cover;">
