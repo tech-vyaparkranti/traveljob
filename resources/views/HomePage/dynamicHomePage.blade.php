@@ -5,7 +5,7 @@
     @include('include.slider')
 
     {{-- <!-- aboutus Section -->
-    <div class="destinations pt-5 pb-2">
+    <div class="destinations pt-5 pb-2" >
         <div class="custom-container">
             <div class="site-title">
                 <h2 class="text-center">About Us</h2>
@@ -15,7 +15,7 @@
     </div>
     <!-- About Section End --> --}}
 
- <div class="destinations py-5">
+ <div class="destinations py-5" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
   <div class="custom-container">
     <div class="offerings-container col-12">
       
@@ -56,7 +56,12 @@
     </div>
   </div>
 </div>
-
+<!-- In <head> -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <style>
     
 .hover-zoom {
@@ -105,7 +110,7 @@
     </section> --}}
 
     <!-- Destinations Section -->
-    <div class="destinations pt-5 pb-2">
+    <div class="destinations pt-5 pb-2" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
     <div class="custom-container">
         <div class="site-title pb-4">
             <h2 class="text-center">Overview Of Services</h2>
@@ -142,7 +147,7 @@
     <!-- Destinations Section End -->
 
      <!-- Destinations Section -->
-    <div class="destinations pt-5 pb-2 ">
+    <div class="destinations pt-5 pb-2 " data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
     <div class="custom-container">
         <div class="site-title pb-4">
             <h2 class="text-center">Quick Navigation</h2>
@@ -220,7 +225,7 @@
         </div>
     </section>
   
-<section class="our_partner pt-5 pb-2">
+<section class="our_partner pt-5 pb-2" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
     <div class="custom-container">
         <div class="site-title pb-3">
             <h2 class="text-center">Industry Certifications</h2>

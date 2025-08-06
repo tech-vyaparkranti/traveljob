@@ -7,7 +7,7 @@
     </div>
 </div>
 <div id="about">
-    <div class="default-content pt-5 pb-3">
+    <div class="default-content pt-5 pb-3" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
         <div class="custom-container">
             <div class="site-title pb-3">
                 <h2 class="text-center">About Us</h2>
@@ -20,7 +20,7 @@
        <div class="site-title pb-3 " style="padding-top:30px">
                 <h2 class="text-center">Objectives</h2>
             </div>
-            <div class="midd-content text-justify" style="">
+            <div class="midd-content text-justify" style="" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
                 <ul >
         	<li>To provide a seamless job search experience for travel industry professionals.</li>
 <li>To serve as a trusted hiring partner for travel agencies and corporate employers.</li>
@@ -33,7 +33,7 @@
             <div  class="site-title pt-2 pb-2" style="margin-top:20px">
                 <h2 class="text-center">Directors</h2>
             </div>
-            <div class="row director-container" style="background:#f9f9f9">
+            <div class="row director-container" style="background:#f9f9f9" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
                 @foreach ($getDirectoreData as $directorRow)
                 <div class="col-md-4">
                     <div class="director-item">
@@ -63,7 +63,7 @@
             @endif
 
             <!-- Static Founder -->
-            <div class="about-our-team row align-items-center my-4">
+            <div class="about-our-team row align-items-center my-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
                 <div class="col-md-5 text-center mb-3 mb-md-0">
                     <img src="{{ asset('assets/img/founder.jpeg') }}" alt="Dr. Anita Sharma" class="img-fluid rounded shadow">
                 </div>
@@ -84,14 +84,20 @@
             
            
             </div>
-          
+          <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- Before </body> -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <!--objectives !-->
             <!-- Our Team Section -->
             <!-- Our Team Section -->
 <div class="site-title pt-4" id="teams-sec">
     <h2 class="text-left" style="margin-bottom:60px;text-align:center;">Our Team</h2>
 </div>
-<div class="row g-4">
+<div class="row g-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
     {{-- Dynamic Chairman Data --}}
     @foreach ($getChairManData as $RowData)
     <div class="col-md-4 col-sm-6">
