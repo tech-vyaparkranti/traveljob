@@ -435,7 +435,7 @@
                                 <label><input type="radio" name="visa_aware_procedures" value="No" onclick="toggleVisaQuestions(false)"> No</label>
                             </div>
                         </div>
-                        <div id="visa_handling_questions" class="conditional-field">
+                        <div id="visa_handling_questions" style="overflow-y: auto;" class="conditional-field">
                             <div class="form-row">
                                 <div class="form-group radio-group-wrapper">
                                     <label>Did you personally handle Visas for your Pax?:</label>
