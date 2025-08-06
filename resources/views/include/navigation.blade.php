@@ -1,4 +1,4 @@
-<div class="sticky-navigation" style="background:#f2dcdc;">
+<div class="sticky-navigation" style="background:#e6e6f2;">
     <div class="custom-container">
     <ul class="sticky-content p-0 m-0" >
             <li><a  style="color:black" href="mailto:{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@Traveljob.com' }}"><i class="fa fa-envelope"></i>&nbsp;<span>{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@TravelJob.com' }}</span></a></li>
@@ -10,9 +10,9 @@
 <!-- Header section Start -->
 <header class="main-header">
     <div class="header-contaner">
-        <div class="logo-section">
+        <div class="logo-section" >
             <div class="mobile-bars" hidden></div>
-            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo4.png' }}" class="img-fluid" width="120" height="86" alt="TravelJob  Farmer Producer Company Limited"></a>
+            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo4.png' }}" class="img-fluid"  style="height:80px;width:190px" alt="TravelJob  Farmer Producer Company Limited"></a>
         </div>
         <div class="slide-navigation">
             <div class="navbar-wrapper">
@@ -36,10 +36,10 @@
                 </ul>
             </div>
             <ul class="social-media">
-                <li><a href="{{ isset($WebSetting['0']->facebook) ? $WebSetting['0']->facebook : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  facebook"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="{{ isset($WebSetting['0']->twitter) ? $WebSetting['0']->twitter : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="{{ isset($WebSetting['0']->instagram) ? $WebSetting['0']->instagram : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="{{ isset($WebSetting['0']->youtube) ? $WebSetting['0']->youtube : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Youtube"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a style="font-size:30px" href="{{ isset($WebSetting['0']->facebook) ? $WebSetting['0']->facebook : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  facebook"><i class="fa-brands fa-facebook" style="font-size:20px"></i></a></li>
+                <li><a href="{{ isset($WebSetting['0']->twitter) ? $WebSetting['0']->twitter : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Twitter"><i class="fa-brands fa-twitter" style="font-size:20px"></i></a></li>
+                <li><a href="{{ isset($WebSetting['0']->instagram) ? $WebSetting['0']->instagram : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Instagram"><i class="fa-brands fa-instagram" style="font-size:20px"></i></a></li>
+                <li><a href="{{ isset($WebSetting['0']->youtube) ? $WebSetting['0']->youtube : '/' }}" aria-label="Read more about TravelJob  Farmer Producer Company Limited  Youtube"><i class="fa-brands fa-youtube" style="font-size:20px"></i></a></li>
             </ul>
         </div>
     </div>
@@ -48,6 +48,11 @@
 <style>
     header.fixed-header .slide-navigation ul li a {
     color:white;
+}
+
+header.fixed-header .mobile-bars:before,
+header.fixed-header .mobile-bars:after {
+    background: white !important;
 }
 
 </style>
