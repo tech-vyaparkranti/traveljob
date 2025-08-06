@@ -4,25 +4,25 @@
 @section('content')
 <div class="information-page-slider">
     <div class="information-content">
-        <h1><a href="{{ url('/') }}">Home</a><span>Job Seeker Form</span></h1>
+        <h1><a href="{{ url('/') }}">Home</a><span>Employer Form</span></h1>
     </div>
 </div>
 <div id="about">
     <div class="default-content products-page pt-5 pb-3">
         <div class="custom-container">
             <div class="site-title pb-3">
-                <h2 class="text-center">SKILL-SET BY THE JOB SEEKERS</h2>
+                <h2 class="text-center">EMPLOYER'S NEEDS OF QUALIFICATIONS</h2>
             </div>
             <div class="midd-content">
                 <div class="container modern-form-container">
                     <form action="{{ route('jobseeker.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
                      <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
-  <i class="fa fa-user-circle me-2 logo"></i> PERSONAL INFORMATION
+  <i class="fa fa-user-circle me-2 logo"></i> Employer INFORMATION
 </h3>
    <div class="row mb-3">
   <div class="col-md-6">
-    <label for="given_name" class="form-label">Given Name:</label>
+    <label for="given_name" class="form-label">Agency/Company Name:</label>
     <div class="input-group">
       <span class="input-group-text "><i class="fa fa-user logo"></i></span>
       <input type="text" class="form-control" id="given_name" name="given_name" placeholder="Enter given name" required>
@@ -30,18 +30,11 @@
   </div>
 
   <div class="col-md-6">
-    <label for="family_name" class="form-label">Family Name:</label>
+    <label for="family_name" class="form-label">Contact Person Name:</label>
     <div class="input-group">
       <span class="input-group-text "><i class="fa fa-users logo"></i></span>
       <input type="text" class="form-control" id="family_name" name="family_name" placeholder="Enter family name" required>
     </div>
-  </div>
-</div>
-<div class="mb-3">
-  <label for="dob" class="form-label">Date of Birth:</label>
-  <div class="input-group">
-    <span class="input-group-text"><i class="fa fa-calendar-alt logo"></i></span>
-    <input type="date" class="form-control" id="dob" name="dob" required>
   </div>
 </div>
 
@@ -52,7 +45,7 @@
     <textarea class="form-control" id="address" name="address" rows="4" required></textarea>
   </div>
 </div>
-                        <div class="row mb-3">
+<div class="row mb-3">
   <div class="col-md-6">
     <label for="mobile_no" class="form-label">Mobile No:</label>
     <div class="input-group">
@@ -62,7 +55,7 @@
   </div>
 
   <div class="col-md-6">
-    <label for="personal_email" class="form-label">Personal Email Id:</label>
+    <label for="personal_email" class="form-label">Email Id:</label>
     <div class="input-group">
       <span class="input-group-text"><i class="fa fa-envelope logo"></i></span>
       <input type="email" class="form-control" id="personal_email" name="personal_email" placeholder="Enter email address" required>
@@ -72,7 +65,7 @@
 <div class="row mb-3">
   <div class="col-md-6">
     <label for="total_experience" class="form-label">
-      TOTAL Number of Travel Trade Experience (Years):
+      Minimum DESIRED Travel Trade Experience (Years):
     </label>
     <div class="input-group">
       <span class="input-group-text"><i class="fa fa-briefcase logo"></i></span>
@@ -80,40 +73,68 @@
     </div>
   </div>
 
-  <div class="col-md-6">
-    <label for="current_city" class="form-label">
-      City of Present Job (3 Letter City Code):
+ <div class="row mb-3">
+  <div class="col-md-12">
+    <label class="form-label">
+      Specific Areas of Expertise in Travel Agency Operations:
+      <small class="text-muted d-block">
+        (Select below. In case of Managers, select all areas of work and select desired skills)
+      </small>
     </label>
-    <div class="input-group">
-      <span class="input-group-text"><i class="fa fa-city logo"></i></span>
-      <input type="text" class="form-control" id="current_city" name="current_city" maxlength="3" placeholder="e.g., DEL" required>
+    <div class="row">
+      <div class="col-md-4 mb-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Domestic Travel" id="domestic_travel">
+          <label class="form-check-label" for="domestic_travel">
+            <i class="fa fa-plane-departure me-1"></i> Domestic Travel
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Hotel Bookings & Car Hire" id="hotel_car">
+          <label class="form-check-label" for="hotel_car">
+            <i class="fa fa-hotel me-1"></i> Hotel Bookings & Car Hire
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="International Travel" id="intl_travel">
+          <label class="form-check-label" for="intl_travel">
+            <i class="fa fa-globe me-1"></i> International Travel
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="VISA Handling" id="visa_handling">
+          <label class="form-check-label" for="visa_handling">
+            <i class="fa fa-passport me-1"></i> VISA Handling
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Tours and Holiday Packages" id="tours">
+          <label class="form-check-label" for="tours">
+            <i class="fa fa-suitcase-rolling me-1"></i> TOURS AND HOLIDAY PACKAGES
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4 mb-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="areas_of_expertise[]" value="Accounting" id="accounting">
+          <label class="form-check-label" for="accounting">
+            <i class="fa fa-calculator me-1"></i> Accounting
+          </label>
+        </div>
+      </div>
     </div>
   </div>
-</div>                        <div class="form-group">
-                            <label>If willing to relocate:</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="willing_to_relocate" value="Yes" onclick="toggleRelocateCities(true)"> Yes</label>
-                                <label><input type="radio" name="willing_to_relocate" value="No" onclick="toggleRelocateCities(false)"> No</label>
-                            </div>
-                        </div>
-                        <div class="form-group conditional-field" id="preferred_cities_group">
-                            <label for="preferred_cities">Preferred Cities (comma-separated, e.g., DEL, MUM, BLR):</label>
-                            <input type="text" id="preferred_cities" name="preferred_cities">
-                        </div>
-                   <div class="mb-3">
-  <label for="current_salary" class="form-label">CURRENT SALARY (Rs.):</label>
-  <div class="input-group">
-    <span class="input-group-text logo">₹</span>
-    <input type="number" class="form-control" id="current_salary" name="current_salary" min="0" placeholder="Enter current salary">
-  </div>
 </div>
-<div class="mb-3">
-  <label for="cv_upload" class="form-label">Attach/Upload your CV/Resume here:</label>
-  <div class="input-group">
-    <span class="input-group-text"><i class="fa fa-paperclip logo"></i></span>
-    <input type="file" class="form-control" id="cv_upload" name="cv_upload" accept=".pdf,.doc,.docx" required>
-  </div>
-</div>
+
+                  
                        <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
   <i class="fa fa-tools me-2 logo"></i> CREATE YOUR SKILL SET
 </h3>
