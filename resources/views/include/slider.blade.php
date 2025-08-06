@@ -10,8 +10,8 @@
         <div class="swiper-slide">
             <img class="img-fluid" width="" height="" alt="Image" src="<?php echo $sliderData->slider_image;?>" />
             <div class="video-content">
-              <span>{!! $sliderData->slider_title; !!}</span>
-              <h1><?php echo $sliderData->sort_about;?></h1>
+              <span   class="cursor typewriter-animation">{!! $sliderData->slider_title; !!}</span>
+              <h1 class="cursor typewriter-animation"><?php echo $sliderData->sort_about;?></h1>
               <a href="<?php echo $sliderData->button_link;?>" aria-label="Explore The World">Get in touch</a>
             </div>
           </div>
@@ -21,7 +21,7 @@
             <img class="img-fluid" width="" height="" alt="Image" src="assets/img/banner-3.png" />
             <div class="video-content">
               <span>Travel Job </span>
-              <h1>Serving Since 2023</h1>
+              <h1 >Serving Since 2023</h1>
               <a href="{{ route('contactUs') }}" aria-label="Explore The World">Get in touch</a>
             </div>
           </div>
@@ -47,6 +47,25 @@
 <style>
 
 
+
+.cursor{
+    overflow:hidden;
+    white-space: nowrap;
+}
+.typewriter-animation {
+  animation: 
+    typewriter 5s steps(50) 1s 1 normal both, 
+    blinkingCursor 500ms steps(50) infinite normal;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blinkingCursor{
+  from { border-right-color: rgba(255,255,255,.75); }
+  to { border-right-color: transparent; }
+}
+
 .swiper-button-prev, .swiper-button-next {
   position: absolute;
   top: 200px;
@@ -62,5 +81,7 @@
   }
 }
 
+
 </style>
+
 
