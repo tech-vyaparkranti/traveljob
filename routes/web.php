@@ -46,6 +46,7 @@ Route::controller(HomePageController::class)->group(function(){
     Route::get("privacy-policy","privacyPolicy")->name("privacyPolicy");
     Route::get("services","destinations")->name("destinations");
     Route::get("profilesubmission","productPage")->name("productPage");
+    Route::get("employer","EmployerPage")->name("EmployerPage");
     Route::get("report","reportPage")->name("reportPage");
     Route::get("event","galleryPages")->name("galleryPages");
     Route::get("contact-us","contactUs")->name("contactUs");
