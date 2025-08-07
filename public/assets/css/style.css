@@ -557,7 +557,7 @@ section.chairperson {
     text-align: left;
     z-index: 2;
     justify-content: center;
-    top: 0;
+    top: 20px;
     bottom: 0;
     left: 10%;
     right: 10%;
@@ -1861,9 +1861,9 @@ section.our-service:before {
     }
 
     .video-content {
-        left: 20px;
+        left: 40px;
         right: 20px;
-        top: 120px;
+        top: 160px;
     }
 
     .footer-section .footer-item {
