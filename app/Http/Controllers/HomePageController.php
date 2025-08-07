@@ -25,24 +25,23 @@ class HomePageController extends Controller
     use CommonFunctions;
 
     public function homePage(){
-         try{
-            $service = OurServicesModel::all();
-             $aboutText =AboutUsModel::get();
-             $getAllProduts =ProductModel::all();
-             $testimonial = DB::table('testimonials')->where('approval_status','approved')->get();
-            $slider = DB::table('slider')->get();
-            $getChairManData =  DB::table('team')->where('post',"LIKE","%Founder%")->get();
-             $our_offers = (new OurOffersController())->getHomePageOffers();
-              $Recognitions   = PartnersModel::where('image_type','2')->get();
-             $partnersImages   = PartnersModel::where('image_type','1')->get();
-             $WebSetting = SettingModel::all();
-             return view("HomePage.dynamicHomePage",compact("our_offers","service","testimonial","slider","aboutText","getChairManData","getAllProduts","partnersImages","Recognitions","WebSetting"));
-        }catch(Exception $exception){
-            echo $exception->getMessage();
-            return false;
-        }
-
+    try {
+        $service = OurServicesModel::where('status', 1)->orderBy('position', 'asc')->get();
+        $aboutText = AboutUsModel::get();
+        $getAllProduts = ProductModel::all();
+        $testimonial = DB::table('testimonials')->where('approval_status', 'approved')->get();
+        $slider = DB::table('slider')->get();
+        $getChairManData = DB::table('team')->where('post', "LIKE", "%Founder%")->get();
+        $our_offers = (new OurOffersController())->getHomePageOffers();
+        $Recognitions = PartnersModel::where('image_type', '2')->get();
+        $partnersImages = PartnersModel::where('image_type', '1')->get();
+        $WebSetting = SettingModel::all();
+        return view("HomePage.dynamicHomePage", compact("our_offers", "service", "testimonial", "slider", "aboutText", "getChairManData", "getAllProduts", "partnersImages", "Recognitions", "WebSetting"));
+    } catch (Exception $exception) {
+        echo $exception->getMessage();
+        return false;
     }
+}
     public function aboutUs(){
     $WebSetting = SettingModel::all();
     $Recognitions = PartnersModel::where('image_type', '2')->get();

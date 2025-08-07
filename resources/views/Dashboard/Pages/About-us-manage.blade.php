@@ -151,37 +151,57 @@
 
         });
 
-        function DeleteAboutData(id) {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "This item will be deleted!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: "Yes, deleted it!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    if (id !== null & id !== undefined) {
-                        $.ajax({
-                            type: 'GET',
-                            url: "{{ route('aboutUs.delete') }}",
-                            data: {
-                                id: id,
-                                '_token': '{{ csrf_token() }}'
-                            },
-                            success: function(response) {
-                                if (response !== null && response !== undefined) {
-                                    console.log("my this slider is deleted");
-                                    console.log(response);
-                                    window.location.reload();
-                                }
-                            }
-                        })
+      function DeleteAboutData(id) {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "This item will be deleted!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (id !== null && id !== undefined) {
+                $.ajax({
+                    type: 'POST', // <-- Changed from GET to POST
+                    url: "{{ route('aboutUs.delete') }}",
+                    data: {
+                        id: id,
+                        _token: '{{ csrf_token() }}',
+                        _method: 'DELETE' // <-- Add method spoofing
+                    },
+                    success: function(response) {
+                        if (response && response.status) { // Check for status in response
+                            // Use a success message instead of just logging
+                            Swal.fire(
+                                'Deleted!',
+                                response.message,
+                                'success'
+                            );
+                            table.ajax.reload(); // Reload the DataTable
+                        } else {
+                             // Handle cases where deletion fails but returns a response
+                            Swal.fire(
+                                'Failed!',
+                                response.message || 'Something went wrong.',
+                                'error'
+                            );
+                        }
+                    },
+                    error: function(xhr) {
+                        console.error("Error:", xhr.responseText);
+                        Swal.fire(
+                            'Error!',
+                            'An error occurred. Check the console for details.',
+                            'error'
+                        );
                     }
-                }
-            })
+                });
+            }
         }
+    })
+}
 
         $(document).ready(function() {
             $("#submitForm").on("submit", function() {

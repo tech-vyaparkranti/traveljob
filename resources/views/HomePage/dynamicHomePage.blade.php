@@ -234,30 +234,61 @@
             @if(!empty($partnersImages))
                 @foreach ($partnersImages as $PartnerRow)
                     <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex justify-content-center">
-                        <div style="width:100%; max-width:400px; height:250px; overflow:hidden; border-radius:15px;">
-                            <img src="{{ url($PartnerRow->image) }}" alt="deHaat" class="img-fluid hover-zoom element" style="border-radius:20px; width:100%; height:100%; " />
-                        </div>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image-url="{{ url($PartnerRow->image) }}">
+                            <div class="partner-image-wrapper">
+                                <img src="{{ url($PartnerRow->image) }}" alt="Partner Logo" class="img-fluid hover-zoom rounded-3" />
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             @else
                 @php
                     $fallbackImages = [
-                        'assets/img/deHaat-logo.png',
-                        'assets/img/amrit.jpg',
-                        'assets/img/guiding.jpg'
+                        'https://via.placeholder.com/400x250/F8F9FA/333333?text=IATA',
+                        'https://via.placeholder.com/400x250/F8F9FA/333333?text=ASTA',
+                        'https://via.placeholder.com/400x250/F8F9FA/333333?text=Travel+Tech'
                     ];
                 @endphp
                 @foreach ($fallbackImages as $image)
                     <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex justify-content-center">
-                        <div style="width:100%; max-width:300px; height:250px; overflow:hidden; border-radius:15px;">
-                            <img src="{{ asset($image) }}" alt="Industry Logo" class="img-fluid" style="border-radius:20px; width:100%; height:100%; object-fit:cover;" />
-                        </div>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image-url="{{ $image }}">
+                            <div class="partner-image-wrapper">
+                                <img src="{{ $image }}" alt="Partner Logo" class="img-fluid hover-zoom rounded-3" />
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             @endif
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="" class="img-fluid" id="fullScreenImage" alt="Full Screen Image">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // This script handles the image modal
+    var imageModal = document.getElementById('imageModal');
+    imageModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        var imageUrl = button.getAttribute('data-bs-image-url');
+
+        // Update the modal's content
+        var modalImage = imageModal.querySelector('#fullScreenImage');
+        modalImage.src = imageUrl;
+    });
+</script>
 <style>
     </style>
     {{-- Testimonial Section End  --}}

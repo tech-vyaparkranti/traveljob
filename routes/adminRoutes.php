@@ -84,8 +84,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('TeamData',[TeamController::class,'GetAllData'])->name('team.data');
     Route::post('Teamsmaster',[TeamController::class,'SaveMaster'])->name('team.save.master');
     Route::get('getTeamDataById',[TeamController::class,'dataById'])->name('TeamDataBy.id');
-    Route::get('deleteTeam',[TeamController::class,'delete'])->name('team.delete');
-
+Route::post('deleteaboutUs',[AdminAboutUSController::class,'delete'])->name('aboutUs.delete');
 
     // For PROUDCT
     Route::get('manageproduct',[productController::class,'index'])->name('manageproduct');
