@@ -32,11 +32,10 @@
           <img 
             src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}" 
             alt="About Us" 
-            class="img-fluid w-100 shadow-sm hover-z" 
-            style="height: 300px;  border-radius: 10px;"
+            class="img-fluid w-100 shadow-sm hover-z image-height" 
+            style="  border-radius: 10px;"
           >
         </div>
-
         <!-- Text Column -->
         <div class="col-md-6 text-justify text-md-start" data-aos="fade-left">
           <p class="about-text mb-3 ">
@@ -63,7 +62,15 @@
   AOS.init();
 </script>
 <style>
-    
+     .image-height{
+        height:300px;
+     }
+    @media (max-width: 640px) { 
+        .image-height{
+            height:200px;
+        }
+    }
+ 
 .hover-zoom {
   transition: transform 0.3s ease;
 }
