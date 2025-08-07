@@ -119,4 +119,12 @@
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 </style>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 @endsection
