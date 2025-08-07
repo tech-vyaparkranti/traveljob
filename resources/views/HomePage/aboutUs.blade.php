@@ -20,19 +20,22 @@
             </div>
 
             <div class="site-title pb-3" style="padding-top:30px">
-                <h2 class="text-center">Objectives</h2>
+                <h2 class="text-center" stylr="margin-bottom:0px">Objectives</h2>
             </div>
             <div class="midd-content text-justify" style="" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
-                <ul>
-                    <li>To provide a seamless job search experience for travel industry professionals.</li>
-                    <li>To serve as a trusted hiring partner for travel agencies and corporate employers.</li>
-                    <li>To elevate the overall quality of employment within the travel sector by facilitating better matches based on skills, expertise, and aspirations.</li>
-                </ul>
-            </div>
+           <b> At Travel Jobs, we’re committed to transforming how hiring happens in the travel industry. Our key objectives include: </b>
+            <ul style="margin-top:5px;">
+  <li>Delivering a seamless and efficient job search experience for individuals pursuing a career in the travel and tourism industry.</li>
+  <li>Becoming a trusted hiring partner for travel agencies, tour operators, hospitality companies, airlines, cruise lines, and corporate travel departments.</li>
+  <li>Creating more meaningful matches between employers and job seekers by focusing on skills, cultural fit, career goals, and long-term aspirations.</li>
+  <li> Raising the standard of professionalism within the industry by promoting ethical hiring practices and supporting career development at every stage.</li>
+  <li> Helping fresh graduates and career switchers find their path in the travel industry with mentorship, resources, and entry-level opportunities.</li>
+</ul>
+  </div>
 
             @if(!empty($getDirectoreData))
-            <div class="site-title pt-2 pb-2" style="margin-top:20px">
-                <h2 class="text-center">Directors</h2>
+            <div class="site-title pt-2 pb-2" style="margin-top:30px">
+                <h2 class="text-center">Founder Message</h2>
             </div>
             <div class="row director-container" style="background:#f9f9f9" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
                 @foreach ($getDirectoreData as $directorRow)
@@ -62,7 +65,10 @@
                 @endforeach
             </div>
             @endif
-
+<div class="site-title pt-2 pb-2" style="margin-top:30px">
+                <h2 class="text-center">Founder Message</h2>
+            </div>
+            
             <div class="about-our-team row align-items-center my-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
                 <div class="col-md-5 text-center mb-3 mb-md-0">
                     <img src="{{ asset('assets/img/founder.jpeg') }}" alt="Dr. Anita Sharma" class="img-fluid rounded shadow">
@@ -119,4 +125,12 @@
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 </style>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 @endsection

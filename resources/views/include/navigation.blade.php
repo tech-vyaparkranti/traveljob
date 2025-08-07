@@ -12,7 +12,7 @@
     <div class="header-contaner">
         <div class="logo-section" >
             <div class="mobile-bars" hidden></div>
-            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo4.png' }}" class="img-fluid"  style="height:80px;width:190px" alt="TravelJob  Farmer Producer Company Limited"></a>
+            <a href="{{ url('/') }}" aria-level="Main logo"><img src="{{ isset($WebSetting['0']->logo) ? url($WebSetting['0']->logo) : './assets/img/logo4.png' }}" class="img-fluid"  style="height:80px;width:200px" alt="TravelJob  Farmer Producer Company Limited"></a>
         </div>
         <div class="slide-navigation">
             <div class="navbar-wrapper">

@@ -15,9 +15,9 @@
     </div>
     <!-- About Section End --> --}}
 
- <div class="destinations py-5" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
+ <div class="destinations py-5" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine" >
   <div class="custom-container">
-    <div class="offerings-container col-12">
+    <div class="offerings-container col-12" style="overflow-x:hidden">
       
       <!-- Section Title -->
       <div class="site-title text-center mb-4">
