@@ -33,7 +33,7 @@
             src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}" 
             alt="About Us" 
             class="img-fluid w-100 shadow-sm hover-z" 
-            style="height: 300px; object-fit: cover; border-radius: 10px;"
+            style="height: 300px;  border-radius: 10px;"
           >
         </div>
 
