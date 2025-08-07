@@ -10,8 +10,8 @@
         <div class="swiper-slide">
             <img class="img-fluid" width="" height="" alt="Image" src="<?php echo $sliderData->slider_image;?>" />
             <div class="video-content">
-              <span   class="cursor typewriter-animation">{!! $sliderData->slider_title; !!}</span>
-              <p class="cursor typewriter-animation" style="font-size:40px;font-weight:bold"><?php echo $sliderData->sort_about;?></p>
+              <span   class="cursor typewriter-animation bottomclass">{!! $sliderData->slider_title; !!}</span>
+              <p class="cursor typewriter-animation bottomclass" style="font-size:40px;font-weight:bold"><?php echo $sliderData->sort_about;?></p>
               <a href="<?php echo $sliderData->button_link;?>" aria-label="Explore The World">Get in touch</a>
             </div>
           </div>
@@ -45,7 +45,13 @@
 </div>
 
 <style>
-
+@media (max-width: 640px) {
+  .bottomclass{
+    font-size:15px !important;
+    padding:0px;
+    margin:0px;
+  }
+}
 
 
 .cursor {
@@ -54,8 +60,8 @@
 }
 .typewriter-animation {
   animation: 
-    typewriter 5s steps(50) 1s 1 normal both, 
-    blinkingCursor 500ms steps(50) infinite normal;
+    typewriter 2s steps(50) 1s 1 normal both, 
+    blinkingCursor 300ms steps(50) infinite normal;
 }
 @keyframes typewriter {
   from { width: 0; }
@@ -77,7 +83,7 @@
 }
 @media (max-width: 640px) { 
   .swiper-button-prev, .swiper-button-next {
-    top: 120px;
+    top: 90px;
   }
 }
 

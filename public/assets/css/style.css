@@ -545,8 +545,8 @@ section.chairperson {
 
 @media (max-width: 480px) {
     .video-banner {
-        height: 250px;
-        max-height: 250px;
+        height: 200px;
+        max-height: 200px;
     }
 }
 
@@ -767,7 +767,7 @@ section.chairperson {
 
 @media (max-width: 480px) {
     .video-block>.main-slider .swiper-slide img.img-fluid {
-        height: 250px !important;
+        height: 200px !important;
     }
 }
 
@@ -1861,9 +1861,9 @@ section.our-service:before {
     }
 
     .video-content {
-        left: 40px;
+        left: 20px;
         right: 20px;
-        top: 160px;
+        top: 150px;
     }
 
     .footer-section .footer-item {
