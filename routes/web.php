@@ -66,6 +66,7 @@ Route::get("get-home-page-dd",[DestinationController::class,"getHomePageDestinat
 Route::get("get-home-page-services",[OurServicesModelController::class,"getHomePageServices"])->name("getHomePageServices");
 Route::post("contact-us-form",[ContactUsController::class,"saveContactUsDetails"])->name("saveContactUsDetails");
 Route::get("get-testimonials-home-page", [TestimonialsController::class, "getHomePageTestimonials"])->name("getHomePageTestimonials");
+Route::get('teamdelete',[TeamController::class,'delete'])->name('team.delete');
 
 // require __DIR__.'/auth.php';
 
