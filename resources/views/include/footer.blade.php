@@ -76,7 +76,7 @@
                         <li><a href="{{ url('/') }}/terms-conditions">Terms & Conditions</a></li>
                         {{-- <li><a href="{{ route('shippingDeliverypolicy') }}">Shipping & Delivery Policy</a></li>
                         <li><a href="{{ route('CancellationRefundPolicy') }}">Cancellation & Refund Policy</a></li> --}}
-                        <li><a href="{{ url('/') }}/comingsoon">Privacy Policy</a></li>
+                        <!-- <li><a href="{{ url('/') }}/comingsoon">Privacy Policy</a></li> -->
                         <li><a href="{{ route('destinations') }}">Our Services</a></li>
                         <li><a href="{{ route('productPage') }}">Profile Submission</a></li>
                         <!-- <li><a href="{{ route('reportPage') }}">Report</a></li> -->
@@ -100,7 +100,8 @@
                         </div>
                         <div class="footer-item pb-3">
                             <label>Address:</label>
-                            <p>{{ isset($WebSetting['0']->address) ? $WebSetting['0']->address : 'Radhika Utasv Vatika, Vitthalpur, Sikar, Mirzapur(231306), Uttar Pradesh' }}</p>
+                            
+                            <p><i class="fa-solid fa-location-dot" style="padding-right:10px"></i>{{ isset($WebSetting['0']->address) ? $WebSetting['0']->address : 'Radhika Utasv Vatika, Vitthalpur, Sikar, Mirzapur(231306), Uttar Pradesh' }}</p>
                         </div>
                     </div>
                 </div>
