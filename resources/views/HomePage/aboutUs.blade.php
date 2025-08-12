@@ -70,10 +70,10 @@
             </div>
             
             <div class="about-our-team row align-items-center my-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
-                <div class="col-md-5 text-center mb-3 mb-md-0">
-                    <img src="{{ asset('assets/img/founder.jpeg') }}" alt="Dr. Anita Sharma" class="img-fluid rounded shadow">
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <img src="{{ asset('assets/img/founder.jpeg') }}" style="height:300px;width:300px" alt="Dr. Anita Sharma" class="img-fluid rounded shadow">
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <p class="text-justify">
                         With over 50 years in the global travel industry, I’ve worn many hats—having joined as an Agency Executive in January 1972 in Hyderabad, India, and has since taken me to Mumbai, Saudi Arabia, East Africa, and the United States, working across every significant segment of travel services.
                         Along the way, I’ve had the privilege of visiting more than 48 countries, forging connections and gaining a ground-level view of how travel works—and how it should work. I served as the President of Skal International Hyderabad (606) and as a member of the Skal India National Committee, always believing in the value of ethical business, trusted partnerships, and professional camaraderie.
@@ -86,7 +86,30 @@
                 </div>
             </div>
 
-            <div class="site-title pt-4" id="teams-sec">
+
+
+            <div class="site-title pt-2 pb-2" style="margin-top:30px">
+    <h2 class="text-center">Co-Founder Message</h2>
+</div>
+
+<div class="about-our-team row align-items-center my-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
+    
+    <div class="col-md-8">
+        <p class="text-justify">
+            With a strong background in travel operations and business strategy, I have spent decades creating innovative solutions for the global travel industry. 
+            My journey has taken me through diverse markets, collaborating with professionals from across continents to shape better travel experiences. 
+            I believe in empowering both companies and individuals by providing access to the right resources, opportunities, and networks. 
+            At TravelJobs.com, my goal is to help bridge gaps in the industry, encourage professional growth, and inspire the next generation of travel leaders.
+        </p>
+        <p class="text-end"><i><b>Vani Harkara</b></i></p>
+        <p class="text-end"><i><b>Co-Founder, TravelJobs.info</b></i></p>
+    </div>
+    <div class="col-md-4 text-center mb-3 mb-md-0">
+        <img src="{{ asset('assets/img/team1.jpeg') }}" style="height:300px;width:300px;" alt="Co-Founder Name" class="img-fluid rounded shadow">
+    </div>
+</div>
+
+            <!-- <div class="site-title pt-4" id="teams-sec">
                 <h2 class="text-left" style="margin-bottom:60px;text-align:center;">Our Team</h2>
             </div>
             <div class="row g-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
@@ -109,7 +132,7 @@
                     </div>
                 </div>
                 @endforelse
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

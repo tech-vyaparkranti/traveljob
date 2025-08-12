@@ -73,7 +73,7 @@
                     <h5 class="footer-title">Quick Link</h5>
                     <ul>
                         <li><a href="{{ route('aboutUs') }}">About Us</a></li>
-                        <li><a href="{{ url('/') }}/comingsoon">Terms & Conditions</a></li>
+                        <li><a href="{{ url('/') }}/terms-conditions">Terms & Conditions</a></li>
                         {{-- <li><a href="{{ route('shippingDeliverypolicy') }}">Shipping & Delivery Policy</a></li>
                         <li><a href="{{ route('CancellationRefundPolicy') }}">Cancellation & Refund Policy</a></li> --}}
                         <li><a href="{{ url('/') }}/comingsoon">Privacy Policy</a></li>
