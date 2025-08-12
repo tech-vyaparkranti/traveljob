@@ -11,7 +11,7 @@
             <img class="img-fluid" width="" height="" alt="Image" src="<?php echo $sliderData->slider_image;?>" />
             <div class="video-content">
               <span   class="cursor typewriter-animation">{!! $sliderData->slider_title; !!}</span>
-              <h1 class="cursor typewriter-animation"><?php echo $sliderData->sort_about;?></h1>
+              <h3 class="cursor typewriter-animation"><?php echo $sliderData->sort_about;?></h3>
               <a href="<?php echo $sliderData->button_link;?>" aria-label="Explore The World">Get in touch</a>
             </div>
           </div>

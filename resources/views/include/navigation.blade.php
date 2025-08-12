@@ -4,7 +4,7 @@
             <li><a  style="color:black" href="mailto:{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@Traveljob.com' }}"><i class="fa fa-envelope"></i>&nbsp;<span>{{ isset($WebSetting['0']->email) ? $WebSetting['0']->email : 'info@TravelJob.com' }}</span></a></li>
             <li><a  style="color:black" href="tel:{{ isset($WebSetting['0']->mobile) ? $WebSetting['0']->mobile : '+91 9876543210' }}"><i class="fa fa-phone"  style="color:black"></i>&nbsp;<span>{{ isset($WebSetting['0']->mobile) ? $WebSetting['0']->mobile : '+91 9876543210' }}</span></a></li>
         </ul>
-        <div class="gtranslate_wrapper"></div>
+        {{-- <div class="gtranslate_wrapper"></div> --}}
     </div>
 </div>
 <!-- Header section Start -->
@@ -19,19 +19,14 @@
                 <ul class="navbar-block">
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ route('aboutUs') }}">About Us</a>
-                        {{-- <i class="drop-plus" hidden></i>
-                        <ul class="sublist">
-                            <li><a href="{{ route('aboutUs') }}#mission-sec">Vision/Mission</a></li>
-                            <li><a href="{{ route('aboutUs') }}#teams-sec">Our Teams</a></li>
-                        </ul> --}}
                     </li>
-                    {{-- <li><a href="{{ route('destinations') }}">Our Services</a></li> --}}
-                    <li><a href="{{ route('productPage') }}">Profile submission</a></li>
-                    <li><a href="{{ route('EmployerPage') }}">Employer</a></li>
-
-                    {{-- <li><a href="{{ route('reportPage') }}">Report</a></li>
-                    <li><a href="{{ route('galleryPages') }}">Event</a></li>
-                     <li><a href="{{ route('blogPage') }}">Blog</a></li> --}}
+<li class="dropdown">
+    <a href="">Profile Submission</a>
+    <ul class="dropdown-menu">
+        <li><a href="{{ route('productPage') }}">Job Seeker</a></li>
+        <li><a href="{{ route('EmployerPage') }}">Employer</a></li>
+    </ul>
+{{-- </li>                    <li><a href="{{ route('EmployerPage') }}">Employer</a></li> --}}
                     <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
                 </ul>
             </div>
@@ -54,5 +49,39 @@ header.fixed-header .mobile-bars:before,
 header.fixed-header .mobile-bars:after {
     background: white !important;
 }
+
+.navbar-block li {
+    position: relative;
+}
+
+.navbar-block .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+.navbar-block .dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar-block .dropdown-menu li a:hover {
+    background: #f5f5f5;
+}
+
+.navbar-block li:hover > .dropdown-menu {
+    display: block;
+}
+
 
 </style>

@@ -28,14 +28,31 @@
       <div class="row align-items-center">
         
         <!-- Image Column -->
-        <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
-          <img 
-            src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}" 
-            alt="About Us" 
-            class="img-fluid w-100 shadow-sm" 
-            style="height: 300px; object-fit: cover; border-radius: 10px;"
-          >
-        </div>
+       <style>
+/* CSS for the always-on 3D effect */
+.image-3d-effect {
+  position: relative;
+  /* Apply the 3D transform directly */
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+  /* Apply a default box-shadow to give it depth */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-3d-effect img {
+  border-radius: 10px;
+}
+</style>
+
+<div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+  <div class="image-3d-effect">
+    <img 
+      src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}" 
+      alt="About Us" 
+      class="img-fluid w-100 shadow-sm" 
+      style="height: 300px; object-fit: cover; border-radius: 10px;"
+    >
+  </div>
+</div>
 
         <!-- Text Column -->
         <div class="col-md-6 text-justify text-md-start" data-aos="fade-left">
