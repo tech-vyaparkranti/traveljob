@@ -699,7 +699,6 @@
 </div>
 
 <style>
-
     .terms-wrapper {
     margin: 15px 0;
     font-size: 19px;
@@ -713,7 +712,6 @@
 .terms-wrapper a:hover {
     text-decoration: none;
 }
-
     
     /* General body and font styling */
     body {

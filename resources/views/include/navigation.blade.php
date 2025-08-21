@@ -20,13 +20,20 @@
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ route('aboutUs') }}">About Us</a>
                     </li>
-<li class="dropdown">
+                    {{-- <li><a href="{{ route('destinations') }}">Our Services</a></li> --}}
+                    <li class="dropdown">
     <a href="">Profile Submission</a>
     <ul class="dropdown-menu">
         <li><a href="{{ route('productPage') }}">Job Seeker</a></li>
         <li><a href="{{ route('EmployerPage') }}">Employer</a></li>
     </ul>
-{{-- </li>                    <li><a href="{{ route('EmployerPage') }}">Employer</a></li> --}}
+</li>
+                    <!-- <li><a href="{{ route('productPage') }}">Profile submission</a></li>
+                    <li><a href="{{ route('EmployerPage') }}">Employer</a></li> -->
+
+                    {{-- <li><a href="{{ route('reportPage') }}">Report</a></li>
+                    <li><a href="{{ route('galleryPages') }}">Event</a></li>
+                     <li><a href="{{ route('blogPage') }}">Blog</a></li> --}}
                     <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
                 </ul>
             </div>
@@ -49,7 +56,6 @@ header.fixed-header .mobile-bars:before,
 header.fixed-header .mobile-bars:after {
     background: white !important;
 }
-
 .navbar-block li {
     position: relative;
 }
@@ -71,7 +77,7 @@ header.fixed-header .mobile-bars:after {
 .navbar-block .dropdown-menu li a {
     display: block;
     padding: 10px 15px;
-    color: black;
+    color: black !important;
     text-decoration: none;
 }
 
@@ -82,6 +88,4 @@ header.fixed-header .mobile-bars:after {
 .navbar-block li:hover > .dropdown-menu {
     display: block;
 }
-
-
 </style>

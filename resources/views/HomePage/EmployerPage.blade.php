@@ -766,16 +766,36 @@
         <label><input type="radio" name="acc_reconcile_bsp" value="No"> No</label>
       </div>
     </div>
+<div class="form-group terms-wrapper">
+    <label>
+        <input type="checkbox" name="agree_terms" required>
+        I agree to the <a href="{{ route('termsConditions') }}" target="_blank">Terms & Conditions</a>.
+    </label>
+</div>
 
     <div class="">
       <button type="submit" class="btn btn-primary">Submit Profile</button>
     </div>
+
   </form>
 </div>
       </div>
       </div></div>
       </div></div>
 <style>
+  .terms-wrapper {
+    margin: 15px 0;
+    font-size: 19px;
+}
+
+.terms-wrapper a {
+    color: #ff6b35;
+    text-decoration: underline;
+}
+
+.terms-wrapper a:hover {
+    text-decoration: none;
+}
     
     /* General body and font styling */
     body {
