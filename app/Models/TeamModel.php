@@ -9,6 +9,12 @@ class TeamModel extends Model
 {
     use HasFactory;
 
-    protected $table = "team";
-    protected $fillable = ['id', 'name', 'image', 'post', 'created_at'];
+    protected $table = 'team'; // or whatever your table name is
+
+    protected $fillable = [
+        'name',
+        'post',
+        'message',   // ✅ added
+        'image',
+    ];
 }

@@ -5,7 +5,7 @@
 
 <link rel="shortcut icon" href="assets/img/logo4.png" type="image/x-icon">
 
-<link href="https://torna.in/" rel="canonical" />
+<link href="https://traveljobs.info/" rel="canonical" />
 
  <!-- Site Metas -->
 <title>@yield('title')</title>

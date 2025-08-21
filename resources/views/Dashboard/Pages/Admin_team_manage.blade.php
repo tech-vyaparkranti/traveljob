@@ -13,28 +13,60 @@
                 <x-input-with-label-element id="name" type="text" label="Name"
                     placeholder="Please Enter Name" name="name" required></x-input-with-label-element>
 
-                <x-input-with-label-element id="image" type="file" accept="image/*" label="Image"
-                    placeholder="Image" name="image" required></x-input-with-label-element>
+                {{-- Message Field with Summernote --}}
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control summernote" id="message" name="message"
+                        placeholder="Please Enter Message"></textarea>
+                </div>
+
+                {{-- Image Field --}}
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
+
+                    {{-- Preview old image when editing --}}
+                    <div id="imagePreview" class="mt-2" style="display:none;">
+                        <p>Current Image:</p>
+                        <img src="" id="previewImg" class="img-thumbnail" style="max-width:150px;">
+                    </div>
+                </div>
 
                 <x-form-buttons></x-form-buttons>
             </x-form-element>
-
         </x-card-element>
 
         <x-card-element header="Team Data">
-            <x-data-table>
-
-            </x-data-table>
+            <x-data-table></x-data-table>
         </x-card-element>
     </x-content-div>
 @endsection
 
 @section('script')
+    {{-- Summernote CSS & JS --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
 
     <script type="text/javascript">
         let site_url = '{{ url('/') }}';
         let table = "";
+
         $(function() {
+            // Initialize Summernote
+            $('.summernote').summernote({
+                placeholder: 'Enter message here...',
+                tabsize: 2,
+                height: 200,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['fontsize', 'color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['insert', ['link', 'picture']],
+                    ['view', ['fullscreen', 'codeview']]
+                ]
+            });
+
+            // Initialize DataTable
             table = $('.data-table').DataTable({
                 processing: true,
                 serverSide: true,
@@ -47,48 +79,66 @@
                     }
                 },
                 columns: [{
-                    data: "DT_RowIndex",
-                    orderable: false,
-                    searchable: false,
-                    title: "Sr.No."
-                }, {
-                    data: 'id',
-                    name: 'id',
-                    title: 'Id',
-                    visible: false
-                }, {
-                    data: 'post',
-                    name: 'post',
-                    title: 'Designation'
-                }, {
-                    data: 'name',
-                    name: 'name',
-                    title: 'Name'
-                }, {
-                    data: 'image',
-                    render: function(data, type, row) {
-                        let image = '';
-                        if (data) {
-                            image += '<img alt="Stored Image" src="' + site_url + data +
-                                '" class="img-thumbnail">';
-                        }
-                        return image;
+                        data: "DT_RowIndex",
+                        orderable: false,
+                        searchable: false,
+                        title: "Sr.No."
                     },
-                    orderable: false,
-                    searchable: false,
-                    title: "Image"
-                }, {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false,
-                    title: 'Action'
-                }, ],
+                    {
+                        data: 'id',
+                        name: 'id',
+                        title: 'Id',
+                        visible: false
+                    },
+                    {
+                        data: 'post',
+                        name: 'post',
+                        title: 'Designation'
+                    },
+                    {
+                        data: 'name',
+                        name: 'name',
+                        title: 'Name'
+                    },
+                    {
+                        data: 'message',
+                        name: 'message',
+                        title: 'Message',
+                        render: function(data, type, row) {
+                            // Show limited text with tooltip
+                            let shortText = data ? data.replace(/(<([^>]+)>)/ig, "").substring(0, 50) + '...' : '';
+                            return `<span title="${data}">${shortText}</span>`;
+                        }
+                    },
+                    {
+                        data: 'image',
+                        render: function(data, type, row) {
+                            let image = '';
+                            if (data) {
+                                image += '<img alt="Stored Image" src="' + site_url + data +
+                                    '" class="img-thumbnail" style="max-width:100px">';
+                            }
+                            return image;
+                        },
+                        orderable: false,
+                        searchable: false,
+                        title: "Image"
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false,
+                        title: 'Action'
+                    },
+                ],
                 order: [
                     [1, "desc"]
                 ]
             });
         });
+
+        // Handle edit button click
         $(document).on("click", ".edit", function() {
             $.ajax({
                 type: 'GET',
@@ -103,7 +153,17 @@
                         $("#id").val(row['id']);
                         $("#name").val(row['name']);
                         $("#post").val(row['post']);
+                        $('#message').summernote('code', row['message']); // set Summernote content
                         $("#action").val("update");
+
+                        // ✅ Show image preview if exists
+                        if (row['image']) {
+                            $("#previewImg").attr("src", site_url + row['image']);
+                            $("#imagePreview").show();
+                        } else {
+                            $("#imagePreview").hide();
+                        }
+
                         scrollToDiv();
                     } else {
                         errorMessage(response.message);
@@ -115,6 +175,7 @@
             });
         });
 
+        // Delete function
         function DeleteData(id) {
             Swal.fire({
                 title: 'Are you sure?',
@@ -123,10 +184,10 @@
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "Yes, deleted it!"
+                confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    if (id !== null & id !== undefined) {
+                    if (id !== null && id !== undefined) {
                         $.ajax({
                             type: 'GET',
                             url: "{{ route('team.delete') }}",
@@ -136,8 +197,6 @@
                             },
                             success: function(response) {
                                 if (response !== null && response !== undefined) {
-                                    console.log("my this slider is deleted");
-                                    console.log(response);
                                     window.location.reload();
                                 }
                             }
@@ -147,6 +206,7 @@
             })
         }
 
+        // Submit form
         $(document).ready(function() {
             $("#submitForm").on("submit", function() {
                 var form = new FormData(this);
@@ -169,7 +229,6 @@
                     }
                 });
             });
-
         });
     </script>
     @include('Dashboard.include.dataTablesScript')
