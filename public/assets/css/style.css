@@ -545,8 +545,8 @@ section.chairperson {
 
 @media (max-width: 480px) {
     .video-banner {
-        height: 250px;
-        max-height: 250px;
+        height: 200px;
+        max-height: 200px;
     }
 }
 
@@ -557,7 +557,7 @@ section.chairperson {
     text-align: left;
     z-index: 2;
     justify-content: center;
-    top: 0;
+    top: 20px;
     bottom: 0;
     left: 10%;
     right: 10%;
@@ -767,7 +767,7 @@ section.chairperson {
 
 @media (max-width: 480px) {
     .video-block>.main-slider .swiper-slide img.img-fluid {
-        height: 250px !important;
+        height: 200px !important;
     }
 }
 
@@ -893,7 +893,7 @@ section.chairperson {
 
 .destinations-block {
     margin: 10px;
-    padding: 10px;
+
     border: 1px solid lightgray;
     border-radius: 10px;
 }
@@ -1863,7 +1863,7 @@ section.our-service:before {
     .video-content {
         left: 20px;
         right: 20px;
-        top: 120px;
+        top: 150px;
     }
 
     .footer-section .footer-item {
