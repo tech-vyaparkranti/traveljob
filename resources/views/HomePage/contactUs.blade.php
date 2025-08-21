@@ -125,8 +125,7 @@
                             <!-- google-map-area start -->
                             <div class="google-map-area mb-20">
                                 <!--  Map Section -->
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14293.264434401897!2d83.56535606441545!3d26.413273730140375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39917d83a361fec7%3A0xa6d50fd7b297b6d5!2sVitthalpur%2C%20Uttar%20Pradesh%20274204!5e0!3m2!1sen!2sin!4v1712610091439!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.977637466187!2d78.45519097526402!3d17.412860802070668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb974676d0dae7%3A0x62f09ceccf9310b6!2sManoj%20Apartments!5e0!3m2!1sen!2sin!4v1755773403037!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                            </div>
                         </div>
                     </div>
                 </div>
