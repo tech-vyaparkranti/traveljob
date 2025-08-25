@@ -136,7 +136,7 @@
 
                   
                        <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
-  <i class="fa fa-tools me-2 logo"></i> CREATE YOUR SKILL SET
+  <i class="fa fa-tools me-2 logo"></i> DESIRED SKILL SET
 </h3>
 
                         <h4>Domestic Travel</h4>

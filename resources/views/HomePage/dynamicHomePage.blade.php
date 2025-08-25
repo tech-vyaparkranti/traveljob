@@ -28,16 +28,16 @@
       <div class="row align-items-center">
         
         <!-- Image Column -->
-        <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+        <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-right">
           <img 
             src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}" 
             alt="About Us" 
             class="img-fluid w-100 shadow-sm hover-z image-height" 
-            style="  border-radius: 10px;"
+            style="  border-radius: 50%"
           >
         </div>
         <!-- Text Column -->
-        <div class="col-md-6 text-justify text-md-start" data-aos="fade-left">
+        <div class="col-md-9 text-justify text-md-start" data-aos="fade-left">
           <p class="about-text mb-3 ">
             {!! isset($aboutText['0']->sort_about_us) 
                 ? $aboutText['0']->sort_about_us 
@@ -63,11 +63,11 @@
 </script>
 <style>
      .image-height{
-        height:300px;
+        height:280px;
      }
     @media (max-width: 640px) { 
         .image-height{
-            height:200px;
+            height:340px;
         }
     }
  
@@ -204,7 +204,7 @@
 <!
 <div class="traveljobs-founders-slider" data-aos="fade-up" data-aos-duration="1500">
      <div class="site-title pb-4">
-            <h2 class="text-center">Meet the Team Behind TravelJobs</h2>
+            <h2 class="text-center">Meet the Men Behind TravelJobs</h2>
             {{-- <p class="text-center">Turn your love for travel into a career — the world is hiring!</p> --}}
         </div>
     <div class="slider-container">
@@ -363,7 +363,7 @@
     <section class="testimonial pt-5 pb-4">
         <div class="custom-container">
             <div class="site-title pb-3">
-                <h2 class="text-center">Testimonial</h2>
+                <h2 class="text-center">Commendations</h2>
                 <p class="text-center text-white">Include quotes or stories from Jobseekers who have benefited from <b>Travel Job  FPO's</b> services.</p>
             </div>
             <div class="swiper testimonials mb-5">
@@ -371,7 +371,7 @@
                     @if(isset($testimonial) && $testimonial->count() > 0)
                         @foreach ($testimonial as $testimonialValue)
                                 <div class="swiper-slide">
-                                    <div class="testimonials-block text-center">
+                                    <div class="testimonials-block text-center method2">
                                         <div class="testimonials-title"><?=$testimonialValue->client_name?>
                                             {{-- <span>Farmer</span> --}}
                                         </div>
@@ -386,7 +386,8 @@
             </div>
         </div>
     </section>
-  
+  <style>
+   </style>
 <section class="our_partner pt-5 pb-2" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
     <div class="custom-container">
         <div class="site-title pb-3">
