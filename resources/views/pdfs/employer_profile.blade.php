@@ -206,7 +206,7 @@
         </div>
 
         <div class="section">
-            <h2>International Travel Expertise</h2>
+            <h2>International Travel - Basic Skills (Base Positions)</h2>
             <table>
                 <thead>
                     <tr><th>Skill</th><th>Proficiency</th><th>Details</th></tr>
@@ -227,18 +227,33 @@
                         @endif
                     </td></tr>
                     <tr><td style="color:black;font-weight:bold">Queue PNRs</td><td><span class="yes-no {{ $employer->intl_queue_pnrs ? 'yes' : 'no' }}">{{ $employer->intl_queue_pnrs ? 'Yes' : 'No' }}</span></td><td></td></tr>
-                    <tr><td style="color:black;font-weight:bold">First Reissue</td><td><span class="yes-no {{ $employer->intl_first_reissue ? 'yes' : 'no' }}">{{ $employer->intl_first_reissue ? 'Yes' : 'No' }}</span></td><td></td></tr>
+                     </tbody>
+            </table>
+        </div>
+<div class="section">
+     <h2>International Travel - Advanced Skills (Senior Positions)</h2>
+           
+    <table>
+        <thead>
+    <tr><th>Skill</th><th>Proficiency</th><th>Details</th></tr>
+                
+        </thead>
+        <tbody>
+              <tr><td style="color:black;font-weight:bold">First Reissue</td><td><span class="yes-no {{ $employer->intl_first_reissue ? 'yes' : 'no' }}">{{ $employer->intl_first_reissue ? 'Yes' : 'No' }}</span></td><td></td></tr>
                     <tr><td style="color:black;font-weight:bold">Subsequent Reissue</td><td><span class="yes-no {{ $employer->intl_subsequent_reissue ? 'yes' : 'no' }}">{{ $employer->intl_subsequent_reissue ? 'Yes' : 'No' }}</span></td><td></td></tr>
                     <tr><td style="color:black;font-weight:bold">Ticket Refunds</td><td><span class="yes-no {{ $employer->intl_ticket_refunds ? 'yes' : 'no' }}">{{ $employer->intl_ticket_refunds ? 'Yes' : 'No' }}</span></td><td></td></tr>
                     <tr><td style="color:black;font-weight:bold">HOTAC Rooms</td><td><span class="yes-no {{ $employer->intl_hotac_rooms ? 'yes' : 'no' }}">{{ $employer->intl_hotac_rooms ? 'Yes' : 'No' }}</span></td><td></td></tr>
                     <tr><td style="color:black;font-weight:bold">Group PNR</td><td><span class="yes-no {{ $employer->intl_group_pnr ? 'yes' : 'no' }}">{{ $employer->intl_group_pnr ? 'Yes' : 'No' }}</span></td><td></td></tr>
                     <tr><td style="color:black;font-weight:bold">Issue EMD</td><td><span class="yes-no {{ $employer->intl_issue_emd ? 'yes' : 'no' }}">{{ $employer->intl_issue_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
+                  
                     <tr><td style="color:black;font-weight:bold">Standalone EMD</td><td><span class="yes-no {{ $employer->intl_standalone_emd ? 'yes' : 'no' }}">{{ $employer->intl_standalone_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
-                    <tr><td style="color:black;font-weight:bold">Associated EMD</td><td><span class="yes-no {{ $employer->intl_associated_emd ? 'yes' : 'no' }}">{{ $employer->intl_associated_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
-                </tbody>
-            </table>
-        </div>
-
+                    <tr><td style="color:black;font-weight:bold">Associated EMD</td><td ><span class="yes-no {{ $employer->intl_associated_emd ? 'yes' : 'no' }}">{{ $employer->intl_associated_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
+                  
+                    <tr><td style="color:black;font-weight:bold">Manage Queues and update PNRs</td><td><span class="yes-no {{ $employer->intl_mng_queues_upd_pnrs ? 'yes' : 'no' }}">{{ $employer->intl_associated_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
+             
+        </tbody>
+    </table>
+</div>
         <div class="section">
             <h2>Visa Processing Expertise</h2>
             <table>

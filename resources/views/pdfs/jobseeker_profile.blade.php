@@ -290,6 +290,8 @@
             </table>
         </div>
         <div class="section">
+               <h2>International Travel - Advanced Skills (Senior Positions)</h2>
+         
             <table>
                 <thead>
                     <tr><th>Skill</th><th>Proficiency</th><th>Details</th></tr>
@@ -303,7 +305,7 @@
                     <tr><td style="color:black;font-weight:bold">Issue EMD</td><td ><span class="yes-no {{ $jobSeeker->intl_issue_emd ? 'yes' : 'no' }}">{{ $jobSeeker->intl_issue_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
                     <tr><td style="color:black;font-weight:bold">Standalone EMD</td><td ><span class="yes-no {{ $jobSeeker->intl_standalone_emd ? 'yes' : 'no' }}">{{ $jobSeeker->intl_standalone_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
                     <tr><td style="color:black;font-weight:bold">Associated EMD</td><td ><span class="yes-no {{ $jobSeeker->intl_associated_emd ? 'yes' : 'no' }}">{{ $jobSeeker->intl_associated_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
-                    <tr><td style="color:black;font-weight:bold">Manage Queues and update PNRs</td><td ><span class="yes-no {{ $jobSeeker->intl_associated_emd ? 'yes' : 'no' }}">{{ $jobSeeker->intl_associated_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
+                    <tr><td style="color:black;font-weight:bold">Manage Queues and update PNRs</td><td ><span class="yes-no {{ $jobSeeker->intl_mng_queues_upd_pnrs ? 'yes' : 'no' }}">{{ $jobSeeker->intl_associated_emd ? 'Yes' : 'No' }}</span></td><td></td></tr>
     
                 </tr>
                 </tbody>
