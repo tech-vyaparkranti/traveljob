@@ -62,6 +62,7 @@ class JobSeeker extends Model
         'intl_issue_emd',
         'intl_standalone_emd',
         'intl_associated_emd',
+        'intl_mng_queues_upd_pnrs',
 
         'visa_aware_procedures',
         'visa_handled_personally',
@@ -145,6 +146,8 @@ class JobSeeker extends Model
         'intl_issue_emd' => 'boolean',
         'intl_standalone_emd' => 'boolean',
         'intl_associated_emd' => 'boolean',
+         'intl_mng_queues_upd_pnrs'=>'boolean',
+       
         'visa_aware_procedures' => 'boolean',
         'visa_handled_personally' => 'boolean',
         'visa_in_department' => 'boolean',
