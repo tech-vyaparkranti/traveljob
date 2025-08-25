@@ -66,11 +66,11 @@
             </div>
             @endif
 {{-- Team Messages Section --}}
-@foreach($teamData as $key => $team)
-    <div class="site-title pt-2 pb-2" style="margin-top:30px">
-        <h2 class="text-center">{{ $team->post }} Message</h2>
-    </div>
 
+    <div class="site-title pt-2 pb-2" style="margin-top:30px">
+        <h2 class="text-center">Founder Message</h2>
+    </div>
+@foreach($teamData as $key => $team)
     <div class="about-our-team row align-items-center my-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
         {{-- Alternate image placement left/right --}}
         @if($key % 2 == 0)

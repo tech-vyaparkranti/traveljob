@@ -36,7 +36,9 @@ class HomePageController extends Controller
         $Recognitions = PartnersModel::where('image_type', '2')->get();
         $partnersImages = PartnersModel::where('image_type', '1')->get();
         $WebSetting = SettingModel::all();
-        return view("HomePage.dynamicHomePage", compact("our_offers", "service", "testimonial", "slider", "aboutText", "getChairManData", "getAllProduts", "partnersImages", "Recognitions", "WebSetting"));
+        $teamData = TeamModel::all();
+
+        return view("HomePage.dynamicHomePage", compact("our_offers", "service", "testimonial", "slider", "aboutText", "getChairManData", "getAllProduts", "partnersImages", "Recognitions", "WebSetting","teamData"));
     } catch (Exception $exception) {
         echo $exception->getMessage();
         return false;

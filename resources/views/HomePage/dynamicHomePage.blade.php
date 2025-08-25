@@ -201,668 +201,145 @@
 }
 </style>
     <!-- Destinations Section End -->
-     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelJobs.info - Founders</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
-    <style>
-        /* Scoped styles to prevent conflicts - all styles prefixed with .traveljobs-founders-slider */
-
-
-        .traveljobs-founders-slider {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-        }
-
-        .traveljobs-founders-slider .slider-container {
-            width: 100%;
-            max-width: none;
-            height: auto;
-            min-height: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: none;
-            margin: 30px auto;
-        }
-
-        .traveljobs-founders-slider .founders-swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .traveljobs-founders-slider .founders-swiper .swiper-slide {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .traveljobs-founders-slider .slide-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            padding: 40px 60px;
-            width: 100%;
-            max-width: none;
-            align-items: center;
-            margin: 0;
-        }
-
-        .traveljobs-founders-slider .founder-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            transform: perspective(1000px) rotateY(-5deg);
-            transition: transform 0.3s ease;
-        }
-
-        .traveljobs-founders-slider .founder-image:hover {
-            transform: perspective(1000px) rotateY(0deg) scale(1.05);
-        }
-
-        .traveljobs-founders-slider .founder-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .traveljobs-founders-slider .founder-info {
-            padding: 0;
-            margin: 0;
-        }
-
-        .traveljobs-founders-slider .founder-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #030358;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            line-height: 1;
-        }
-
-        .traveljobs-founders-slider .founder-subtitle {
-            font-size: 1.3rem;
-            color: #7f8c8d;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-
-        .traveljobs-founders-slider .founder-description {
-            font-size: 0.9rem;
-            line-height: 1.8;
-            color: #34495e;
-            text-align: justify;
-        }
-
-        .traveljobs-founders-slider .founder-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-top: 15px;
-            text-align: right;
-        }
-
-        .traveljobs-founders-slider .founder-position {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            font-weight: 500;
-            text-align: right;
-            margin-top: 2px;
-        }
-
-        /* Scoped Swiper Navigation */
-        .traveljobs-founders-slider .founders-swiper .swiper-button-next,
-        .traveljobs-founders-slider .founders-swiper .swiper-button-prev {
-            color: #2c3e50;
-            background: rgba(255,255,255,0.9);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .traveljobs-founders-slider .founders-swiper .swiper-button-next:hover,
-        .traveljobs-founders-slider .founders-swiper .swiper-button-prev:hover {
-            background: #2c3e50;
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .traveljobs-founders-slider .founders-swiper .swiper-button-next:after,
-        .traveljobs-founders-slider .founders-swiper .swiper-button-prev:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        /* Scoped Pagination */
-        .traveljobs-founders-slider .founders-swiper .swiper-pagination-bullet {
-            width: 15px;
-            height: 15px;
-            background: rgba(44, 62, 80, 0.3);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .traveljobs-founders-slider .founders-swiper .swiper-pagination-bullet-active {
-            background: #2c3e50;
-            transform: scale(1.3);
-        }
-
-        /* Co-founder slide styling */
-        .traveljobs-founders-slider .slide-content.reverse {
-            grid-template-columns: 2fr 1fr;
-        }
-
-        .traveljobs-founders-slider .slide-content.reverse .founder-image {
-            order: 2;
-            transform: perspective(1000px) rotateY(5deg);
-        }
-
-        .traveljobs-founders-slider .slide-content.reverse .founder-image:hover {
-            transform: perspective(1000px) rotateY(0deg) scale(1.05);
-        }
-
-        .traveljobs-founders-slider .slide-content.reverse .founder-info {
-            order: 1;
-        }
-
-        .traveljobs-founders-slider .slide-content.reverse .founder-name,
-        .traveljobs-founders-slider .slide-content.reverse .founder-position {
-            text-align: left;
-        }
-
-        /* Comprehensive Responsive Design */
-        
-        /* Extra Large Desktops (1440px+) */
-        @media (min-width: 1440px) {
-            .traveljobs-founders-slider .slider-container {
-                max-width: none;
-            }
-            
-            .traveljobs-founders-slider .slide-content {
-                gap: 80px;
-                padding: 80px 100px;
-                grid-template-columns: 1fr 2fr;
-            }
-            
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 2fr 1fr;
-            }
-            
-            .traveljobs-founders-slider .founder-title {
-                font-size: 2rem;
-            }
-            
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Large Desktops (1200px - 1439px) */
-        @media (min-width: 1200px) and (max-width: 1439px) {
-            .traveljobs-founders-slider .slider-container {
-                max-width: none;
-                height: 700px;
-            }
-            
-            .traveljobs-founders-slider .slide-content {
-                gap: 60px;
-                padding: 60px 80px;
-                grid-template-columns: 1fr 2fr;
-            }
-            
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 2fr 1fr;
-            }
-        }
-
-        /* Medium Desktops (992px - 1199px) */
-        @media (min-width: 992px) and (max-width: 1199px) {
-            .traveljobs-founders-slider .slider-container {
-                height: 650px;
-            }
-            
-            .traveljobs-founders-slider .slide-content {
-                gap: 50px;
-                padding: 50px 70px;
-                grid-template-columns: 1fr 2fr;
-            }
-            
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 2fr 1fr;
-            }
-            
-            .traveljobs-founders-slider .founder-title {
-                font-size: 2rem;
-            }
-            
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.9rem;
-            }
-            
-            .traveljobs-founders-slider .founder-image img {
-                height: 350px;
-            }
-        }
-
-        /* Small Desktops/Large Tablets (768px - 991px) */
-        @media (min-width: 768px) and (max-width: 991px) {
-            .traveljobs-founders-slider .slider-container {
-                height: 600px;
-            }
-            
-            .traveljobs-founders-slider .slide-content {
-                gap: 40px;
-                padding: 40px 60px;
-                grid-template-columns: 1fr 2fr;
-            }
-            
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 2fr 1fr;
-            }
-            
-            .traveljobs-founders-slider .founder-title {
-                font-size: 2rem;
-            }
-            
-            .traveljobs-founders-slider .founder-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.95rem;
-                line-height: 1.7;
-            }
-            
-            .traveljobs-founders-slider .founder-image img {
-                height: 320px;
-            }
-            
-            .traveljobs-founders-slider .founder-name {
-                font-size: 1.6rem;
-            }
-            
-            .traveljobs-founders-slider .founder-position {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Tablets Portrait (481px - 767px) */
-        @media (min-width: 481px) and (max-width: 767px) {
-            .traveljobs-founders-slider {
-                padding: 0;
-            }
-            
-            .traveljobs-founders-slider .slider-container {
-                height: auto;
-                min-height: 700px;
-            }
-            
-            .traveljobs-founders-slider .slide-content,
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 30px 40px;
-            }
-
-            .traveljobs-founders-slider .slide-content.reverse .founder-image {
-                order: 1;
-                transform: none;
-            }
-
-            .traveljobs-founders-slider .slide-content.reverse .founder-info {
-                order: 2;
-            }
-
-            .traveljobs-founders-slider .founder-title {
-                font-size: 2rem;
-                text-align: center;
-                margin-bottom: 15px;
-            }
-            
-            .traveljobs-founders-slider .founder-subtitle {
-                font-size: 1.1rem;
-                text-align: center;
-                margin-bottom: 25px;
-            }
-
-            .traveljobs-founders-slider .founder-image {
-                transform: none;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .traveljobs-founders-slider .founder-image:hover {
-                transform: scale(1.02);
-            }
-            
-            .traveljobs-founders-slider .founder-image img {
-                height: 300px;
-            }
-
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.9rem;
-                line-height: 1.6;
-                text-align: left;
-            }
-
-            .traveljobs-founders-slider .founder-name,
-            .traveljobs-founders-slider .founder-position {
-                text-align: center !important;
-            }
-            
-            .traveljobs-founders-slider .founder-name {
-                font-size: 1.5rem;
-                margin-top: 25px;
-            }
-            
-            .traveljobs-founders-slider .founder-position {
-                font-size: 1rem;
-            }
-        }
-
-        /* Mobile Landscape (376px - 480px) */
-        @media (min-width: 376px) and (max-width: 480px) {
-            .traveljobs-founders-slider {
-                padding: 0;
-            }
-            
-            .traveljobs-founders-slider .slider-container {
-                height: auto;
-                min-height: 650px;
-                border-radius: 0;
-            }
-            
-            .traveljobs-founders-slider .slide-content,
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                padding: 25px 30px;
-            }
-
-            .traveljobs-founders-slider .founder-title {
-                font-size: 2rem;
-                text-align: center;
-            }
-            
-            .traveljobs-founders-slider .founder-subtitle {
-                font-size: 1rem;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            .traveljobs-founders-slider .founder-image {
-                max-width: 320px;
-                margin: 0 auto;
-            }
-            
-            .traveljobs-founders-slider .founder-image img {
-                height: 250px;
-            }
-
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.85rem;
-                line-height: 1.5;
-            }
-
-            .traveljobs-founders-slider .founder-name {
-                font-size: 1.3rem;
-                margin-top: 20px;
-            }
-            
-            .traveljobs-founders-slider .founder-position {
-                font-size: 0.95rem;
-            }
-            
-            .traveljobs-founders-slider .founders-swiper .swiper-button-next,
-            .traveljobs-founders-slider .founders-swiper .swiper-button-prev {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .traveljobs-founders-slider .founders-swiper .swiper-button-next:after,
-            .traveljobs-founders-slider .founders-swiper .swiper-button-prev:after {
-                font-size: 16px;
-            }
-        }
-
-        /* Mobile Portrait (320px - 375px) */
-        @media (max-width: 375px) {
-            .traveljobs-founders-slider {
-                padding: 0;
-            }
-            
-            .traveljobs-founders-slider .slider-container {
-                height: auto;
-                min-height: 600px;
-                border-radius: 0;
-            }
-            
-            .traveljobs-founders-slider .slide-content,
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 20px 25px;
-            }
-
-            .traveljobs-founders-slider .founder-title {
-                font-size: 1.8rem;
-                text-align: center;
-                line-height: 0.9;
-            }
-            
-            .traveljobs-founders-slider .founder-subtitle {
-                font-size: 0.9rem;
-                text-align: center;
-                margin-bottom: 15px;
-            }
-
-            .traveljobs-founders-slider .founder-image {
-                max-width: 280px;
-                margin: 0 auto;
-                border-radius: 15px;
-            }
-            
-            .traveljobs-founders-slider .founder-image img {
-                height: 220px;
-            }
-
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.8rem;
-                line-height: 1.4;
-            }
-
-            .traveljobs-founders-slider .founder-name {
-                font-size: 1.2rem;
-                margin-top: 15px;
-            }
-            
-            .traveljobs-founders-slider .founder-position {
-                font-size: 0.9rem;
-            }
-            
-            .traveljobs-founders-slider .founders-swiper .swiper-button-next,
-            .traveljobs-founders-slider .founders-swiper .swiper-button-prev {
-                width: 35px;
-                height: 35px;
-            }
-            
-            .traveljobs-founders-slider .founders-swiper .swiper-button-next:after,
-            .traveljobs-founders-slider .founders-swiper .swiper-button-prev:after {
-                font-size: 14px;
-            }
-            
-            .traveljobs-founders-slider .founders-swiper .swiper-pagination-bullet {
-                width: 12px;
-                height: 12px;
-            }
-        }
-
-        /* Very Small Mobile (under 320px) */
-        @media (max-width: 319px) {
-            .traveljobs-founders-slider .founder-title {
-                font-size: 1.5rem;
-            }
-            
-            .traveljobs-founders-slider .founder-image {
-                max-width: 250px;
-            }
-            
-            .traveljobs-founders-slider .founder-image img {
-                height: 200px;
-            }
-            
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.75rem;
-            }
-            
-            .traveljobs-founders-slider .slide-content,
-            .traveljobs-founders-slider .slide-content.reverse {
-                padding: 15px 20px;
-            }
-        }
-
-        /* Landscape Orientation Adjustments for Mobile */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .traveljobs-founders-slider {
-                min-height: auto;
-                padding: 0;
-            }
-            
-            .traveljobs-founders-slider .slider-container {
-                height: 90vh;
-                min-height: 500px;
-            }
-            
-            .traveljobs-founders-slider .slide-content {
-                grid-template-columns: 1fr 1.2fr;
-                gap: 20px;
-                padding: 20px 30px;
-            }
-            
-            .traveljobs-founders-slider .slide-content.reverse {
-                grid-template-columns: 1.2fr 1fr;
-            }
-            
-            .traveljobs-founders-slider .founder-image {
-                max-width: none;
-            }
-            
-            .traveljobs-founders-slider .founder-image img {
-                height: 250px;
-            }
-            
-            .traveljobs-founders-slider .founder-title {
-                font-size: 2rem;
-                text-align: left;
-            }
-            
-            .traveljobs-founders-slider .slide-content.reverse .founder-title {
-                text-align: right;
-            }
-            
-            .traveljobs-founders-slider .founder-description {
-                font-size: 0.8rem;
-                line-height: 1.4;
-            }
-        }
-
-        /* Background patterns */
-        .traveljobs-founders-slider .slide-content::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: foundersFloat 20s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes foundersFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
-        }
-    </style>
-</head>
-<body>
-    <div class="traveljobs-founders-slider" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
-        <div class="slider-container">
-            <div class="swiper founders-swiper">
-                <div class="swiper-wrapper">
-                    <!-- Founder Slide -->
+<!
+<div class="traveljobs-founders-slider" data-aos="fade-up" data-aos-duration="1500">
+     <div class="site-title pb-4">
+            <h2 class="text-center">Meet the Team Behind TravelJobs</h2>
+            {{-- <p class="text-center">Turn your love for travel into a career — the world is hiring!</p> --}}
+        </div>
+    <div class="slider-container">
+        <div class="swiper founders-swiper">
+            <div class="swiper-wrapper">
+                @foreach($teamData as $team)
                     <div class="swiper-slide">
-                        <div class="slide-content">
-                            <div class="founder-image">
-                                <img src="./assets/img/founder.jpeg" width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f8f9fa'/%3E%3Ctext x='200' y='180' text-anchor='middle' fill='%236c757d' font-size='16' font-family='Arial'%3EFounder Image%3C/text%3E%3Ctext x='200' y='220' text-anchor='middle' fill='%236c757d' font-size='14' font-family='Arial'%3EAshok Harkara%3C/text%3E%3C/svg%3E" alt="Ashok Harkara - Founder">
+                        <div class="team-card text-center p-4 shadow rounded">
+                            <div class="team-image mb-3">
+                                <img src="{{ asset($team->image) }}" 
+                                     alt="{{ $team->name }}" 
+                                     style="height:250px; width:250px; object-fit:cover; border-radius:12px;">
                             </div>
-                            <div class="founder-info">
-                                <h2 class="founder-title">Founder</h2>
-                                <p class="founder-subtitle">Message</p>
-                                <p class="founder-description">
-                    With over 50 years in the global travel industry—starting in 1972 as an Agency Executive in Hyderabad and spanning roles across Mumbai, Saudi Arabia, East Africa, and the U.S.—I’ve worked across all major segments of travel. Having visited 48+ countries, I bring first-hand insight into how travel works worldwide. I also served as President of Skal International Hyderabad (606) and as a member of the Skal India National Committee, championing ethics, partnerships, and professional camaraderie. Now, through TravelJobs.info, I continue contributing by connecting talent with opportunity, fostering mentorship, mobility, and meaningful careers in travel.            </p>
-                                <div class="founder-name">Ashok Harkara</div>
-                                <div class="founder-position">Founder, TravelJobs.info</div>
-                            </div>
+                            <h4 class="fw-bold">{{ strtoupper($team->name) }}</h4>
+                            <p class="text-muted">{{ $team->post }}</p>
                         </div>
                     </div>
-
-                    <!-- Co-Founder Slide -->
-                    <div class="swiper-slide">
-                        <div class="slide-content reverse">
-                            <div class="founder-image">
-                                <img src="http://127.0.0.1:8000/assets/img/team1.jpeg" width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f8f9fa'/%3E%3Ctext x='200' y='180' text-anchor='middle' fill='%236c757d' font-size='16' font-family='Arial'%3ECo-Founder Image%3C/text%3E%3Ctext x='200' y='220' text-anchor='middle' fill='%236c757d' font-size='14' font-family='Arial'%3EVani Harkara%3C/text%3E%3C/svg%3E" alt="Vani Harkara - Co-Founder">
-                            </div>
-                            <div class="founder-info">
-                                <h2 class="founder-title">Co-Founder</h2>
-                                <p class="founder-subtitle">Message</p>
-                                <p class="founder-description">
-                                    With a strong background in travel operations and business strategy, I have spent decades creating innovative solutions for the global travel industry. My journey has taken me through diverse markets, collaborating with professionals from across continents to shape better travel experiences. I believe in empowering both companies and individuals by providing access to the right resources, opportunities, and networks. At TravelJobs.com, my goal is to help bridge gaps in the industry, encourage professional growth, and inspire the next generation of travel leaders.
-                                </p>
-                                <div class="founder-name">Vani Harkara</div>
-                                <div class="founder-position">Co-Founder, TravelJobs.info</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Navigation buttons -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
+                @endforeach
             </div>
+
+            <!-- Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
     </div>
+</div>
+<style>
+   /* =====================
+   Team Section Styling
+   ===================== */
+.traveljobs-founders-slider {
+    padding: 70px 0;
+    background: #f9fafc;
+}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
-    <script>
-        // Use a unique variable name and specific class selector to avoid conflicts
+.site-title h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0a0a23;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Team Card */
+.team-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Image Circle Style */
+.team-image img {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%; /* circle image */
+    object-fit: cover;
+    width: 180px;
+    height: 180px;
+    border: 6px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Name */
+.team-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0 5px;
+    color: #0a0a23;
+}
+
+/* Position */
+.team-card p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* Swiper Pagination + Arrows */
+.founders-swiper .swiper-pagination-bullet {
+    background: #0a0a23;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.founders-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #0056b3;
+}
+
+.founders-swiper .swiper-button-next,
+.founders-swiper .swiper-button-prev {
+    color: #0a0a23;
+    transition: color 0.3s ease;
+}
+
+.founders-swiper .swiper-button-next:hover,
+.founders-swiper .swiper-button-prev:hover {
+    color: #0056b3;
+}
+
+</style>
+
+<!-- Include Swiper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const totalSlides = document.querySelectorAll('.founders-swiper .swiper-slide').length;
+
         const foundersSwiper = new Swiper('.founders-swiper', {
-            loop: true,
-            autoplay: {
-                delay: 5000,
+            loop: totalSlides > 3, // only loop if more than 3 members
+            slidesPerView: Math.min(totalSlides, 3),
+            spaceBetween: 30,
+            autoplay: totalSlides > 1 ? {
+                delay: 4000,
                 disableOnInteraction: false,
-            },
-            effect: 'slide',
-            speed: 800,
+            } : false,
             navigation: {
                 nextEl: '.founders-swiper .swiper-button-next',
                 prevEl: '.founders-swiper .swiper-button-prev',
@@ -870,40 +347,15 @@
             pagination: {
                 el: '.founders-swiper .swiper-pagination',
                 clickable: true,
-                dynamicBullets: true,
             },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true,
-            },
-            mousewheel: {
-                enabled: false, // Disabled to allow normal page scrolling
-            },
-            // Allow touch swipe on mobile but not interfere with page scroll
-            touchRatio: 1,
-            touchAngle: 45,
-            simulateTouch: true,
-            allowTouchMove: true,
-            touchStartPreventDefault: false,
-        });
-
-        // Add smooth entrance animation with unique selector
-        document.addEventListener('DOMContentLoaded', function() {
-            const foundersSliderContainer = document.querySelector('.traveljobs-founders-slider .slider-container');
-            if (foundersSliderContainer) {
-                foundersSliderContainer.style.opacity = '0';
-                foundersSliderContainer.style.transform = 'translateY(50px)';
-                
-                setTimeout(() => {
-                    foundersSliderContainer.style.transition = 'all 0.8s ease';
-                    foundersSliderContainer.style.opacity = '1';
-                    foundersSliderContainer.style.transform = 'translateY(0)';
-                }, 100);
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: Math.min(totalSlides, 2) },
+                1024: { slidesPerView: Math.min(totalSlides, 3) }
             }
         });
-    </script>
-</body>
-</html>
+    });
+</script>
 
     <!-- Destinations Section End -->
 
