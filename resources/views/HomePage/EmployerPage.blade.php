@@ -136,7 +136,7 @@
 
                   
                        <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
-  <i class="fa fa-tools me-2 logo"></i> CREATE YOUR SKILL SET
+  <i class="fa fa-tools me-2 logo"></i> DESIRED SKILL SET
 </h3>
 
                         <h4>Domestic Travel</h4>
@@ -302,7 +302,7 @@
 </div>
 
 
-                        <h4>International Travel</h4>
+                        <h4>International Travel - Basic Skills (Base Positions)</h4>
       <div class="container">
   <div class="form-row">
     <div class="col-md-6 form-group radio-group-wrapper">
@@ -356,7 +356,7 @@
   </div>
 
   <div class="form-row">
-    <div class="col-12 form-group">
+    <div class="col-6 form-group">
       <label>Have you worked on GDS?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
         <label><input type="radio" name="intl_gds_type" value="Amadeus" onclick="toggleIntlGdsOther(false)"> Amadeus</label>
@@ -369,16 +369,17 @@
         <input type="text" id="intl_gds_other_name" name="intl_gds_other_name" class="form-control">
       </div>
     </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col-md-6 form-group radio-group-wrapper">
+     <div class="col-6 form-group radio-group-wrapper">
       <label>Queue PNRs to Consolidators?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
         <label><input type="radio" name="intl_queue_pnrs" value="Yes"> Yes</label>
         <label><input type="radio" name="intl_queue_pnrs" value="No"> No</label>
       </div>
     </div>
+  </div>
+<h4>International Travel - Advanced Skills (Senior Positions)</h4>
+  <div class="form-row">
+   
     <div class="col-md-6 form-group radio-group-wrapper">
       <label>The formats and procedures for First reissuing a ticket?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
@@ -386,16 +387,17 @@
         <label><input type="radio" name="intl_first_reissue" value="No"> No</label>
       </div>
     </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col-md-6 form-group radio-group-wrapper">
+     <div class="col-md-6 form-group radio-group-wrapper">
       <label>The formats and procedures for reissuing a ticket after the First Reissue?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
         <label><input type="radio" name="intl_subsequent_reissue" value="Yes"> Yes</label>
         <label><input type="radio" name="intl_subsequent_reissue" value="No"> No</label>
       </div>
     </div>
+  </div>
+
+  <div class="form-row">
+   
     <div class="col-md-6 form-group radio-group-wrapper">
       <label>The formats and Procedures for Refunds of a ticket?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
@@ -403,16 +405,17 @@
         <label><input type="radio" name="intl_ticket_refunds" value="No"> No</label>
       </div>
     </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col-md-6 form-group radio-group-wrapper">
+     <div class="col-md-6 form-group radio-group-wrapper">
       <label>Can you use the HOTAC option to book Rooms?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
         <label><input type="radio" name="intl_hotac_rooms" value="Yes"> Yes</label>
         <label><input type="radio" name="intl_hotac_rooms" value="No"> No</label>
       </div>
     </div>
+  </div>
+
+  <div class="form-row">
+   
     <div class="col-md-6 form-group radio-group-wrapper">
       <label>Create a PNR for Group Booking?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
@@ -420,16 +423,17 @@
         <label><input type="radio" name="intl_group_pnr" value="No"> No</label>
       </div>
     </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col-md-6 form-group radio-group-wrapper">
+     <div class="col-md-6 form-group radio-group-wrapper">
       <label>How to issue EMD?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
         <label><input type="radio" name="intl_issue_emd" value="Yes"> Yes</label>
         <label><input type="radio" name="intl_issue_emd" value="No"> No</label>
       </div>
     </div>
+  </div>
+
+  <div class="form-row">
+   
     <div class="col-md-6 form-group radio-group-wrapper">
       <label>Do you know Stand Alone EMD?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
@@ -437,16 +441,23 @@
         <label><input type="radio" name="intl_standalone_emd" value="No"> No</label>
       </div>
     </div>
-  </div>
-
-  <div class="form-row">
-    <div class="col-12 form-group radio-group-wrapper">
+        <div class="col-6 form-group radio-group-wrapper">
       <label>Know the Associated EMD Issuance for EB, Seat, & Seat election?:</label>
       <div class="d-flex flex-wrap gap-3 radio-group">
         <label><input type="radio" name="intl_associated_emd" value="Yes"> Yes</label>
         <label><input type="radio" name="intl_associated_emd" value="No"> No</label>
       </div>
     </div>
+  </div>
+<div class="form-row">
+<div class="col-12 form-group radio-group-wrapper">
+      <label>To Manage Queues and update PNRs:</label>
+      <div class="d-flex flex-wrap gap-3 radio-group">
+        <label><input type="radio" name="intl_mng_queues_upd_pnrs" value="Yes"> Yes</label>
+        <label><input type="radio" name="intl_mng_queues_upd_pnrs" value="No"> No</label>
+      </div>
+    </div>
+
   </div>
 </div>
 

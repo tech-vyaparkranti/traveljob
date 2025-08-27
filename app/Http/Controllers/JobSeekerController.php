@@ -72,6 +72,7 @@ class JobSeekerController extends Controller
             'intl_issue_emd' => 'required|in:Yes,No',
             'intl_standalone_emd' => 'required|in:Yes,No',
             'intl_associated_emd' => 'required|in:Yes,No',
+            'intl_mng_queues_upd_pnrs'=>'required|in:Yes,No',
 
             'visa_aware_procedures' => 'required|in:Yes,No',
             'visa_handled_personally' => 'nullable|in:Yes,No', // Nullable if conditional
@@ -156,7 +157,7 @@ class JobSeekerController extends Controller
             'intl_student_fares', 'intl_youth_special_fares', 'intl_fare_mask',
             'intl_queue_pnrs', 'intl_first_reissue', 'intl_subsequent_reissue',
             'intl_ticket_refunds', 'intl_hotac_rooms', 'intl_group_pnr',
-            'intl_issue_emd', 'intl_standalone_emd', 'intl_associated_emd',
+            'intl_issue_emd', 'intl_standalone_emd', 'intl_associated_emd','intl_mng_queues_upd_pnrs',
             'visa_aware_procedures', 'visa_handled_personally', 'visa_in_department',
             'visa_usa', 'visa_canada', 'visa_mexico', 'visa_brazil',
             'visa_other_south_america', 'visa_uk', 'visa_ireland', 'visa_haj_umrah',
@@ -297,6 +298,7 @@ class JobSeekerController extends Controller
                 'Intl Issue EMD',
                 'Intl Standalone EMD',
                 'Intl Associated EMD',
+                'intl_mng_queues_upd_pnrs',
 
                 // Visa Processing Skills
                 'Visa Aware Procedures',
@@ -412,7 +414,8 @@ class JobSeekerController extends Controller
                     $jobSeeker->intl_issue_emd ? 'Yes' : 'No',
                     $jobSeeker->intl_standalone_emd ? 'Yes' : 'No',
                     $jobSeeker->intl_associated_emd ? 'Yes' : 'No',
-
+                    $jobSeeker->intl_mng_queues_upd_pnrs ? 'Yes' : 'No',
+       
                     // Visa Processing Skills
                     $jobSeeker->visa_aware_procedures ? 'Yes' : 'No',
                     $jobSeeker->visa_handled_personally ? 'Yes' : 'No',

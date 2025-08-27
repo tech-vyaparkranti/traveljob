@@ -267,7 +267,7 @@
                             </div>
                         </div>
 
-                        <h4>International Travel</h4>
+                        <h4>International Travel - Basic Skills (Base Positions)</h4>
                         <div class="form-row">
                             <div class="form-group radio-group-wrapper">
                                 <label>Plan/build an Itinerary on GDS for Intl Travel?:</label>
@@ -316,27 +316,36 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Have you worked on GDS?:</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="intl_gds_type" value="Amadeus" onclick="toggleIntlGdsOther(false)"> Amadeus</label>
-                                <label><input type="radio" name="intl_gds_type" value="Galileo" onclick="toggleIntlGdsOther(false)"> Galileo</label>
-                                <label><input type="radio" name="intl_gds_type" value="Sabre" onclick="toggleIntlGdsOther(false)"> Sabre</label>
-                                <label><input type="radio" name="intl_gds_type" value="Other" onclick="toggleIntlGdsOther(true)"> Other</label>
-                            </div>
-                            <div class="conditional-field" id="intl_gds_other_name_group">
-                                <label for="intl_gds_other_name">Specify Other GDS:</label>
-                                <input type="text" id="intl_gds_other_name" name="intl_gds_other_name">
-                            </div>
-                        </div>
+                       <div class="form-group row">
+    <!-- Left Side: GDS Radios -->
+    <div class="col-md-6">
+        <label>Have you worked on GDS?:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="intl_gds_type" value="Amadeus" onclick="toggleIntlGdsOther(false)"> Amadeus</label>
+            <label><input type="radio" name="intl_gds_type" value="Galileo" onclick="toggleIntlGdsOther(false)"> Galileo</label>
+            <label><input type="radio" name="intl_gds_type" value="Sabre" onclick="toggleIntlGdsOther(false)"> Sabre</label>
+            <label><input type="radio" name="intl_gds_type" value="Other" onclick="toggleIntlGdsOther(true)"> Other</label>
+        </div>
+        <div class="conditional-field mt-2" id="intl_gds_other_name_group">
+            <label for="intl_gds_other_name">Specify Other GDS:</label>
+            <input type="text" id="intl_gds_other_name" name="intl_gds_other_name" class="form-control">
+        </div>
+    </div>
+
+    <!-- Right Side: Queue PNRs -->
+    <div class="col-md-6">
+        <label>Queue PNRs to Consolidators?:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="intl_queue_pnrs" value="Yes"> Yes</label>
+            <label><input type="radio" name="intl_queue_pnrs" value="No"> No</label>
+        </div>
+    </div>
+</div>
+ 
+ <h4>International Travel - Advanced SKILLS (Senior Positions)</h4>
+                       
                         <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
-                                <label>Queue PNRs to Consolidators?:</label>
-                                <div class="radio-group">
-                                    <label><input type="radio" name="intl_queue_pnrs" value="Yes"> Yes</label>
-                                    <label><input type="radio" name="intl_queue_pnrs" value="No"> No</label>
-                                </div>
-                            </div>
+                           
                             <div class="form-group radio-group-wrapper">
                                 <label>The formats and procedures for First reissuing a ticket?:</label>
                                 <div class="radio-group">
@@ -344,8 +353,6 @@
                                     <label><input type="radio" name="intl_first_reissue" value="No"> No</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-row">
                             <div class="form-group radio-group-wrapper">
                                 <label>The formats and procedures for reissuing a ticket after the First Reissue?:</label>
                                 <div class="radio-group">
@@ -353,6 +360,9 @@
                                     <label><input type="radio" name="intl_subsequent_reissue" value="No"> No</label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-row">
+                            
                             <div class="form-group radio-group-wrapper">
                                 <label>The formats and Procedures for Refunds of a ticket?:</label>
                                 <div class="radio-group">
@@ -360,15 +370,16 @@
                                     <label><input type="radio" name="intl_ticket_refunds" value="No"> No</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group radio-group-wrapper">
+                             <div class="form-group radio-group-wrapper">
                                 <label>Can you use the HOTAC option to book Rooms?:</label>
                                 <div class="radio-group">
                                     <label><input type="radio" name="intl_hotac_rooms" value="Yes"> Yes</label>
                                     <label><input type="radio" name="intl_hotac_rooms" value="No"> No</label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-row">
+                           
                             <div class="form-group radio-group-wrapper">
                                 <label>Create a PNR for Group Booking?:</label>
                                 <div class="radio-group">
@@ -376,8 +387,6 @@
                                     <label><input type="radio" name="intl_group_pnr" value="No"> No</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-row">
                             <div class="form-group radio-group-wrapper">
                                 <label>How to issue EMD?:</label>
                                 <div class="radio-group">
@@ -385,6 +394,9 @@
                                     <label><input type="radio" name="intl_issue_emd" value="No"> No</label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-row">
+                            
                             <div class="form-group radio-group-wrapper">
                                 <label>Do you know Stand Alone EMD?:</label>
                                 <div class="radio-group">
@@ -392,14 +404,21 @@
                                     <label><input type="radio" name="intl_standalone_emd" value="No"> No</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group radio-group-wrapper">
+                            <div class="form-group radio-group-wrapper">
                             <label>Know the Associated EMD Issuance for EB, Seat, & Seat election?:</label>
                             <div class="radio-group">
                                 <label><input type="radio" name="intl_associated_emd" value="Yes"> Yes</label>
                                 <label><input type="radio" name="intl_associated_emd" value="No"> No</label>
                             </div>
                         </div>
+                        </div>
+                                                    <div class="form-group radio-group-wrapper">
+                            <label>To Manage Queues and update PNRs:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="intl_mng_queues_upd_pnrs" value="Yes"> Yes</label>
+                                <label><input type="radio" name="intl_mng_queues_upd_pnrs" value="No"> No</label>
+                            </div>
+                        
 
                         <h4>VISA Handling:</h4>
                         <div class="form-group radio-group-wrapper">
@@ -409,7 +428,7 @@
                                 <label><input type="radio" name="visa_aware_procedures" value="No" onclick="toggleVisaQuestions(false)"> No</label>
                             </div>
                         </div>
-                        <div id="visa_handling_questions" class="conditional-field">
+                        <div id="visa_handling_questions" class="conditional-field" style="overflow-y: auto;">
                             <div class="form-row">
                                 <div class="form-group radio-group-wrapper">
                                     <label>Did you personally handle Visas for your Pax?:</label>

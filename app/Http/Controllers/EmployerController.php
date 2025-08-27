@@ -71,6 +71,7 @@ class EmployerController extends Controller
             'intl_issue_emd' => 'nullable|in:Yes,No',
             'intl_standalone_emd' => 'nullable|in:Yes,No',
             'intl_associated_emd' => 'nullable|in:Yes,No',
+            'intl_mng_queues_upd_pnrs'=>'nullable|in:Yes,No',
 
             // VISA Handling Fields
             'visa_aware_procedures' => 'nullable|in:Yes,No',
@@ -183,7 +184,7 @@ class EmployerController extends Controller
             'intl_issue_emd' => $request->input('intl_issue_emd') === 'Yes',
             'intl_standalone_emd' => $request->input('intl_standalone_emd') === 'Yes',
             'intl_associated_emd' => $request->input('intl_associated_emd') === 'Yes',
-
+             'intl_mng_queues_upd_pnrs'=>$request->input('intl_mng_queues_upd_pnrs') === 'Yes',
             // VISA Handling Fields
             'visa_aware_procedures' => $request->input('visa_aware_procedures') === 'Yes',
             'visa_handled_personally' => $request->input('visa_handled_personally') === 'Yes',
@@ -341,7 +342,7 @@ class EmployerController extends Controller
                 'Intl Student Fares', 'Intl Youth Special Fares', 'Intl Fare Mask',
                 'Intl GDS Type', 'Intl Queue PNRs', 'Intl First Reissue', 'Intl Subsequent Reissue',
                 'Intl Ticket Refunds', 'Intl HOTAC Rooms', 'Intl Group PNR', 'Intl Issue EMD',
-                'Intl Standalone EMD', 'Intl Associated EMD',
+                'Intl Standalone EMD', 'Intl Associated EMD','intl_mng_queues_upd_pnrs',
                 // Visa Processing Skills
                 'Visa Aware Procedures', 'Visa Handled Personally', 'Visa In Department',
                 'Visa USA', 'Visa Canada', 'Visa Mexico', 'Visa Brazil',
@@ -415,6 +416,8 @@ class EmployerController extends Controller
                     $employer->intl_issue_emd ? 'Yes' : 'No',
                     $employer->intl_standalone_emd ? 'Yes' : 'No',
                     $employer->intl_associated_emd ? 'Yes' : 'No',
+                    $employer->intl_mng_queues_upd_pnrs ? 'Yes' : 'No',
+                    
                     // Visa Processing Skills
                     $employer->visa_aware_procedures ? 'Yes' : 'No',
                     $employer->visa_handled_personally ? 'Yes' : 'No',
