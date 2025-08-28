@@ -45,9 +45,9 @@
 </div>
 
 <style>
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   .bottomclass{
-    font-size:15px !important;
+    font-size:10px !important;
     padding:0px;
     margin:0px;
   }

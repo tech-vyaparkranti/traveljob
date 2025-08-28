@@ -3,7 +3,32 @@
 @section('content')
     {{-- @include('include.navigation') --}}
     @include('include.slider')
+<style>
+    .about-circle-img {
+  width: 100%;
+  max-width: 250px; /* optional, limits circle size */
+  aspect-ratio: 1/1; /* ensures square container */
+  border-radius: 50%; /* circle */
+  object-fit: cover; /* image fills circle */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
 
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .about-circle-img {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-circle-img {
+    max-width: 350px;
+  }
+}
+
+</style>
     {{-- <!-- aboutus Section -->
     <div class="destinations pt-5 pb-2" >
         <div class="custom-container">
@@ -28,12 +53,12 @@
       <div class="row align-items-center">
         
         <!-- Image Column -->
-        <div class="col-md-3 mb-4 mb-md-0" data-aos="fade-right">
+        <div class="col-md-3  mb-md-0 col-md-3 mb-4 mb-md-0 d-flex justify-content-center align-items-center" data-aos="fade-right">
           <img 
             src="{{ isset($aboutText['0']->about_image) ? asset($aboutText['0']->about_image) : asset('assets/img/Random Pics.jpeg') }}" 
             alt="About Us" 
-            class="img-fluid w-100 shadow-sm hover-z image-height" 
-            style="  border-radius: 50%"
+            class="about-circle-img" 
+            style="  "
           >
         </div>
         <!-- Text Column -->
@@ -129,15 +154,15 @@
                     @foreach ($service as $item)
                         <div class="swiper-slide mb-4">
                             {{-- Use Flexbox on the parent container --}}
-                            <div class="destinations-block" style="display: flex; flex-direction: column; height: 350px;">
+                            <div class="destinations-block" style="display: flex; flex-direction: column; height: 300px;">
                                 {{-- Image Wrapper (90% of parent height) --}}
-                                <div style="height: 90%; overflow: hidden;">
+                                <div style="height: 70%; overflow: hidden;">
                                     <img  src="{{ url($item->image) }}" class="img-fluid hover-zoom"
                                     alt="{!! $item->service_name !!}" style="width:100%; height:100%;border-radius:10px 10px 0px 0px">
                                 </div>
 
                                 {{-- Name Wrapper (10% of parent height) --}}
-                                <div class="destinations-name-container" style="height: 10%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 5px;margin-top:10px">
+                                <div class="destinations-name-container" style="height: 30%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 5px;margin-top:10px">
                                     <span class="destinations-title" style="margin: 0; font-size: 1.8rem; color: #333;">
                                         {!! $item->service_name !!}
                                     </span>
@@ -204,7 +229,7 @@
 <!
 <div class="traveljobs-founders-slider" data-aos="fade-up" data-aos-duration="1500">
      <div class="site-title pb-4">
-            <h2 class="text-center">Meet the Men Behind TravelJobs</h2>
+            <h2 class="text-center" style="margin-top:50px;">Meet the Men Behind TravelJobs</h2>
             {{-- <p class="text-center">Turn your love for travel into a career — the world is hiring!</p> --}}
         </div>
     <div class="slider-container">

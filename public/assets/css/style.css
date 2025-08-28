@@ -773,7 +773,13 @@ section.chairperson {
 
 @media (min-width: 992px) {
     .video-block>.main-slider .swiper-slide img.img-fluid {
-        height: 560px;
+        height: 560px !important;
+    }
+}
+
+@media (min-width: 921px) and (max-width: 922px) {
+    .video-block>.main-slider .swiper-slide img.img-fluid {
+        height: 500px !important;
     }
 }
 

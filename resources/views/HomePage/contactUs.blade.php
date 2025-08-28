@@ -120,19 +120,43 @@
 
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="map-area">
-                            <!-- google-map-area start -->
-                            <div class="google-map-area mb-20">
-                                <!--  Map Section -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.977637466187!2d78.45519097526402!3d17.412860802070668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb974676d0dae7%3A0x62f09ceccf9310b6!2sManoj%20Apartments!5e0!3m2!1sen!2sin!4v1755773403037!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="map-area">
+        <div class="google-map-area mb-20">
+            <div class="responsive-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.977637466187!2d78.45519097526402!3d17.412860802070668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb974676d0dae7%3A0x62f09ceccf9310b6!2sManoj%20Apartments!5e0!3m2!1sen!2sin!4v1755773403037!5m2!1sen!2sin" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
                 <!-- Contact Area End -->
             </div>
         </div>
     </div>
+    <style>
+      .responsive-map {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 ratio, adjust if needed */
+    height: 450px;
+}
+
+.responsive-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+    </style>
 @endsection
 @section('script')
     <script>
