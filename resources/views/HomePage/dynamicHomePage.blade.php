@@ -232,51 +232,33 @@
             <h2 class="text-center" style="margin-top:50px;">Meet the Men Behind TravelJobs</h2>
             {{-- <p class="text-center">Turn your love for travel into a career — the world is hiring!</p> --}}
         </div>
-    @foreach($teamData as $key => $team)
-    <div class="about-our-team row align-items-center my-4" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
-        {{-- Alternate image placement left/right --}}
-        @if($key % 2 == 0)
-            {{-- Image Left --}}
-            <div class="col-md-4 text-center mb-3 mb-md-0">
-                <img src="{{ asset($team->image) }}" 
-                     style="height:300px;width:300px" 
-                     alt="{{ $team->name }}" 
-                     class="img-fluid rounded shadow">
+    <div class="slider-container">
+        <div class="swiper founders-swiper">
+            <div class="swiper-wrapper">
+                @foreach($teamData as $team)
+                    <div class="swiper-slide">
+                        <div class="team-card text-center p-4 shadow rounded">
+                            <div class="team-image mb-3">
+                                <img src="{{ asset($team->image) }}" 
+                                     alt="{{ $team->name }}" 
+                                     style="height:250px; width:250px; object-fit:cover; border-radius:12px;">
+                            </div>
+                            <h4 class="fw-bold">{{ strtoupper($team->name) }}</h4>
+                            <p class="text-muted">{{ $team->post }}</p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            <div class="col-md-8">
-                <p class="text-justify">{!! $team->message !!}</p>
-                <p class="text-end"><i><b>{{ $team->name }}</b></i></p>
-                <p class="text-end"><i><b>{{ $team->post }}, TravelJobs.info</b></i></p>
-            </div>
-        @else
-            {{-- Image Right --}}
-            <div class="col-md-8">
-                <p class="text-justify">{!! $team->message !!}</p>
-                <p class="text-end"><i><b>{{ $team->name }}</b></i></p>
-                <p class="text-end"><i><b>{{ $team->post }}, TravelJobs.info</b></i></p>
-            </div>
-            <div class="col-md-4 text-center mb-3 mb-md-0">
-                <img src="{{ asset($team->image) }}" 
-                     style="height:300px;width:300px" 
-                     alt="{{ $team->name }}" 
-                     class="img-fluid rounded shadow">
-            </div>
-        @endif
-    </div>
-@endforeach
-</div>
 
-<style>
-    .team-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
-    }
-    .team-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-</style>
+            <!-- Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
 <style>
    /* =====================
    Team Section Styling
