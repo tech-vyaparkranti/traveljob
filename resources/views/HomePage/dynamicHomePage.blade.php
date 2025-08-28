@@ -413,7 +413,7 @@
     </section>
   <style>
    </style>
-<section class="our_partner pt-5 pb-2" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
+{{-- <section class="our_partner pt-5 pb-2" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
     <div class="custom-container">
         <div class="site-title pb-3">
             <h2 class="text-center">Industry Certifications</h2>
@@ -445,7 +445,7 @@
             @endif
         </div>
     </div>
-</section>
+</section> --}}
 <style>
     </style>
     {{-- Testimonial Section End  --}}

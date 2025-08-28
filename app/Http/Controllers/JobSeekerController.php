@@ -31,6 +31,7 @@ class JobSeekerController extends Controller
             'preferred_cities' => 'nullable|string|max:255',
             'current_salary' => 'nullable|numeric|min:0',
             'cv_upload' => 'required|file|mimes:pdf,doc,docx|max:2048', // Max 2MB
+            'not_want_company' => 'required|string|max:255',
 
             // Validation rules for all your other fields (domestic, international, visa, tours, accounting)
             // For radio buttons (Yes/No), they should be 'in:Yes,No' and then converted
@@ -255,6 +256,7 @@ class JobSeekerController extends Controller
                 'Willing to Relocate',
                 'Preferred Cities',
                 'Current Salary',
+                'not_want_company',
 
                 // Domestic Travel Skills
                 'Domestic GDS Itinerary',

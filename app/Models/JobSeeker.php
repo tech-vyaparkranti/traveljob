@@ -115,6 +115,7 @@ class JobSeeker extends Model
 
     // Cast boolean-like string values (Yes/No) to actual booleans if needed
     protected $casts = [
+        'not_want_company' => 'string',
         'domestic_gds_itinerary' => 'boolean',
         'domestic_pnr_adult' => 'boolean',
         'domestic_pnr_child_infant' => 'boolean',

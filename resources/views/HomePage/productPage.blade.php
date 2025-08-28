@@ -65,7 +65,7 @@
     <label for="personal_email" class="form-label">Personal Email Id:</label>
     <div class="input-group">
       <span class="input-group-text"><i class="fa fa-envelope logo"></i></span>
-      <input type="email" class="form-control" id="personal_email" name="personal_email" placeholder="Enter email address" required>
+      <input type="email" class="form-control" id="personal_email" name="personal_email" placeholder="Enter personal email address" required>
     </div>
   </div>
 </div>
@@ -112,6 +112,13 @@
   <div class="input-group">
     <span class="input-group-text"><i class="fa fa-paperclip logo"></i></span>
     <input type="file" class="form-control" id="cv_upload" name="cv_upload" accept=".pdf,.doc,.docx" required>
+  </div>
+</div>
+ <div class="mb-3">
+  <label for="current_salary" class="form-label">Do you have any Company whom you do not want to show CV .</label>
+  <div class="input-group">
+    <span class="input-group-text"><i class="fa fa-briefcase logo"></i></span>
+    <input type="text" class="form-control" id="not_want_company" name="not_want_company" min="0" placeholder="Enter Company name">
   </div>
 </div>
                        <h3 class="form-section-title mb-3 fw-bold" style="color: #030358;">
