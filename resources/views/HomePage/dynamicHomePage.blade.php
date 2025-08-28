@@ -265,6 +265,18 @@
     </div>
 @endforeach
 </div>
+
+<style>
+    .team-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+    }
+    .team-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+</style>
 <style>
    /* =====================
    Team Section Styling
