@@ -113,7 +113,7 @@
     <script>
         document.write(new Date().getFullYear());
     </script>
-    {{ isset($WebSetting['0']->copyright_txt) ? $WebSetting['0']->copyright_txt : ' All Rights Reserved by Travel Job ' }}
+    {{ isset($WebSetting['0']->copyright_txt) ? $WebSetting['0']->copyright_txt : ' All Rights Reserved by Travel Jobs ' }}
     & Developed by <a href="https://vyaparkranti.com/" class="text-white" aria-label="Digital Markating"
         alt="Vyapar Kranti">Vyapar kranti</a>
 </div><!-- Footer Section End-->

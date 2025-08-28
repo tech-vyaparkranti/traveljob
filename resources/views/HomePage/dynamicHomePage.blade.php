@@ -1,5 +1,5 @@
 @extends('layouts.webSite')
-@section('title', 'Travel Job ')
+@section('title', 'Travel Jobs ')
 @section('content')
     {{-- @include('include.navigation') --}}
     @include('include.slider')
