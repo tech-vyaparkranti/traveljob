@@ -23,7 +23,7 @@
                 <h2 class="text-center" stylr="margin-bottom:0px">Objectives</h2>
             </div>
             <div class="midd-content text-justify" style="" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out-sine">
-           <b> At Travel Jobs, we’re committed to transforming how hiring happens in the travel industry. Our key objectives include: </b>
+           <b> At TravelJobs, we’re committed to transforming how hiring happens in the travel industry. Our key objectives include: </b>
             <ul style="margin-top:5px;">
   <li>Delivering a seamless and efficient job search experience for individuals pursuing a career in the travel and tourism industry.</li>
   <li>Becoming a trusted hiring partner for travel agencies, tour operators, hospitality companies, airlines, cruise lines, and corporate travel departments.</li>
